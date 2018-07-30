@@ -1,4 +1,4 @@
-var game = function() {
+var Game = function() {
 
     var EMPTY_MARK = 'x'
 
@@ -21,14 +21,28 @@ var game = function() {
         :return: list with 16 randomly shuffled tiles,
         one of which is a empty space.
         */
+
+        var field=[];
+        while (field.length < 16) {
+         var Tempvalue=Math.floor(Math.random()*16)+1;
+            if (field.includes(Tempvalue)==false) {
+            field.push(Tempvalue);
+         } 
+        }
+        field.push('X');
+       
+        
+        
+
     }
 
-    this.print_field = function(field) {
+    this.print_field = function(fields) {
         /*
         This method prints field to user.
         :param field: current field state to be printed.
         :return: None
         */
+         console.log(field);
     }
 
 
@@ -39,6 +53,8 @@ var game = function() {
         :param field: current field state.
         :return: True if the game is finished, False otherwise.
         */
+        var newCheckArray=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,'X'];
+        if 
     }
         
 
@@ -75,6 +91,9 @@ var game = function() {
     }
 
 }
+
+var game= new Game();
+console.log(game.print_field());
 
 
 
