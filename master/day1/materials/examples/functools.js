@@ -24,3 +24,16 @@ var pos_arr = arr.filter(function(number) {
   return number > 0;
 });
 
+
+
+var arr = [1, 4, 5, 8, 7, 3, 81, 2, 3];
+
+var res = arr.map(function(v) {
+    return v * v;
+  }).
+  filter(function(v) {
+    return v > 50;
+  }).
+  reduce(function() {
+    return sum + v;
+  });

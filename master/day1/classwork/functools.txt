@@ -1,3 +1,17 @@
 Есть массив, [1,4,5,8,7,3,81,2,3]
 
 Вовзведите в квадрат, отфильтруйте больше 50 и получите сумму
+
+
+
+var arr = [1, 4, 5, 8, 7, 3, 81, 2, 3];
+
+var res = arr.map(function(v) {
+  return v*v;
+}).
+filter(function(v) {
+  return v > 50;
+}).
+reduce(function() {
+  return sum + v;
+});
