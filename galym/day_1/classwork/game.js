@@ -49,9 +49,15 @@ var Game = function() {
 			:param field: current field state.
 			:return: True if the game is finished, False otherwise.
 			*/
-		let newArr = [ 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,'x' ];
+		let newArr = [ 1, 2, 3,
+									 4, 5, 6,
+									 7, 8, 9,
+									10, 11, 12,
+									13, 14, 15,
+									EMPTY_MARK ];
+		
 		if( field == newArr ) return true;
-		else return false; 
+			return false; 
 	}
 			
 
@@ -63,26 +69,28 @@ var Game = function() {
 			:return: new field state (after the move).
 			:raises: IndexError if the move can't me done.
 			*/
+			console.log( key );
 		
-		/* if ( MOVES[key] == "d" && field.indexOf(EMPTY_MARK) - 4 < 0 ) {
+		if ( key == "d" && field.indexOf(EMPTY_MARK) >= 15 ) {
+			throw new Error("Error!");
+			console.log("err")
+		}
+		if( key == "a" && field.indexOf(EMPTY_MARK) <= 0) {
 			throw new Error("Error!");
 		}
-		if( MOVES[key] == "a" && field.indexOf(EMPTY_MARK) + 4 == 0) {
+		if( key == "w" && field.indexOf(EMPTY_MARK) <= 4) {
 			throw new Error("Error!");
 		}
-		if( MOVES[key] == "w" && field.indexOf(EMPTY_MARK) % 1 == 0) {
+		if( key == "s" && field.indexOf(EMPTY_MARK) >= 13) {
 			throw new Error("Error!");
 		}
-		if( MOVES[key] == "s" && field.indexOf(EMPTY_MARK) % 4 == 0) {
-			throw new Error("Error!");
-		} */
 
 		let index = field.indexOf(EMPTY_MARK);
-		field[index] = field[index + key];
-		field[index + key] = EMPTY_MARK;
+		let x = field.indexOf(key);
+		field[index] = field[index + MOVES[key]];
+		field[index + MOVES[key]] = EMPTY_MARK;
 
 		return field;
-		
 	}
 
 
@@ -97,7 +105,7 @@ var Game = function() {
 			*/
 		
 			let userInput = prompt("Input for: 'w' - up, 's' - down, 'a' - left,'d' - right", "d");
-			if(userInput == "w" || userInput == "s" || userInput == "a" || userInput == "d") {
+			if (typeof MOVES[userInput] != 'undefined') {
 				return (userInput);
 			}
 		
@@ -122,5 +130,4 @@ var Game = function() {
 	self.init();
 
 }
-
 new Game();
