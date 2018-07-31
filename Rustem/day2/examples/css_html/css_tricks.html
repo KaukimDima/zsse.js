@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        /* каскадность */
+        .title { color: red; }
+        p { font-weight: bold; }
+
+        /* конфлик свойств */
+        .title { color: red; }
+        .important { color: green; }
+
+    </style>
+</head>
+<body>
+
+    <h1>Header</h1>
+    <p class="title important">
+       Some title
+    </p>
+    
+</body>
+</html>

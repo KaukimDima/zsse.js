@@ -1,0 +1,141 @@
+селектор {
+свойство: значение;
+свойство: значение;
+свойство: значение;
+...
+}
+
+p {...}/* по тегу */
+
+.title {...}/* по классу */
+
+p.warning {...}/* тег с классом */
+
+#promo {...}/* по id */
+
+h1#chapter1 {...}/* тег с id */
+
+.title a {...}/* тег внутри тега с классом */
+
+.title .bage {...}/* класс внутри тега с классом */
+
+
+псевдоклассы
+
+:link
+:hover
+:active
+:focus
+:visited
+
+:root
+:first-child
+:last-child
+:nth-child(odd)
+:nth-child(even)
+:nth-child(1)
+:nth-child(n+1)
+
+:valid
+:invalid
+:required
+:optional
+:checked
+:disabled
+:enabled
+
+/* Ссылки в фокусе */
+a:focus {}
+/* Каждый второй элемент списка */
+li:nth-child(2n) {}
+/* Обязательные поля ввода */
+input:required {}
+/* Отключенные кнопки */
+button:disabled {}
+
+
+::after
+::before
+::first-letter
+::first-line
+
+
+position top left z-index
+display width height margin padding
+font-family font-style line-height color
+text-decoration text-transform
+float clear
+background box-shadow text-shadow
+
+Абсолютные значения
+width: 1000px;
+font-size: 16px;
+
+Относительные значения
+width: 50%;
+width: 100vw;
+height: 100vh;
+font-size: 2em;
+font-size: 2rem;
+
+Ключевые слова
+text-transform: uppercase;
+text-align: center;
+display: block;
+color: red;
+
+Цвета
+color: #f00; /* #f 0 0 */
+color: #ff0000;
+color: rgb(255, 0, 0);
+color: rgba(255, 0, 0, 0.5);
+color: hsl(0, 100%, 50%);
+color: hsla(0, 100%, 50%, 0.5);
+
+Функцииcl
+width: calc(100% - 100px);
+
+background-image:
+linear-gradient(45deg, yellow, green);
+
+Произвольные строки
+font-family: "Times New Roman", serif;
+content: "Привет!";
+
+CSS-директивы
+•
+Специальные инструкции, которые начинаются с @
+@font-face {
+font-family: "Open Sans";
+src:
+url("OpenSans-Regular.woff2") format("woff2"),
+url("OpenSans-Regular.woff") format("woff");
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+
+• Кодгайд от MDO
+http://mdo.github.io/code-guide
+• Кодгайд от GOOGLE
+https://google.github.io/styleguide/htmlcssguide.xml
+• Idiomatic CSS
+http://github.com/necolas/idiomatic-css
+
+
+
+порядок css свойств
+
+normalize.css
+
+подключение шрифтов
+
+px rem em
+
+
+https://fontstorage.com/blog/about-font-face-part-one/
+https://fontstorage.com/blog/about-font-face-part-two/
