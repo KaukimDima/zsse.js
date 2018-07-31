@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inline_elements</title>
+</head>
+<body>
+    Все строчные элементы
+    <code>
+        a <br>
+        abbr <br>
+        acronym <br>
+        b <br>
+        bdo <br>
+        big <br>
+        br <br>
+        button <br>
+        cite <br>
+        dfn <br>
+        em <br>
+        i <br>
+        img <br>
+        input <br>
+        kbd <br>
+        label <br>
+        map <br>
+        object <br>
+        q <br>
+        samp <br>
+        script <br>
+        select <br>
+        small <br>
+        span <br>
+        strong <br>
+        sub <br>
+        sup <br>
+        textarea <br>
+        time <br>
+        tt <br>    
+         var <br>
+    </code>
+
+    <a href="heading.html">Это ссылка внутреннее тело где идет теест, с атрибуттом href</a>
+
+    <!--<p>
+        <a href="heading.html">
+            <h1>В ссылке h1</h1>
+            Здесь нельзя потому что родитель p, а в p нельзя записывать h1
+        </a>
+    </p>--> 
+    <section>
+        <a href="heading.html">
+            <h1>Можно записывать h1 в зависимости от родителя. Здесь можно потому что роитель section  </h1>
+        </a>
+    </section>
+
+    <i>Курсив</i>
+    <em>Курсив</em>
+    <b>Жирный</b>
+    <strong>Жирный</strong>
+    <s>Зачеркнутый</s> <br>
+    <strike>Зачеркнутый</strike>
+    <sub>Текст снизу</sub>
+    <sup>Текст сверху</sup>
+    <small>Тест меньше</small>
+    
+    <div>
+        <img title="Картинка с placehold" alt="Example of alt text" src="http://placehold.it/150x100" >
+        <p>аттрибут <b>alt</b> - появлется тест при наведение или пока грузиться картинка</p>
+        <p>Только у движка webkit, есть баг он ничего не поакзывает, так что chrome может и неработать</p>
+        <p>Поэтому лучше использовать <b>title</b></p>
+    </div>
+
+    <div>
+        <p>Также картинки можно делать ссылками</p>
+        <a  href="p.html">
+            <img title="Image Not Found" alt="Картинка с placehold" src="http://placehold.it/150x100" alt="">
+        </a>
+    </div>
+
+</body>
+</html>
