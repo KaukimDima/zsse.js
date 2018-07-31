@@ -91,10 +91,9 @@ var Game = function() {
         }
          
             var currentIndex=field.indexOf('X');
-            var nextIndex=field.indexOf('X')+MOVES[userInput];
-            var previousIndex=field.indexOf('X')-MOVES[userInput];
+            var nextIndex=currentIndex+MOVES[userInput];
             var temp1=field[nextIndex];
-            field.splice(previousIndex,1,temp1);
+            field.splice(currentIndex,1,temp1);
             field.splice(nextIndex,1,'X');
             
             return field;
