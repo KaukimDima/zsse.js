@@ -26,3 +26,24 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.delete-button {
+  font-size: 5vh;
+}
+
+.delete-button {
+  float: right;
+  margin-top: -2vh;
+}
+
+.left, .right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.right p, .right input {
+  display: inline;
+}
+.input-group {
+  margin-bottom: 15px!important;
+}
