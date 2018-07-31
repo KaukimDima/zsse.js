@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 //import logo from './logo.svg';
+=======
+>>>>>>> cbea1358c6d6fc23c7b9870bd00e2ee2144f499e
 import './App.css';
+import TodoDone from "./Todo/TodoDone";
+import TodoList from "./Todo/TodoList";
+
+
+let id = 0;
+
+function getTodoId() {
+  id += 1;
+  return id;
+}
 
 let id = 0; 
 
@@ -12,17 +25,33 @@ function getTodoId() {
 
 class App extends Component {
   state = {
+<<<<<<< HEAD
     //test: "defualt",
+=======
+>>>>>>> cbea1358c6d6fc23c7b9870bd00e2ee2144f499e
     inputValue: "",
     todos: [
       {
         id: 0,
+<<<<<<< HEAD
         value: "Встать с утра",
         done: true
+=======
+        value: "Сходить за продуктами",
+        done: false
+>>>>>>> cbea1358c6d6fc23c7b9870bd00e2ee2144f499e
       }
     ]
   };
 
+<<<<<<< HEAD
+=======
+  handleChange = event => {
+    const value = event.target.value;
+    this.setState({ inputValue: value });
+  };
+
+>>>>>>> cbea1358c6d6fc23c7b9870bd00e2ee2144f499e
   handleKeyDown = event => {
     if (event.keyCode === 13) {
       const { inputValue, todos } = this.state;
@@ -32,6 +61,7 @@ class App extends Component {
     }
   };
 
+<<<<<<< HEAD
   handleEvent = e => {
     const value = e.target.value;
     this.setState({ inputValue: value });
@@ -92,5 +122,69 @@ checkbox = (e) => {
     );
   }
 }
+=======
+  cahngeDoneState = (id, val) => {
+
+    this.setState()
+
+  };
+
+  handleClickCheckbox = id => {
+    this.setState(state => ({
+      todos: state.todos.map(
+        todo => (id === todo.id ? { ...todo, done: !todo.done } : todo)
+      )
+    }));
+  };
+
+  handleDelete = id => {
+    this.setState(state => ({
+      todos: state.todos.filter(todo => id !== todo.id)
+    }));
+  };
+
+  render() {
+    const { inputValue, todos } = this.state;
+    const todos_ = todos.filter(el => !el.done);
+    const todo_done = todos.filter(el => el.done);
+    return <div className="container">
+        <div className="row">
+          <div className="left col-sm-6">
+            <div className="input-group col-sm-12">
+              <input type="text" className="form-control" placeholder="Введите ваш план" value={inputValue} onChange={this.handleChange} onKeyDown={this.handleKeyDown} />
+            </div>
+            <div className="col-sm-10">
+              {todos_.map(todo => (
+                <TodoList
+                  onChange={this.handleClickCheckbox}
+                  onDelete={this.handleDelete}
+                  key={todo.id}
+                  id={todo.id}
+                  text={todo.value}
+                  done={todo.done}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="right col-sm-6">
+            <div>
+              {todo_done.map(todo => (
+                <TodoDone
+                  onChange={this.handleClickCheckbox}
+                  key={todo.id}
+                  id={todo.id}
+                  text={todo.value}
+                  done={todo.done}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>;
+  }
+}
+
+
+>>>>>>> cbea1358c6d6fc23c7b9870bd00e2ee2144f499e
 export default App;
 

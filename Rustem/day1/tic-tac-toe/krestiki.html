@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head >
+  <meta charset="UTF-8" >
+  <title >OZ</title >
+  <link rel="stylesheet" href="css/bootstrap.min.css" >
+  <style>
+    .btn{
+      float: center;
+      margin: 4px;
+    }
+
+  </style>
+</head >
+<body >
+  <div class="container">
+       <h1>OX 🚀</h1>
+       <div>
+         <h1>
+         </h1>
+       </div>
+      <div class="row">
+           <button class="btn btn-primary" id = "00" >_</button >
+           <button class="btn btn-primary" id = "01" >_</button >
+           <button class="btn btn-primary" id = "02" >_</button >
+
+       </div>
+       <div class="row">
+         <button class="btn btn-primary" id = "10" >_</button >
+         <button class="btn btn-primary" id = "11" >_</button >
+         <button class="btn btn-primary" id = "12" >_</button >
+       </div>
+       <div class="row">
+         <button class="btn btn-primary" id = "20" >_</button >
+         <button class="btn btn-primary" id = "21" >_</button >
+         <button class="btn btn-primary" id = "22" >_</button >
+       </div>
+  </div>
+
+  <script>
+
+MOVES_KEY = {'x' : 'x', 'o' : 'o'};
+
+class Krestiki{
+
+createMassive () {
+
+    var matrix = [];
+    for(var i=0; i<3; i++) {
+        matrix[i] = [];
+        for(var j=0; j<3; j++) {
+            matrix[i][j] = " ";
+        }
+    }
+
+  console.log(matrix);
+
+  return matrix;
+
+  }
+
+isGameFinished (data) {
+
+/////////////row check
+  for(var i = 0; i < 3; i++){
+
+    var counterX = 0;
+
+    var counterO = 0;
+
+    for(var k = 0; k < 3; k ++){
+
+      if(data[i][j] == 'x'){
+
+        counterX = counterX + 1;
+
+              }
+      else if(data[i][j] == 'o') {
+
+        counterO = counterO + 1;
+
+
+      }
+    }
+
+  }
+
+  if (counter0 == 3){
+
+    console.log("O wins")
+  }
+  else if (counterX == 3) {
+
+    console.log("X wins")
+  }
+
+  //////////////////////////////column check!!!!!!
+
+  for(var k = 0; k < 3; k++){
+
+    var counterXcol = 0;
+
+    var counterOcol = 0;
+
+    for(var i = 0; i < 3; i ++){
+
+      if(data[i][j] == 'x'){
+
+        counterXcol = counterXcol + 1;
+
+              }
+     else if (data[i][j] == 'o') {
+
+        counterOcol = counterOcol + 1;
+
+
+      }
+    }
+
+  }
+
+  if (counterOcol == 3){
+
+    console.log("O wins")
+  }
+  else if (counterXcol == 3) {
+
+    console.log("X wins")
+  }
+
+  //////diagonal check #1
+
+  var counterOdia = 0;
+
+  var counterXdia = 0;
+
+  for (var i = 0; i < 3; i++){
+
+    for (var j = 0; j < 3; j++){
+
+      if(i == j) {
+
+        if(data[i][j] == 'x') {
+
+          counterOdia = counterOdia + 1;
+
+
+        }
+
+        else if (data[i][j] == 'o') {
+
+          counterXdia = counterXdia + 1;
+      }
+
+
+      }
+    }
+  }
+
+  if (counterOdia == 3){
+
+    console.log("O wins")
+  }
+   else if  (counterXdia == 3) {
+
+    console.log("X wins")
+  }
+
+
+  /////////diagonal check #2
+
+  var counterOdiaT = 0;
+
+  var counterXdiaT = 0;
+
+  for (var i = 0; i < 3; i++){
+
+    for (var j = 0; j < 3; j++){
+
+      if(i + j == 2) {
+
+        if(data[i][j] == 'x') {
+
+          counterOdiaT = counterOdiaT + 1;
+
+
+        }
+
+        else if (data[i][j] == 'o'){
+
+          counterXdiaT = counterXdiaT + 1;
+        }
+      }
+    }
+  }
+
+  if (counterOdiaT == 3){
+
+    console.log("O wins")
+  }
+  else if  (counterXdiaT == 3) {
+
+    console.log("X wins")
+  }
+
+}
+
+
+}
+
+
+
+
+
+let game = new Krestiki();
+
+game.createMassive();
+
+game.isGameFinished(game.createMassive());
+
+
+  </script>
+</body >
+</html >
