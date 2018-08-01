@@ -12,7 +12,6 @@ function getTodoId() {
 }
 
 class App extends Component {
-  
   state = {
     inputValue: "",
     todos: [
@@ -23,6 +22,7 @@ class App extends Component {
       }
     ]
   };
+}
 
   handleChange = event => {
     const value = event.target.value;

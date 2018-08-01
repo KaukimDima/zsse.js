@@ -2,19 +2,19 @@ https://es6console.com/
 
 class Animal - родитель
     constructor 
-        name
-        height
-        color
+        this.name = name
+        this.height = height
+        this.color = color
     
     canfly
         True
-    static getName
+    getName
         
     class pinguin
         constructor
             weight (перезаписать и добавить вес)
         color 
-            black
+            "black"
         fly
             false
 
@@ -24,4 +24,6 @@ class Animal - родитель
         fly 
             true
 
-
+func() {
+    return true; 
+}

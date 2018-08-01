@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://react1.tilda.ws/metod-3 -->
+<html data-livestyle-extension="available">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://static.tildacdn.com/tild3661-3565-4362-b930-336366303233/wallpaperwikiFunnyAt.jpg">
+    <meta property="fb:app_id" content="257953674358265">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="http://static.tildacdn.com/">
+    <link rel="canonical" href="http://react1.tilda.ws/metod-3">
+    <link rel="shortcut icon" href="http://static.tildacdn.com/img/tildafavicon.ico" type="image/x-icon">
+    <!-- Assets -->
+    <link rel="stylesheet" href="./React. Методическое пособие №3_files/tilda-grid-3.0.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./React. Методическое пособие №3_files/tilda-blocks-2.12.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./React. Методическое пособие №3_files/tilda-animation-1.0.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./React. Методическое пособие №3_files/tilda-slds-1.4.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./React. Методическое пособие №3_files/tilda-zoom-2.0.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./React. Методическое пособие №3_files/highlight.min.css" type="text/css" media="all">
+    <script type="text/javascript" id="tildastatscript" async="" src="./React. Методическое пособие №3_files/tildastat.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №3_files/jquery-1.10.2.min.js.Без названия"></script>
+    <style></style>
+    <script src="./React. Методическое пособие №3_files/tilda-scripts-2.8.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №3_files/tilda-blocks-2.7.js.Без названия"></script>
+    <script src="./React. Методическое пособие №3_files/tilda-animation-1.0.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №3_files/tilda-slds-1.4.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №3_files/hammer.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №3_files/tilda-zoom-2.0.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №3_files/highlight.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №3_files/lazyload-1.3.min.js.Без названия"></script>
+    <style type="text/css">
+        /*.lleo_errorSelection *::-moz-selection,
+.lleo_errorSelection *::selection,
+.lleo_errorSelection *::-webkit-selection {
+    background-color: red !important;
+    color: #fff !important;;
+}*/
+
+        #lleo_dialog,
+        #lleo_dialog * {
+            color: #000 !important;
+            font: normal 13px Arial, Helvetica !important;
+            line-height: 15px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: none !important;
+            border: none 0 !important;
+            position: static !important;
+            vertical-align: baseline !important;
+            overflow: visible !important;
+            width: auto !important;
+            height: auto !important;
+            max-width: none !important;
+            max-height: none !important;
+            float: none !important;
+            visibility: visible !important;
+            text-align: left !important;
+            text-transform: none !important;
+            border-collapse: separate !important;
+            border-spacing: 2px !important;
+            box-sizing: content-box !important;
+            box-shadow: none !important;
+            opacity: 1 !important;
+            text-shadow: none !important;
+            letter-spacing: normal !important;
+            -webkit-filter: none !important;
+            -moz-filter: none !important;
+            filter: none !important;
+        }
+
+        #lleo_dialog *:before,
+        #lleo_dialog *:after {
+            content: '';
+        }
+
+        #lleo_dialog iframe {
+            height: 0 !important;
+            width: 0 !important;
+        }
+
+        #lleo_dialog {
+            position: absolute !important;
+            background: #fff !important;
+            border: solid 1px #ccc !important;
+            padding: 7px 0 0 !important;
+            left: -999px;
+            top: -999px;
+            width: 440px !important;
+            overflow: hidden;
+            display: block !important;
+            z-index: 999999999 !important;
+            box-shadow: 8px 16px 30px rgba(0, 0, 0, 0.16) !important;
+            border-radius: 3px !important;
+            opacity: 0 !important;
+            -webkit-transform: translateY(15px);
+            -moz-transform: translateY(15px);
+            -ms-transform: translateY(15px);
+            -o-transform: translateY(15px);
+            transform: translateY(15px);
+        }
+
+        #lleo_dialog.lleo_show_small {
+            width: 150px !important;
+        }
+
+        #lleo_dialog.lleo_show {
+            opacity: 1 !important;
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+            transform: translateY(0);
+            -webkit-transition: -webkit-transform 0.3s, opacity 0.3s !important;
+            -moz-transition: -moz-transform 0.3s, opacity 0.3s !important;
+            -ms-transition: -ms-transform 0.3s, opacity 0.3s !important;
+            -o-transition: -o-transform 0.3s, opacity 0.3s !important;
+            transition: transform 0.3s, opacity 0.3s !important;
+        }
+
+        #lleo_dialog.lleo_collapse {
+            opacity: 0 !important;
+            -webkit-transform: scale(0.25, 0.1) translate(-550px, 100px);
+            -moz-transform: scale(0.25, 0.1) translate(-550px, 100px);
+            -ms-transform: scale(0.25, 0.1) translate(-550px, 100px);
+            -o-transform: scale(0.25, 0.1) translate(-550px, 100px);
+            transform: scale(0.25, 0.1) translate(-550px, 100px);
+            -webkit-transition: -webkit-transform 0.4s, opacity 0.4s !important;
+            -moz-transition: -moz-transform 0.4s, opacity 0.4s !important;
+            -ms-transition: -ms-transform 0.4s, opacity 0.4s !important;
+            -o-transition: -o-transform 0.4s, opacity 0.4s !important;
+            transition: transform 0.4s, opacity 0.4s !important;
+        }
+
+        #lleo_dialog input::-webkit-input-placeholder {
+            color: #aaa !important;
+        }
+
+        #lleo_dialog .lleo_has_pic #lleo_word {
+            margin-right: 80px !important;
+        }
+
+        #lleo_dialog #lleo_translationsContainer1 {
+            position: relative !important;
+        }
+
+        #lleo_dialog #lleo_translationsContainer2 {
+            padding: 7px 0 0 !important;
+            vertical-align: middle !important;
+        }
+
+        #lleo_dialog #lleo_word {
+            color: #000 !important;
+            margin: 0 5px 2px 0 !important;
+            /*float: left !important;*/
+        }
+
+        #lleo_dialog .lleo_has_sound #lleo_word {
+            margin-left: 30px !important;
+        }
+
+        #lleo_dialog #lleo_text {
+            font-weight: bold !important;
+            color: #d56e00 !important;
+            text-decoration: none !important;
+            cursor: default !important;
+        }
+
+        /*
+#lleo_dialog #lleo_text.lleo_known {
+    cursor: pointer !important;
+    text-decoration: underline !important;
+}
+*/
+
+        /*#lleo_dialog #lleo_closeBtn {
+    position: absolute !important;
+    right: 6px !important;
+    top: 5px !important;
+    line-height: 1px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 0 !important;
+    color: #aaa !important;
+    display: block !important;
+	z-index: 9999999999 !important;
+	width: 7px !important;
+	height: 7px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}*/
+
+        #lleo_dialog #lleo_optionsBtn {
+            position: absolute !important;
+            right: 3px !important;
+            top: 5px !important;
+            line-height: 1px !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            font-size: 13px !important;
+            color: #aaa !important;
+            padding: 2px !important;
+            display: none;
+        }
+
+        #lleo_dialog.lleo_optionsShown #lleo_optionsBtn {
+            display: block !important;
+        }
+
+        #lleo_dialog #lleo_optionsBtn img {
+            width: 12px !important;
+            height: 12px !important;
+        }
+
+        #lleo_dialog #lleo_sound {
+            float: left !important;
+            width: 16px !important;
+            height: 16px !important;
+            margin-left: 9px !important;
+            margin-right: 3px !important;
+            background: 0 0 no-repeat !important;
+            cursor: pointer !important;
+            display: none !important;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAfNJREFUeNq0U01IVFEU/u57Oo5WhBRIBBptykWLYBa2soWiEKQQEbrSFsGbVRQKQc2iFqGitXqvjQxCoCJCqyI0aBUtZILaJNUuYWYWo8HovJ/707nP94bnz0rxwvfOuefd8517fi5TSuE4i50YwZ3l37ZhNlpgzFkaaM/G9sHF1YskNrT+7l4PjMOcb78t2JL71uxgB+2UlfxHTtq5N94fIOh/88kWgWfl73ZCSQkpeGg3H091JY6dI2S00qA/N3KO3dDUYhFgEmZGurG+w9FqApIHsVM7kaTF9Nhn0r8Q7hPWQgIRuNaH3AMUA4W/Lkdh04cpFS43G0TgxQTvCdMETVAk3KynIHwXZU/ge8XDt7KH9bKLjU0P2zVO5LsEpSejVRJ9UR18EtfqKegovs9R3Q6w9c/H1o4Aa2Jwm1lIvn9RJ4w9RdRRzqcYrpwycCll4Cy1lnkS3Bc6vfBg28v8aRIfI78zhB/1GygROH3jLyyzMQ0zlUZuZBSlKkeLoegGtTjYLcJ8pF+NakHOFC2J6w+f25mxSfWrWFF/ShXVPTGvtN14NNkVnxlYWJkgZEL7/vwKr55lKSVnaGYWkuYgrgG172uUv47+U7fw0EHaJXmalUQy/HqO6lBzEsVjJC4Q8kd6TETQpjuaGOvjv8b/AgwA/ij1XMx58NIAAAAASUVORK5CYII=) !important;
+        }
+
+        #lleo_dialog .lleo_has_sound #lleo_sound {
+            display: block !important;
+        }
+
+        #lleo_dialog #lleo_soundWave {
+            border: solid 5px #4495CC !important;
+            border-radius: 5px !important;
+            position: absolute !important;
+            left: -5px !important;
+            top: -5px !important;
+            right: -5px !important;
+            bottom: -5px !important;
+            z-index: 0 !important;
+            opacity: 0.9 !important;
+            display: none !important;
+        }
+
+        #lleo_dialog #lleo_soundWave.lleo_beforePlaying {
+            display: block !important;
+        }
+
+        #lleo_dialog #lleo_soundWave.lleo_playing {
+            opacity: 0 !important;
+            border-width: 20px !important;
+            border-radius: 30px !important;
+
+            -webkit-transform: scale(1.07, 1.1) !important;
+            -moz-transform: scale(1.07, 1.1) !important;
+            -ms-transform: scale(1.07, 1.1) !important;
+            transform: scale(1.07, 1.1) !important;
+
+            -webkit-transition: all 0.6s !important;
+            -moz-transition: all 0.6s !important;
+            -ms-transition: all 0.6s !important;
+            transition: all 0.6s !important;
+        }
+
+
+        #lleo_dialog #lleo_picOuter {
+            position: absolute !important;
+            float: right !important;
+            top: 4px;
+            right: 5px;
+            z-index: 9 !important;
+            display: none !important;
+            width: 100px !important;
+        }
+
+        #lleo_dialog.lleo_optionsShown #lleo_picOuter {
+            right: 25px;
+        }
+
+        #lleo_dialog .lleo_has_pic #lleo_picOuter {
+            display: block !important;
+        }
+
+        #lleo_dialog #lleo_picOuter:hover {
+            width: auto !important;
+            z-index: 11 !important;
+        }
+
+        #lleo_dialog #lleo_pic,
+        #lleo_dialog #lleo_picBig {
+            position: absolute !important;
+            top: 0 !important;
+            right: 0 !important;
+            border: solid 2px #fff !important;
+            -webkit-border-radius: 2px !important;
+            -moz-border-radius: 2px !important;
+            border-radius: 2px !important;
+            z-index: 1 !important;
+        }
+
+        #lleo_dialog #lleo_pic {
+            position: relative !important;
+            border: none !important;
+            width: 30px !important;
+        }
+
+        #lleo_dialog #lleo_picBig {
+            box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.3);
+            z-index: 2 !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+
+        #lleo_dialog #lleo_picOuter:hover #lleo_picBig {
+            visibility: visible !important;
+            opacity: 1 !important;
+            -webkit-transition: opacity 0.3s !important;
+            -webkit-transition-delay: 0.3s !important;
+        }
+
+        #lleo_dialog #lleo_transcription {
+            margin: 0 80px 4px 31px !important;
+            color: #aaaaaa !important;
+        }
+
+        #lleo_dialog .lleo_no_trans {
+            color: #aaa !important;
+        }
+
+        #lleo_dialog .ll-translation-counter {
+            float: right !important;
+            font-size: 11px !important;
+            color: #aaa !important;
+            padding: 2px 2px 1px 10px !important;
+        }
+
+        #lleo_dialog .ll-translation-text {
+            float: left !important;
+            /*width: 80% !important;*/
+        }
+
+        #lleo_dialog #lleo_trans a {
+            color: #3F669F !important;
+            text-decoration: none !important;
+            text-overflow: ellipsis !important;
+            padding: 1px 4px !important;
+            overflow: hidden !important;
+            float: left !important;
+            width: 320px !important;
+        }
+
+        #lleo_dialog .ll-translation-item {
+            color: #3F669F !important;
+            border: solid 1px #fff !important;
+            padding: 3px !important;
+            width: 100% !important;
+            float: left !important;
+            -moz-border-radius: 2px !important;
+            -webkit-border-radius: 2px !important;
+            border-radius: 2px !important;
+        }
+
+        #lleo_dialog .ll-translation-item:hover {
+            border: solid 1px #9FC2C9 !important;
+            background: #EDF4F6 !important;
+            cursor: pointer !important;
+        }
+
+        #lleo_dialog .ll-translation-item:hover .ll-translation-counter {
+            color: #83a0a6 !important;
+        }
+
+        #lleo_dialog .ll-translation-marker {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAWSURBVBhXY7RPm/+fAQkwIXNAbMICAJQ8AkvqWg/SAAAAAElFTkSuQmCC) !important;
+            display: inline-block !important;
+            width: 4px !important;
+            height: 4px !important;
+            margin: 7px 5px 2px 2px !important;
+            float: left !important;
+        }
+
+        #lleo_dialog #lleo_icons {
+            color: #aaa !important;
+            font-size: 11px !important;
+            background: #f8f8f8 !important;
+            padding: 10px 10px 10px 16px !important;
+        }
+
+        #lleo_icons a {
+            display: inline-block !important;
+            width: 16px !important;
+            height: 16px !important;
+            margin: 0 10px -4px 3px !important;
+            text-decoration: none !important;
+            opacity: 0.5 !important;
+            background: url(data:image/png;base64,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) !important;
+        }
+
+        #lleo_icons a:hover {
+            opacity: 1 !important;
+        }
+
+        #lleo_icons a.lleo_google {
+            background-position: -34px 0 !important;
+        }
+
+        #lleo_icons a.lleo_multitran {
+            background-position: -64px 0 !important;
+        }
+
+        #lleo_icons a.lleo_lingvo {
+            background-position: -51px 0 !important;
+            width: 12px !important;
+        }
+
+        #lleo_icons a.lleo_dict {
+            background-position: -17px 0 !important;
+        }
+
+        #lleo_icons a.lleo_linguee {
+            background-position: -81px 0 !important;
+        }
+
+        #lleo_icons a.lleo_michaelis {
+            background-position: -98px 0 !important;
+        }
+
+        #lleo_dialog #lleo_contextContainer {
+            margin: 0 !important;
+            padding: 3px 15px 8px 10px !important;
+            background: #eee !important;
+            background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee)) !important;
+            background: -moz-linear-gradient(-90deg, #fff, #eee) !important;
+            border-bottom: solid 1px #ddd !important;
+            border-top-left-radius: 3px !important;
+            border-top-right-radius: 3px !important;
+            display: none !important;
+            overflow: hidden !important;
+        }
+
+        #lleo_dialog .lleo_has_context #lleo_contextContainer {
+            display: block !important;
+        }
+
+        #lleo_dialog #lleo_context {
+            color: #444 !important;
+            text-shadow: 1px 1px 0 #f4f4f4 !important;
+            line-height: 12px !important;
+            font-size: 11px !important;
+            margin-left: 2px !important;
+        }
+
+        #lleo_dialog #lleo_context b {
+            line-height: 12px !important;
+            color: #000 !important;
+            font-weight: bold !important;
+            font-size: 11px !important;
+        }
+
+        /*#lleo_dialog #lleo_gBrand {
+    color: #aaa !important;
+    font-size: 10px !important;
+    */
+
+        /*padding-right: 52px !important;*/
+
+        /*
+    padding-bottom: 14px !important;
+    margin: -3px 4px 0 4px !important;
+    background: left bottom url(data:image/png;base64,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) no-repeat !important;
+    display: inline-block !important;
+    float: right !important;
+}
+#lleo_dialog #lleo_gBrand.hidden {
+    display: none !important;
+}*/
+
+        #lleo_dialog #lleo_translateContextLink {
+            color: #444 !important;
+            text-shadow: 1px 1px 0 #f4f4f4 !important;
+            background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#ddd)) !important;
+            background: -moz-linear-gradient(-90deg, #f4f4f4, #ddd) !important;
+            border: solid 1px !important;
+            box-shadow: 1px 1px 0 #f6f6f6 !important;
+            border-color: #999 #aaa #aaa #999 !important;
+            -moz-border-radius: 2px !important;
+            -webkit-border-radius: 2px !important;
+            border-radius: 2px !important;
+            padding: 0 3px !important;
+            font-size: 11px !important;
+            text-decoration: none !important;
+            margin: 1px 5px 0 !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+        }
+
+        #lleo_dialog #lleo_translateContextLink:hover {
+            background: #f8f8f8 !important;
+        }
+
+        #lleo_dialog #lleo_translateContextLink.hidden {
+            visibility: hidden !important;
+        }
+
+        #lleo_dialog #lleo_setTransForm {
+            display: block !important;
+            margin-top: 3px !important;
+            padding-top: 5px !important;
+            /* Set position and background because the form might be overlapped by an image when no translations */
+            position: relative !important;
+            background: #fff !important;
+            z-index: 10 !important;
+            padding-bottom: 10px !important;
+            padding-left: 16px !important;
+        }
+
+        #lleo_dialog .lleo-custom-translation {
+            padding: 4px 5px !important;
+            border: solid 1px #ddd !important;
+            border-radius: 2px !important;
+            width: 90% !important;
+            min-width: 270px !important;
+            background: -webkit-gradient(linear, 0 0, 0 20, from(#f1f1f1), to(#fff)) !important;
+            background: -moz-linear-gradient(-90deg, #f1f1f1, #fff) !important;
+            font: normal 13px Arial, Helvetica !important;
+            line-height: 15px !important;
+        }
+
+        #lleo_dialog .lleo-custom-translation:hover {
+            border: solid 1px #aaa !important;
+        }
+
+        #lleo_dialog .lleo-custom-translation:focus {
+            background: #FFFEC9 !important;
+        }
+
+        #lleo_dialog *.hidden {
+            display: none !important;
+        }
+
+        #lleo_dialog .infinitive {
+            color: #D56E00 !important;
+            text-decoration: none;
+            border-bottom: 1px dotted #D56E00 !important;
+        }
+
+        #lleo_dialog .infinitive:hover {
+            border: none !important;
+        }
+
+        #lleo_dialog .lleo_separator {
+            height: 1px !important;
+            background: #eee;
+            margin-top: 10px !important;
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, #eee 8%, rgba(255, 255, 255, 1) 80%) !important;
+            background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, #eee 8%, rgba(255, 255, 255, 1) 80%) !important;
+            background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, #eee 8%, rgba(255, 255, 255, 1) 80%) !important;
+            background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, #eee 8%, rgba(255, 255, 255, 1) 80%) !important;
+        }
+
+        #lleo_dialog #lleo_trans {
+            /*border-top: 1px solid #eeeeee !important;*/
+            padding: 5px 30px 0 14px !important;
+            zoom: 1;
+        }
+
+        #lleo_dialog .lleo_clearfix {
+            display: block !important;
+            clear: both !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            font-size: 0 !important;
+        }
+
+
+        #lleo_dialog #lleo_picOuter table {
+            width: 44px !important;
+            position: absolute !important;
+            right: 0 !important;
+            top: 0 !important;
+            vertical-align: middle !important;
+        }
+
+        #lleo_dialog #lleo_picOuter td {
+            width: 38px !important;
+            height: 38px !important;
+            /*border: 1px solid #eeeeee !important;*/
+            vertical-align: middle !important;
+            text-align: center !important;
+        }
+
+        #lleo_dialog #lleo_picOuter td div {
+            height: 38px !important;
+            overflow: hidden !important;
+        }
+
+        #lleo_dialog .lleo_empty {
+            margin: 0 5px 7px !important;
+        }
+
+        #lleo_youtubeExportBtn {
+            margin-left: 10px;
+            height: 24px;
+        }
+
+        #lleo_youtubeExportBtn i {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: 0 0 url(https://d144fqpiyasmrr.cloudfront.net/plugins/all/images/i16.png) !important;
+        }
+
+        #lleo_youtubeExportBtn .yt-uix-button-content {
+            font-size: 12px;
+            line-height: 2px;
+        }
+
+
+        /*** Parsed Lyrics Content *****************************/
+
+        .lleo_lyrics tran {
+            background: transparent !important;
+            border-radius: 2px !important;
+            text-shadow: none !important;
+            cursor: pointer !important;
+        }
+
+        .lleo_lyrics tran:hover {
+            color: #fff !important;
+            background: #C77213 !important;
+            -webkit-transition: all 0.1s !important;
+            -moz-transition: all 0.1s !important;
+            -ms-transition: all 0.1s !important;
+            -o-transition: all 0.1s !important;
+            transition: all 0.1s !important;
+        }
+
+        .lleo_songName {
+            border: solid 1px #ffd47c;
+            background: #fff1c2;
+            border-radius: 2px;
+        }
+
+        .lleo_hidden_iframe {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body class="t-body" style="margin: 0px;" cz-shortcut-listen="true">
+    <!--allrecords-->
+    <div id="allrecords" class="t-records" data-hook="blocks-collection-content-node" data-tilda-project-id="441083" data-tilda-page-id="1897920"
+        data-tilda-page-alias="metod-3" data-tilda-formskey="d8791aa2b2bea6010580d17ea444b0a2">
+
+        <div id="rec37617345" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="607">
+            <style>
+                #rec37617345 .t607__tooltip::after {
+                    border-left-color: #292929;
+                }
+
+                #rec37617345 .t-menu__link-item.t-active .t607__dot {
+                    background: #dbdbdb !important;
+                    opacity: 1 !important;
+                }
+            </style>
+            <script type="text/javascript"> $(document).ready(function () { setTimeout(function () { t607_init('37617345'); }, 100); });</script>
+        </div>
+        <div id="rec37617347" class="r t-rec t-rec_pt_60 t-rec_pb_60" style="padding-top:60px;padding-bottom:60px;background-color:#f2f2f2; "
+            data-record-type="373" data-bg-color="#f2f2f2" data-animationappear="off">
+            <!-- T373 -->
+            <div class="t373">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t373__wrapper">
+                            <div class="t373__col">
+                                <div class="t373__circle " style="border: 0px solid #000; ">
+                                    <div class="t373__title t-title" field="number" style="">/</div>
+                                </div>
+                            </div>
+                            <div class="t373__col">
+                                <div class="t373__text t-text t-text_md" field="text">
+                                    <strong>Оглавление
+                                        <br>
+                                        <br>
+                                    </strong>
+                                    <ol>
+                                        <li>
+                                            <span style="color: rgb(194, 46, 46);">
+                                                <u>Жизненный цикл компоненты</u>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span style="color: rgb(194, 46, 46);">
+                                                <u>Порядок вызовов методов компоненты</u>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span style="color: rgb(194, 46, 46);">
+                                                <u>События в React и их обработка</u>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span style="color: rgb(194, 46, 46);">
+                                                <u>Композиция компонент</u>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span style="color: rgb(194, 46, 46);">
+                                                <u>Списки и key</u>
+                                            </span>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37617349" class="r t-rec t-rec_pt_60 t-rec_pb_0 r_anim r_showed" style="padding-top:60px;padding-bottom:0px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">
+                                <strong>1.</strong> Жизненный цикл компоненты</div>
+                            <svg class="t676__divider t676__divider_rotate"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37617350" class="r t-rec t-rec_pt_45 t-rec_pb_60 r_anim r_showed" style="padding-top:45px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> При создании компоненты с помощью класса, компонента имеет несколько встроенных функций, которые
+                            называют lifecycle callbacks, которые вызываются в зависимости от того, что происходит с компонентой.
+                            <br>
+                            <br> В целом, компонента может быть примонтирована к DOM, может не быть примонтирована, и может получать
+                            новые значения через props. Эти процессы и описываются callbacks.
+                            <br>
+                            <br> Обязательной функцией является функция render, которая должна возвращать null, string, портал(о
+                            нём позднее), boolean или jsx. Остальные — опциональны.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37618210" class="r t-rec t-rec_pt_15 t-rec_pb_0 r_anim r_showed" style="padding-top:15px;padding-bottom:0px; "
+            data-record-type="372">
+            <!-- T372 -->
+            <div class="t372">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t372__line " style="background-color: #ff5500;height: 3px;"></div>
+                        <div field="text" class="t372__text t-text t-text_md t-text_weight_plus">constructor(props)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37618223" class="r t-rec t-rec_pt_30 t-rec_pb_60 r_anim r_showed" style="padding-top:30px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Конструктор компоненты вызывается монтированием компоненты к DOM. Обязательным является вызывать
+                            super(props) перед какой-либо операцией в конструкторе. Конструктор обычно используется для инициализации
+                            state компоненты. Если вам не нужно инициализировать состояние от props, то лучше не использовать
+                            конструктор.
+                            <br>
+                            <br> Задавать состояние в конструкторе нужно не через setState, а через присваивание this.state =
+                            {state: 'init'}.
+                            <br>
+                            <br> Также можно задать состояние по умолчанию без конструктора:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37617351" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Input</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+ state = {
+   value: <span class="hljs-string">'empty value'</span>
+ };
+
+ render() {
+   <span class="hljs-keyword">const</span> {value} = <span class="hljs-keyword">this</span>.state;
+   <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{value}</span> /&gt;</span>;</span>
+ }
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37619105" class="r t-rec t-rec_pt_45 t-rec_pb_0 r_anim r_showed" style="padding-top:45px;padding-bottom:0px; "
+            data-record-type="372">
+            <!-- T372 -->
+            <div class="t372">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t372__line " style="background-color: #ff5500;height: 3px;"></div>
+                        <div field="text" class="t372__text t-text t-text_md t-text_weight_plus">componentWillMount()
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37617352" class="r t-rec t-rec_pt_30 t-rec_pb_60 r_anim r_showed" style="padding-top:30px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Эта функция вызывается непосредственно перед монтированием и render.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37619185" class="r t-rec t-rec_pt_45 t-rec_pb_0 r_anim r_showed" style="padding-top:45px;padding-bottom:0px; "
+            data-record-type="372">
+            <!-- T372 -->
+            <div class="t372">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t372__line " style="background-color: #ff5500;height: 3px;"></div>
+                        <div field="text" class="t372__text t-text t-text_md t-text_weight_plus">render()
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37619312" class="r t-rec t-rec_pt_30 t-rec_pb_60 r_anim r_showed" style="padding-top:30px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Функция render должна возвращать jsx, string, number, null, boolean или портал, если возвращается
+                            boolean значение или null, то компонент не будет отрендерен.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37619331" class="r t-rec t-rec_pt_45 t-rec_pb_15 r_anim r_showed" style="padding-top:45px;padding-bottom:15px; "
+            data-record-type="372">
+            <!-- T372 -->
+            <div class="t372">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t372__line " style="background-color: #ff5500;height: 3px;"></div>
+                        <div field="text" class="t372__text t-text t-text_md t-text_weight_plus">componentDidMount()
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37619335" class="r t-rec t-rec_pt_30 t-rec_pb_60 r_anim r_showed" style="padding-top:30px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Эта функция вызывается сразу же после вызова функции render и монтировании компонента к DOM. Если
+                            вам нужно запустить таймеры, получить данные от сервера или получить значения от DOM, например,
+                            getBoundingClientRect, эта функция — идеальное место для этого.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37619405" class="r t-rec t-rec_pt_45 t-rec_pb_15 r_anim r_showed" style="padding-top:45px;padding-bottom:15px; "
+            data-record-type="372">
+            <!-- T372 -->
+            <div class="t372">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t372__line " style="background-color: #ff5500;height: 3px;"></div>
+                        <div field="text" class="t372__text t-text t-text_md t-text_weight_plus">shouldComponentUpdate(nextProps, nextState)
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37619408" class="r t-rec t-rec_pt_30 t-rec_pb_45 r_anim r_showed" style="padding-top:30px;padding-bottom:45px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Вызывается перед функцией render, и не вызывается в самый первый раз при монтировании. Эта функция
+                            сообщает реакту, нужно ли вызывать функцию render для компоненты, когда у нее изменились её props
+                            или state. Функция должна вернуть булево значение. По умолчанию, она возвращает true и компонент
+                            производит render каждый раз при изменении state или props.
+                            <br>
+                            <br> Если props изменились, и shouldComponentUpdate возвращает false методы componentWillUpdate,
+                            render и compoentDidUpdate не будут вызваны.
+                            <br>
+                            <br> Единственное отличие PureComponent от Component заключается в том, что PureComponent реализует
+                            поверхностное сравнение в методе shouldComponentUpdate.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37619475" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_anim r_showed" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="248">
+            <!-- T220 -->
+            <div class="t220">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t220__textwrapper" style="background-color:#f5f5f5;">
+                            <div style="">
+                                <div field="text" class="t220__text t-text t-text_md ">
+                                    <strong>Поверхностное сравнение</strong> (shallow comparison) — сравнение чисел, булевых значенией
+                                    и строк по значению, а массивов и объектов по ссылке.
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37619571" class="r t-rec t-rec_pt_30 t-rec_pb_45 r_anim r_showed" style="padding-top:30px;padding-bottom:45px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> При таком сравнении могут возникнуть проблемы, если вы используете мутации. Например, присваивание
+                            новых свойств объекту, или добавление в массив новых значений с помощью функций изменяющих массив.
+                            Если передать такой объект или массив как props, затем сделать мутацию, компонент не увидит изменений,
+                            так как ссылка останется прежней. Поэтому в мире реакт стараются избегать мутаций и создавать
+                            новые объекты и массивы при их изменении.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37619999" class="r t-rec t-rec_pt_45 t-rec_pb_15 r_anim r_showed" style="padding-top:45px;padding-bottom:15px; "
+            data-record-type="372">
+            <!-- T372 -->
+            <div class="t372">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t372__line " style="background-color: #ff5500;height: 3px;"></div>
+                        <div field="text" class="t372__text t-text t-text_md t-text_weight_plus">componentWillReceiveProps(nextProps)
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620005" class="r t-rec t-rec_pt_30 t-rec_pb_45 r_anim r_showed" style="padding-top:30px;padding-bottom:45px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Этот метод вызывается каждый раз, когда компонент получает новые props. В этом методе, как правило,
+                            обновляют значения state, которые зависят от props.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620214" class="r t-rec t-rec_pt_45 t-rec_pb_15 r_anim r_showed" style="padding-top:45px;padding-bottom:15px; "
+            data-record-type="372">
+            <!-- T372 -->
+            <div class="t372">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t372__line " style="background-color: #ff5500;height: 3px;"></div>
+                        <div field="text" class="t372__text t-text t-text_md t-text_weight_plus">componentWillUpdate(nextProps, nextState)
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620222" class="r t-rec t-rec_pt_30 t-rec_pb_45 r_anim r_showed" style="padding-top:30px;padding-bottom:45px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Этот метод вызывается непосредственно перед обновлением компоненты и вызовом render.
+                            <br>
+                            <br> В этом методе нельзя вызывать setState.
+                            <br>
+                            <br> Этот метод позволяет сделать подготовки перед обновлением, например, посчитать какие локальные
+                            переменные класса.
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620297" class="r t-rec t-rec_pt_45 t-rec_pb_15 r_hidden r_anim" style="padding-top:45px;padding-bottom:15px; "
+            data-record-type="372">
+            <!-- T372 -->
+            <div class="t372">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t372__line " style="background-color: #ff5500;height: 3px;"></div>
+                        <div field="text" class="t372__text t-text t-text_md t-text_weight_plus">componentDidUpdate(prevProps, prevState)
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620330" class="r t-rec t-rec_pt_30 t-rec_pb_45 r_hidden r_anim" style="padding-top:30px;padding-bottom:45px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Вызывается сразу после render. Не вызывается после первого вызова render.
+                            <br> Этот метод используется для того, чтобы изменять DOM в зависимости от props компоненты.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620372" class="r t-rec t-rec_pt_45 t-rec_pb_15 r_hidden r_anim" style="padding-top:45px;padding-bottom:15px; "
+            data-record-type="372">
+            <!-- T372 -->
+            <div class="t372">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t372__line " style="background-color: #ff5500;height: 3px;"></div>
+                        <div field="text" class="t372__text t-text t-text_md t-text_weight_plus">componentWillUnmount()
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620386" class="r t-rec t-rec_pt_30 t-rec_pb_45 r_hidden r_anim" style="padding-top:30px;padding-bottom:45px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Этот метод вызывается перед тем, как компонент отмонтируется от DOM и будет уничтожен. В этом методе
+                            отключают eventListener, если они есть и отменяют сетевые запросы.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620404" class="r t-rec t-rec_pt_45 t-rec_pb_15 r_hidden r_anim" style="padding-top:45px;padding-bottom:15px; "
+            data-record-type="372">
+            <!-- T372 -->
+            <div class="t372">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t372__line " style="background-color: #ff5500;height: 3px;"></div>
+                        <div field="text" class="t372__text t-text t-text_md t-text_weight_plus">componentDidCatch(error, info)
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620409" class="r t-rec t-rec_pt_30 t-rec_pb_45 r_hidden r_anim" style="padding-top:30px;padding-bottom:45px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Если в одном из детей компоненты произошла ошибка, будет вызван этот метод. С помощью него можно
+                            вызвать setState и указать ошибку в состоянии компоненты, чтобы ее можно было отразить в ui в
+                            методе render.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620546" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_hidden r_anim" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">
+                                <strong>2.</strong> Порядок вызовов методов компоненты
+                                <br>
+                            </div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37617353" class="r t-rec t-rec_pt_30 t-rec_pb_30 r_hidden r_anim" style="padding-top:30px;padding-bottom:30px; "
+            data-record-type="373">
+            <!-- T373 -->
+            <div class="t373">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t373__wrapper">
+                            <div class="t373__col">
+                                <div class="t373__circle " style="border: 0px solid #000; ">
+                                    <div class="t373__title t-title" field="number" style="">1</div>
+                                </div>
+                            </div>
+                            <div class="t373__col">
+                                <div class="t373__text t-text t-text_md" field="text">Монтирование компоненты
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620586" class="r t-rec t-rec_pt_30 t-rec_pb_45 r_hidden r_anim" style="padding-top:30px;padding-bottom:45px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Компонента монтируется, если она добавляется компонентом родителем в jsx, или если она указана в
+                            методе ReactDOM.render.
+                            <br>
+                            <br> Методы вызываются в следующем порядке:
+                            <br>
+                            <br>
+                            <ul>
+                                <li>
+                                    <strong>constructor</strong>
+                                </li>
+                                <li>
+                                    <strong>componentWillMount</strong>
+                                </li>
+                                <li>
+                                    <strong>render</strong>
+                                </li>
+                                <li>
+                                    <strong>componentDidMount</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620666" class="r t-rec t-rec_pt_30 t-rec_pb_30 r_hidden r_anim" style="padding-top:30px;padding-bottom:30px; "
+            data-record-type="373">
+            <!-- T373 -->
+            <div class="t373">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t373__wrapper">
+                            <div class="t373__col">
+                                <div class="t373__circle " style="border: 0px solid #000; ">
+                                    <div class="t373__title t-title" field="number" style="">2</div>
+                                </div>
+                            </div>
+                            <div class="t373__col">
+                                <div class="t373__text t-text t-text_md" field="text">Обновление компоненты
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620678" class="r t-rec t-rec_pt_30 t-rec_pb_45 r_hidden r_anim" style="padding-top:30px;padding-bottom:45px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Этот порядок вызывается, когда компонента получает новые props.
+                            <br>
+                            <br>
+                            <ul>
+                                <li>
+                                    <strong>compoentWillReceiveProps</strong>
+                                </li>
+                                <li>
+                                    <strong>shouldComponentUpdate</strong>
+                                </li>
+                                <li>
+                                    <strong>componentWillUpdate</strong>
+                                </li>
+                                <li>
+                                    <strong>render</strong>
+                                </li>
+                                <li>
+                                    <strong>componentDidUpdate</strong>
+                                </li>
+                            </ul>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620711" class="r t-rec t-rec_pt_30 t-rec_pb_30 r_hidden r_anim" style="padding-top:30px;padding-bottom:30px; "
+            data-record-type="373">
+            <!-- T373 -->
+            <div class="t373">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t373__wrapper">
+                            <div class="t373__col">
+                                <div class="t373__circle " style="border: 0px solid #000; ">
+                                    <div class="t373__title t-title" field="number" style="">3</div>
+                                </div>
+                            </div>
+                            <div class="t373__col">
+                                <div class="t373__text t-text t-text_md" field="text">Удаление компоненты
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620794" class="r t-rec t-rec_pt_0 t-rec_pb_45 r_hidden r_anim" style="padding-top:0px;padding-bottom:45px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <ul>
+                                <li>
+                                    <strong>componentWillUnmoun</strong>
+                                    <br>
+                                    <strong></strong>
+                                </li>
+                            </ul>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37620869" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_hidden r_anim" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">
+                                <strong>3.</strong> Дополнительные методы
+                                <br>
+                            </div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37621011" class="r t-rec t-rec_pt_45 t-rec_pb_15 r_hidden r_anim" style="padding-top:45px;padding-bottom:15px; "
+            data-record-type="372">
+            <!-- T372 -->
+            <div class="t372">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t372__line " style="background-color: #ff5500;height: 3px;"></div>
+                        <div field="text" class="t372__text t-text t-text_md t-text_weight_plus">forceUpdate()
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37621012" class="r t-rec t-rec_pt_30 t-rec_pb_45 r_hidden r_anim" style="padding-top:30px;padding-bottom:45px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">По умолчанию, компонент вызывает метод render только если он получает новые props, меняет state или
+                            монтируется. Есть возможность вызвать в ручную метод render, с помощью forceUpdate.
+                            <br>
+                            <br> В нормальной ситуации не стоит вызывать метод, а когда покажется что стоит,
+                            <em>нужно подумать еще 7 раз</em>.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37621013" class="r t-rec t-rec_pt_45 t-rec_pb_15 r_hidden r_anim" style="padding-top:45px;padding-bottom:15px; "
+            data-record-type="372">
+            <!-- T372 -->
+            <div class="t372">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t372__line " style="background-color: #ff5500;height: 3px;"></div>
+                        <div field="text" class="t372__text t-text t-text_md t-text_weight_plus">defaultProps
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37621014" class="r t-rec t-rec_pt_30 t-rec_pb_45 r_hidden r_anim" style="padding-top:30px;padding-bottom:45px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Это переменная класса, для того чтобы задать props по-умолчанию. Желательно задать все props, от
+                            которых зависит render компоненты.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37621015" class="r t-rec t-rec_pt_45 t-rec_pb_15 r_hidden r_anim" style="padding-top:45px;padding-bottom:15px; "
+            data-record-type="372">
+            <!-- T372 -->
+            <div class="t372">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t372__line " style="background-color: #ff5500;height: 3px;"></div>
+                        <div field="text" class="t372__text t-text t-text_md t-text_weight_plus">displayName
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37621016" class="r t-rec t-rec_pt_30 t-rec_pb_45 r_hidden r_anim" style="padding-top:30px;padding-bottom:45px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Это переменная класса нужна только при разработке и дебагинге. Помогает увидеть, где точно произошла
+                            ошибка в стеке ошибок.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37621208" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_hidden r_anim" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">
+                                <strong>4.</strong> События в React и их обработка
+                                <br>
+                            </div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37621223" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> В реакте используются synthetic event. Это события, которые обладают такими же свойствами, как и
+                            обычные события браузера, отличаются в деталях и созданы для того, чтобы во всех браузерах был
+                            единый интерфейс взаимодействия с событиями. Для работы с событиями, поступающими от тега или
+                            компонента, необходимо использовать атрибут компонента onChange. На самом деле их больше, но
+                            пока для примеров будем использовать только onChange.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37621275" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__descr t-descr t-descr_xs" field="descr">Пример:</div>
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Form</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+ state = {
+   value: <span class="hljs-string">''</span>
+ };
+ handleOnChange = event =&gt; {
+   <span class="hljs-keyword">this</span>.setState({value: event.target.value});
+ };
+ render() {
+   <span class="hljs-keyword">return</span> (
+     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{this.state.value}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{this.state.value}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleOnChange}</span> /&gt;</span>
+     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+   )</span>;
+ }
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37621362" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">В данном случае компонент
+                            <strong>Form</strong> выводит параграф с содержим state, а также input, значением которого является значение
+                            state, и обработчик событий onChange. Обратите внимание, мы передаем в обработчик событий метод
+                            нашего класса handleOnChange. Когда мы передаём функцию, по сути мы делаем передачу ссылки на
+                            функцию. И если потом вызвать эту функцию, контекст this потеряется, если не предпринять дополнительных
+                            мер. Раньше, при разработке на реакте, все методы, предназначенные для передачи в обработчики
+                            событий, оборачивали в контекст с помощью функции bind, переданная функция знала, что this указывает
+                            на экземпляр компоненты. В новом синтаксисе js, для этих задач служат стрелочные методы js. Метод
+                            handleOnChange является стрелочным методом, такой способ указания метода класса делает автоматическую
+                            обёртку и в случае передачи такого метода this в нём всегда будет указывать на экземпляр класса.
+                            <br>
+                            <br> Метод handleOnChange получает синтетическое событие, с помощью taget.value получаем значение
+                            input, записываем в state, и это отражается в параграфе и самом input.
+                            <br>
+                            <br> Помимо onChange существуют методы onInput для получения событий input, onSubmit для тегов form,
+                            onClick, onFocus для событий получения фокуса и onBlur для событий удаления фокуса. Это список
+                            обработчиков событий для мышки:
+                            <br>
+                            <br>
+                            <em>onClick, onContextMenu, onDoubleClick, onDrag, onDragEnd, onDragEnter, onDragExit, onDragLeave,
+                                onDragOver, onDragStart, onDrop, onMouseDown, onMouseEnter, onMouseLeave, onMouseMove, onMouseOut,
+                                onMouseOver, onMouseUp.</em>
+                            <em></em>
+                            <br>
+                            <br> Все обработчики событий получают синтетическое событие, если нужно остановить баблинг события,
+                            можно воспользоваться event.preventDefault() иди event.stopPropagation().
+                            <br>
+                            <br> Если нужно передать событие, и воспользоваться им в асинхронном коде, в следующих тиках — необходимо
+                            вызвать метод event.persist() чтобы реакт отдал вам это событие. Реакт использует объекты событий
+                            много раз, без удаления их из памяти, для ускорения работы, и метод event.persist сообщит реакту,
+                            что это событие не нужно очищать и переиспользовать.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37621691" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_hidden r_anim" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">
+                                <strong>4.</strong> Композиция компонент
+                                <br>
+                            </div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37621726" class="r t-rec t-rec_pt_60 t-rec_pb_15 r_hidden r_anim" style="padding-top:60px;padding-bottom:15px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Бывают ситуации, когда вам нужно передать данные из одной компоненты, в другую компоненту, находящуюся
+                            рядом. Давайте рассмотрим способы общения компонент, находящихся в близком родстве друг к другу.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37621828" class="r t-rec t-rec_pt_30 t-rec_pb_30 r_hidden r_anim" style="padding-top:30px;padding-bottom:30px; "
+            data-record-type="373">
+            <!-- T373 -->
+            <div class="t373">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t373__wrapper">
+                            <div class="t373__col">
+                                <div class="t373__circle " style="border: 0px solid #000; ">
+                                    <div class="t373__title t-title" field="number" style="">1</div>
+                                </div>
+                            </div>
+                            <div class="t373__col">
+                                <div class="t373__text t-text t-text_md" field="text">От родителя к ребенку
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37621933" class="r t-rec t-rec_pt_15 t-rec_pb_75" style="padding-top:15px;padding-bottom:75px; " data-animationappear="off"
+            data-record-type="3">
+            <!-- T107 -->
+            <div class="t107">
+                <div class="t-align_center" itemscope="" itemtype="http://schema.org/ImageObject">
+                    <meta itemprop="image" content="https://static.tildacdn.com/tild3337-3663-4335-b531-366536333766/1.png">
+                    <img src="./React. Методическое пособие №3_files/1.png" data-original="https://static.tildacdn.com/tild3337-3663-4335-b531-366536333766/1.png"
+                        class="t107__width t-width t-width_6 t-img" imgfield="img"> </div>
+            </div>
+        </div>
+        <div id="rec37622019" class="r t-rec t-rec_pt_0 t-rec_pb_30 r_hidden r_anim" style="padding-top:0px;padding-bottom:30px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Это самый простой вид связи, и помимо передачи значений через props, у нас есть еще один метод, instace
+                            methods, то есть встроенные методы ребёнка.
+                            <br>
+                            <br> При передачи данных через props, мы просто передаём нужные данные нашему ребенку. Если данные
+                            в родителе меняются, мы меняем эти данные в props и ребенок получает себе новые значения.
+                            <br>
+                            <br> При использовании встроенных методов, нужно использовать атрибут компонента ref. Ref будет изучен
+                            в следующей части, но давайте пока коротко посмотрим, как это работает.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37622115" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Child</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+ childMethod() {
+   <span class="hljs-keyword">return</span> <span class="hljs-string">'child method called'</span>;
+ }	
+
+ render() {
+   <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Child<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>;</span>
+ }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+ componentDidMount() {
+   <span class="hljs-built_in">console</span>.log(
+     <span class="hljs-keyword">this</span>.child.childMethod() <span class="hljs-comment">// child method called</span>
+   );
+ }
+ render() {
+   <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Child</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">{component</span> =&gt;</span> (this.child = component)} /&gt;;</span>
+ }
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37622217" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>ref</strong> — это специальный атрибут, который вызывается, когда тег попадает в DOM. ref ожидает
+                            передачи функции. При вызове этой функции, в нее передаётся ссылка на тег. Если это простой тег,
+                            то ссылка указывается на объект в DOM, если же это компонент, то ссылка будет указывать на экземпляр
+                            компоненты. Реакт примонтировал нашего родителя. Это значит, что все дети тоже уже примонтированы,
+                            и мы можем быть уверены в том, что переменная класса child содержит ссылку на экземпляр, которую
+                            присвоили в функции, которую передали в ref. Таким образом, мы можем вызвать внутренний метод
+                            компоненты, и передать данные, если в этом возникает потребность.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37622235" class="r t-rec t-rec_pt_30 t-rec_pb_30 r_hidden r_anim" style="padding-top:30px;padding-bottom:30px; "
+            data-record-type="373">
+            <!-- T373 -->
+            <div class="t373">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t373__wrapper">
+                            <div class="t373__col">
+                                <div class="t373__circle " style="border: 0px solid #000; ">
+                                    <div class="t373__title t-title" field="number" style="">2</div>
+                                </div>
+                            </div>
+                            <div class="t373__col">
+                                <div class="t373__text t-text t-text_md" field="text">От ребенка к родителю
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37622334" class="r t-rec t-rec_pt_15 t-rec_pb_0" style="padding-top:15px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="3">
+            <!-- T107 -->
+            <div class="t107">
+                <div class="t-align_center" itemscope="" itemtype="http://schema.org/ImageObject">
+                    <meta itemprop="image" content="https://static.tildacdn.com/tild3937-3538-4439-b338-323333333337/22.png">
+                    <img src="./React. Методическое пособие №3_files/22.png" data-original="https://static.tildacdn.com/tild3937-3538-4439-b338-323333333337/22.png"
+                        class="t107__width t-width t-width_6 t-img" imgfield="img"> </div>
+            </div>
+        </div>
+        <div id="rec37622352" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Такой способ общения компонент также имеет 2 простых способа.
+                            <br>
+                            <br>
+                            <strong>Первый способ </strong>— это передача callback-функций. Обработчики событий являются примерами
+                            этого способа, например:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37622371" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Child</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+ render() {
+   <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.props.onClick}</span>&gt;</span>Click me<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>;</span>
+ }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+ handleClick() {
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'child clicked'</span>);
+ }
+ render() {
+   <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Child</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleClick}</span> /&gt;</span>;</span>
+ }
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37622492" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">В этом случае ребенок вызывает функцию, которую в него передал родитель в тот момент, когда происходит
+                            клик на элемент ребенка.
+                            <br>
+                            <br>
+                            <strong>Второй способ </strong>называется event bubbling, вот пример:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37622549" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-keyword">const</span> Child = () =&gt; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span>&gt;</span>Click me<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+ handleClick() {
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'child clicked'</span>);
+ }
+ render() {
+   retrun(
+     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleClick}</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-title">Child</span> /&gt;</span>
+     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+   )</span>;
+ }
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37622575" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Тут происходит ловля события, которое происходит на элементе ребенка, но событие, которое порождается
+                            ребенком, будет поймано уже у родителя.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37622722" class="r t-rec t-rec_pt_30 t-rec_pb_30 r_hidden r_anim" style="padding-top:30px;padding-bottom:30px; "
+            data-record-type="373">
+            <!-- T373 -->
+            <div class="t373">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t373__wrapper">
+                            <div class="t373__col">
+                                <div class="t373__circle " style="border: 0px solid #000; ">
+                                    <div class="t373__title t-title" field="number" style="">3</div>
+                                </div>
+                            </div>
+                            <div class="t373__col">
+                                <div class="t373__text t-text t-text_md" field="text">От ребенка ребенку
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37622723" class="r t-rec t-rec_pt_15 t-rec_pb_45" style="padding-top:15px;padding-bottom:45px; " data-animationappear="off"
+            data-record-type="3">
+            <!-- T107 -->
+            <div class="t107">
+                <div class="t-align_center" itemscope="" itemtype="http://schema.org/ImageObject">
+                    <meta itemprop="image" content="https://static.tildacdn.com/tild3833-6462-4562-b832-393738313366/33.png">
+                    <img src="./React. Методическое пособие №3_files/33.png" data-original="https://static.tildacdn.com/tild3833-6462-4562-b832-393738313366/33.png"
+                        class="t107__width t-width t-width_6 t-img" imgfield="img"> </div>
+            </div>
+        </div>
+        <div id="rec37622792" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+ ...
+ render () {
+   <span class="hljs-keyword">return</span> (
+     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-title">Child1</span>
+         <span class="hljs-attribute">child1prop</span>=<span class="hljs-value">{this.state.child2prop}</span>
+         <span class="hljs-attribute">callbackChild1</span>=<span class="hljs-value">{this.handleCallbackChild1}</span>
+       /&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-title">Child2</span>
+       <span class="hljs-attribute">child2prop</span>=<span class="hljs-value">{this.state.child1prop}</span>
+       <span class="hljs-attribute">callbackChild2</span>=<span class="hljs-value">{this.handleCallbackChild2}</span>
+     /&gt;</span>
+     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+   )</span>
+ }
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37622771" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Этот пример — комбинация прежних 2. В состоянии хранится 2 переменные, которые мы передаём 2 детям,
+                            калбэки каждого ребенка меняют переменные, которые передаются другому ребёнку.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37622908" class="r t-rec t-rec_pt_30 t-rec_pb_30 r_hidden r_anim" style="padding-top:30px;padding-bottom:30px; "
+            data-record-type="373">
+            <!-- T373 -->
+            <div class="t373">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t373__wrapper">
+                            <div class="t373__col">
+                                <div class="t373__circle " style="border: 0px solid #000; ">
+                                    <div class="t373__title t-title" field="number" style="">4</div>
+                                </div>
+                            </div>
+                            <div class="t373__col">
+                                <div class="t373__text t-text t-text_md" field="text">Более сложные взаимодействия
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37622981" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Существуют ситуации, когда нам нужно передать одинаковые данные в совершенно разных местах приложения.
+                            В таких случаях используют уже сторонние решения, такие как redux/mobx. Такие решения берут на
+                            себя функцию хранения состояния приложения, и предоставляют удобный способ получения нужных данных
+                            в разных частях вашего приложения.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37623014" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_hidden r_anim" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">
+                                <strong>5.</strong> Списки и keys
+                                <br>
+                            </div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37623029" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> В случае, когда нужно вернуть список компонент и используется метод map, необходимо использовать
+                            дополнительный атрибут у детей — key.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37623035" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-keyword">const</span> TODOS = [
+ { id: <span class="hljs-number">1</span>,
+   text: <span class="hljs-string">'помыть посуду'</span> },
+ { id: <span class="hljs-number">2</span>,
+   text: <span class="hljs-string">'купить продукты'</span> }
+];
+
+<span class="hljs-keyword">const</span> List = () =&gt; (
+ <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>{TODOS.map(todo =&gt;
+   <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{todo.id}</span>&gt;</span>{todo.text}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>)</span>
+ }&lt;<span class="hljs-regexp">/div&gt;
+);</span></code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37623082" class="r t-rec t-rec_pt_60 t-rec_pb_150 r_hidden r_anim" style="padding-top:60px;padding-bottom:150px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> В данном случае, в key передаётся уникальный id. Каждый раз в key следует передавать уникальный идентификатор.
+                            Если нет id, в данном случае можно было использовать text.
+                            <br>
+                            <br> Key существует, чтобы помочь реакту понять, какой именно элемент изменился. Помощь присутствует
+                            на этапе обновления DOM. В случае, если текст одного из TODO поменялся, после нового вызова компоненты
+                            List вернется новый слепок jsx, который произведет слепок virtual DOM, и на этапе сравнения слепков
+                            реакт поймет, что реально следует обновить в реальном DOM.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script> (function (d, w, k) { w.setTimeout(function () { var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n) }; s.type = "text/javascript"; s.id = 'tildastatscript'; s.key = k; s.async = !0; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//stat.tildacdn.com/js/tildastat.min.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, !1) } else { f() } }, 2000) })(document, window, '5725ccd9e33aadf9dc80c76ad185388d'); if (!window.mainTracker) { window.mainTracker = 'tilda'; } </script>
+</body>
+
+</html>
