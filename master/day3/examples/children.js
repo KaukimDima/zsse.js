@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 
 class App extends Component {
   state = {
@@ -22,7 +21,7 @@ class App extends Component {
         <button onClick={this.handleClick}>Update!</button>
         <Title>
           <span>
-            <b>Karamba</b>
+            <b>asdasdsad</b>
           </span>
         </Title>
       </div>
