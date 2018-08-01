@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import CommentList from './comments/commentList';
-import SendComment from './comments/sendComment';
-import User from './users/users';
+import CommentList from "./comments/CommentList";
+import SendComment from "./comments/SendComment";
+import UserList from "./users/UserList";
 
 let id = 0;
 
@@ -10,95 +10,54 @@ function getTodoId() {
   id += 1;
   return id;
 }
-
 class App extends Component {
   state = {
-
-    name: "",
-
-    list: [
-
-        {
-        id: 23,
-        comment:"#1",
-        name:"Rus"
-     },
-     {
-        id: 24,
-        comment:"#2",
-        name:"Rustem"
-     }
+    name : "",
+    commentList : [
     ]
- }
+  }
 
- addComment = (name1, comment) =>{
+  delComment = (id, name) => {
+    const {commentList} = this.state;
+    if(name !== this.state.name) return;
+    const newCommentlist = commentList.filter( el => id !== el.id);
+    this.setState({
+      commentList : [...newCommentlist]
+    });
+  }
 
-  const {list} = this.state;
-
-  this.setState({name:name1,list: [...list, {
-
-    id: getTodoId(),
-    name: name1,
-    comment: comment
-
-  }]})
-
- }
-
- deleteToDo = (name, id) => {
-
-  const{list} = this.state;
-  if(name !== this.state.name) return;
-  const newList = list.filter(el => id !== el.id);
-  this.setState({
-    list : [...newList]
-  });
- }
-
-
+  addComment = (name1, comment) =>  {
+    const id =getTodoId();
+    const  {commentList} = this.state;
+    this.setState({ name : name1, commentList: [...commentList,  {
+      id : id,
+      name : name1,
+      comment : comment
+    }] });
+  }
 
   render() {
-
-    const {list} = this.state;
-
-    return (
-
-
-     <div>
-        <div className ="send__message">
-        <SendComment 
-       commentAdd={this.addComment}
-        />
+    const { commentList } = this.state;
+    return <div>
+        <div className="send__comment">
+          <SendComment addComment={this.addComment} />
         </div>
-      <div className ="commentlist">
-
-        {list.map(el => (
-
-          <CommentList 
-
-          key={el.id}
-          name={el.name}
-          comment={el.comment}
-          id={el.id}
-          deleteToDo = {this.deleteToDo} />
-        )
-      )
-      }
-       </div>  
-
-       <div className ="users">
-        <User/>
+        <div className="commentlist col-sm-12">
+          {commentList.map(el => (
+            <CommentList
+              key={el.id}
+              name={el.name}
+              comment={el.comment}
+              id={el.id}
+              delComment={this.delComment}
+            />
+          ))}
         </div>
-
-       
-
-       
-           
-       </div>
-    );
+        <UserList>
+            asdasdasdasdasd
+        </UserList>
+      </div>;
   }
 }
-
-
 
 export default App;
