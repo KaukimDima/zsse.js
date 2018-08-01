@@ -1,0 +1,12 @@
+form {
+	width: 500px;
+	margin: 0 auto;
+}
+
+textarea {
+	margin-top: 20px;
+}
+
+input[type=submit] {
+	width: 100px
+}
