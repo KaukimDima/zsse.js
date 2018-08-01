@@ -6,7 +6,7 @@ class App
         send :{
             comment : "comment",
             name : "name"
-        }
+        }, 
         commentList : [
             {
                 id : 0,
