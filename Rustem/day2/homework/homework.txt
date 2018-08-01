@@ -1,0 +1,26 @@
+Создать приложение, для отправки сообщений
+
+class App
+    
+    state {
+        send :{
+            comment : "comment",
+            name : "name"
+        }
+        commentList : [
+            {
+                id : 0,
+                name : "some Name",
+                comment : "some comment"
+            },
+            {
+                id : 1
+                name : "some Name",
+                comment : "some comment"
+
+            }
+        ]
+    }
+
+    class CommentList
+    class SendComment
