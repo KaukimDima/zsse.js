@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-//import logo from './logo.svg';
-=======
->>>>>>> cbea1358c6d6fc23c7b9870bd00e2ee2144f499e
 import './App.css';
 import TodoDone from "./Todo/TodoDone";
 import TodoList from "./Todo/TodoList";
@@ -15,44 +11,24 @@ function getTodoId() {
   return id;
 }
 
-let id = 0; 
-
-function getTodoId() {
-  id += 1;
-  return id;
-}
-
-
 class App extends Component {
-  
   state = {
-<<<<<<< HEAD
-    //test: "defualt",
-=======
->>>>>>> cbea1358c6d6fc23c7b9870bd00e2ee2144f499e
     inputValue: "",
     todos: [
       {
         id: 0,
-<<<<<<< HEAD
-        value: "Встать с утра",
-        done: true
-=======
         value: "Сходить за продуктами",
         done: false
->>>>>>> cbea1358c6d6fc23c7b9870bd00e2ee2144f499e
       }
     ]
   };
+}
 
-<<<<<<< HEAD
-=======
   handleChange = event => {
     const value = event.target.value;
     this.setState({ inputValue: value });
   };
 
->>>>>>> cbea1358c6d6fc23c7b9870bd00e2ee2144f499e
   handleKeyDown = event => {
     if (event.keyCode === 13) {
       const { inputValue, todos } = this.state;
@@ -62,68 +38,6 @@ class App extends Component {
     }
   };
 
-<<<<<<< HEAD
-  handleEvent = e => {
-    const value = e.target.value;
-    this.setState({ inputValue: value });
-  }
-  changeTest = (id) => {
-    const {todos} = this.state;
-    const item = todos.filter(e => e.id !== id);
-    this.setState({ todos: [...item] });
-  }
-
-  render() {
-    //console.log(this.state);
-    const { todos } = this.state;
-    return (
-      <div className="App">
-        <h1>ToDo</h1>
-        <input
-          type="text"
-          onChange={this.handleEvent}
-          onKeyDown={this.handleKeyDown}
-        />
-        <div>{todos.map(el => <TodoList
-           key = {el.id} 
-           deletefunc={this.changeTest} 
-           id={el.id}
-           value= {el.value}
-           done = {el.done}/>)}
-        </div> 
-      </div>
-    );
-  }
-}
-
-class TodoList extends Component {
-Ondeletetodoitem = e => {
-  const {deletefunc} = this.props;
-  deletefunc(this.props.id);
-  
-}
-
-checkbox = (e) => {
-  console.log(e.target.value);
-}
-
-  render() {
-    const {id,value,done} = this.props;
-    //console.log(this.state);
-    return (
-      <div>
-       <h1 key={id}> 
-       <input type="checkbox" checked = {done} onClick = {this.checkbox}/>
-       <span className="todoText" > {value} </span>
-       <span className="cross" onClick = {this.Ondeletetodoitem}> &#215; </span>
-       <span className="DoneText"> {done} </span>
-
-       </h1>
-      </div>
-    );
-  }
-}
-=======
   cahngeDoneState = (id, val) => {
 
     this.setState()
@@ -186,6 +100,4 @@ checkbox = (e) => {
 }
 
 
->>>>>>> cbea1358c6d6fc23c7b9870bd00e2ee2144f499e
 export default App;
-
