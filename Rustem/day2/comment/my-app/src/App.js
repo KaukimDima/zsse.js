@@ -21,8 +21,8 @@ class App extends Component {
         done: false
       }
     ]
-  };
-}
+  }
+
 
   handleChange = event => {
     const value = event.target.value;
@@ -95,7 +95,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-      </div>;
+      </div>
   }
 }
 

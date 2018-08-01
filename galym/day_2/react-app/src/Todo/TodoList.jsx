@@ -7,10 +7,6 @@ class TodoList extends Component {
 		onDelete(id);
 	}
 
-	/* onChangeList = id => {
-		const {  }
-	} */
-
   render() {
 		const { id, value } = this.props;
     return (
