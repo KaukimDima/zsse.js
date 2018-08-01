@@ -1,72 +1,47 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class SendComment extends Component {
-
     state = {
-
-        send: {
-
-            comment:"asdasd",
-            name:""
-         }
-     }
-
-HandleName = (e) => {
-
-    const {send} = this.state;
-
-    this.setState({send: {...send, name: e.target.value}});
-
-    console.log(this.state);
+        comment : "asdasd",
+        name : ""
+    }
 
 
-}
+    handleName = e => {
+        this.setState({  name: e.target.value });
+    }
 
-HandleComment = (e) => {
+    handleComment = e => {
+        this.setState({ comment : e.target.value  })
+    }
 
-    const {send} = this.state;
-
-    this.setState({send: {...send, comment: e.target.value}});
-
-    console.log(this.state);
-}
-
-
-
-HandleForm = (event) => {
-
+    handleForm = ( event ) => {
         event.preventDefault();
-        const {commentAdd} = this.props;
-        const {name, comment} = this.state.send;
-        commentAdd(name, comment);
-        console.log(this.state);
-    }
-    render( ) {
+        const { addComment } = this.props;
+        const {name, comment} = this.state;
+        addComment(name, comment);
+        console.log(this.State);
+    } 
 
-        return (
-                
-        <div className = "send__message">
+    render() { 
+        return <div className="send__message col-sm-10">
+            <form onSubmit={this.handleForm} action="asdasd">
+              <div className="form-group">
+                <label htmlFor="exampleInputEmail1">Your name</label>
+                <input onChange={this.handleName} type="text" placeholder="Enter name" className="form-control" name="name" id="" />
+              </div>
 
-            <form onSubmit = {this.HandleForm}   action = "asd">
+              <div className="form-group">
+                <label htmlFor="exampleInputEmail1">Your comment</label>
+                <input type="text" placeholder="Enter comment" className="form-control" name="comment" id="" />
+              </div>
 
-            <div className="form-group">
-                <label htmlFor="exampleInputEmail1">your name</label>
-                <input className = "form-control" onChange = {this.HandleName} type="text" name="name" placeholder="Enter name" /> 
-
-            
-            </div>
-
-            <label htmlFor="exampleInputEmail1">your comment</label>
-            <input className="form-control" type = "text" onChange = {this.HandleComment} placeholder = "Enter comment" name = "comment" id =""/>
-            <button type = "submit" className="btn btn-primary"> submit </button>
+              <button className="btn btn-primary" type="submit">
+                Submit
+              </button>
             </form>
-
-        </div>
-
-
-        );
+          </div>;
     }
-
-    
 }
+ 
 export default SendComment;
