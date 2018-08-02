@@ -1,5 +1,5 @@
 {
-  "name": "react_lifecycle",
+  "name": "react_day2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,5 +12,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-stage-0": "^6.24.1"
   }
 }

@@ -1,0 +1,16 @@
+body {
+	display: flex;
+	justify-content: center;
+}
+ul {
+	width: 500px;
+	padding: 0;
+}
+.form-group {
+	width: 500px;
+	margin-top: 50px;
+}
+button {
+	margin: 0 auto;
+	width: 100px;
+}
