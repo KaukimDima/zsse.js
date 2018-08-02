@@ -25,19 +25,13 @@ class UserList extends Component {
   };
 
   render() {
-    console.log("render");
     const { users } = this.state;
-    if(error) {
-        return render(
-            <div>
-                <h1>Что-то пошло не так</h1>
-            </div>
-        );
-    }
+    
+        
+    
     return (
       <div>
         <div>
-          <h1>Нажми чтобы получить всех пользователй</h1>
         </div>
         <ul>
           {users.map(el => (
