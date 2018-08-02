@@ -11,7 +11,7 @@ class App extends Component {
       const children = el.parentNode.childNodes;
       let i = 0;
       for (; i < children.length; i++) {
-        if (children[i] == el) {
+        if (children[i] === el) {
           return i;
         }
       }
@@ -49,3 +49,4 @@ class App extends Component {
 }
 
 export default App;
+
