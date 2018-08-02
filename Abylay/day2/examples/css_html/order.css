@@ -1,0 +1,39 @@
+.some-class {
+    
+    /* Позиционирование*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+
+    /* Блочная модель */
+    display: block;
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+
+    /* Типографика */
+    font: normal 13px/1.5 "Arial", sabs-serif;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.5;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: green;
+
+    /* Оформление */ 
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 50%;
+    opacity: 1;
+
+    /* Анимация */ 
+    transition: color 1s;
+
+    /* Разное */
+    will-change: auto;
+}

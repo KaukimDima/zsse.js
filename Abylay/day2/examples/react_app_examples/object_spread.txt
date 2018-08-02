@@ -1,0 +1,5 @@
+npm install --save-dev babel-plugin-transform-object-rest-spread
+.babelrc
+{
+  "plugins": ["transform-object-rest-spread"]
+}

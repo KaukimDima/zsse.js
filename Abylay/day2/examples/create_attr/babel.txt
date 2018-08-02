@@ -1,0 +1,11 @@
+https://babeljs.io/repl/
+
+import React from 'react';
+
+const a = () => {
+	return <div id="root">
+      			<p class="name">
+                  <span>Hello World</span>
+                </p>
+      	   </div>
+};

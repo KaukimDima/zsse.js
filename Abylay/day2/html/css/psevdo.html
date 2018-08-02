@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .login-item::before {
+        content: "Иконка входа";
+        }
+    .logout-item::after {
+        content: "Иконка выхода";
+        }
+    </style>
+</head>
+<body>
+    <li class="login-item">
+        <!-- <::before>Иконка входа</::before> -->
+        <a href="/login">Вход</a>
+    </li>
+    <li class="logout-item">
+        <a href="/logout">Выход</a>
+        <!-- <::after>Иконка выхода</::after>-->
+    </li>
+</body>
+</html>
