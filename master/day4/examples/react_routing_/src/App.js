@@ -1,62 +1,51 @@
-import React, { Component } from "react";
-import "./App.css";
-import {
-  BrowserRouter as Router,
-  HashRouter,
-  Route,
-  Link
-} from "react-router-dom";
-import GetUser from "./router/GetUser";
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import { BrowserRouter as Router, HashRouter, Route, Link } from "react-router-dom";
 import UserList from "./router/UserList";
-class App extends Component {
-  state = {
-    ShowList: true
-  };
+import GetUser from "./router/GetUser";
 
+class App extends Component {
+  
   render() {
     return (
-      <div>
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-
+      <div className="App">
+        <header>
+          <h1 />
+        </header>
           <Routing />
-
-          <footer>
-            <h1>FOOTER</h1>
-          </footer>
-        </div>
+        <footer>
+          <h1>FOOTER</h1>
+        </footer>
       </div>
     );
   }
 }
 
 const Routing = () => {
-  return (
-    <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">UserList</Link>
-          </li>
-          <li>
-            <Link to="/getUser">GetUser</Link>
-          </li>
-        </ul>
 
-        <hr />
+    return <Router>
+        <div>
+          <ul>
+            <li>
+              <Link to="/">UserList</Link>
+            </li>
+            <li>
+              <Link to="/getUser">GetUser</Link>
+            </li>
+          </ul>
 
-        <Route exact path="/" component={UserList} />
-        <Route path="/getUser/:id" component={GetUser} />
-        <Route
-          exact
-          path="/getUser"
-          render={() => <h3>Please select a users.</h3>}
-        />
-      </div>
-    </Router>
-  );
+          <hr />
+
+          <Route exact path="/" render={props => <UserList someprop="getUser" {...props} />} />
+          <Route path="/getUser/:id" component={GetUser} />
+          <Route exact path="/getUser" render={() => <h3>
+                Please select a users.
+              </h3>} />
+        </div>
+      </Router>;
 };
 
+
 export default App;
+
