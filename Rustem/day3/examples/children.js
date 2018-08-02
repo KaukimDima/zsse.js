@@ -1,4 +1,4 @@
-import React, {Component, PureComponent} from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
@@ -7,21 +7,8 @@ class App extends Component {
     data: [1, 2, 3]
   };
 
-  a  = {
-    bbb : "str",
-    str : [
-      {
-        1 : 11
-      },
-      {
-        2 : 11
-      },
-    ]
-  }
-
   handleClick = () => {
     const {data} = this.state;
-    [...data, newdata]
     data.push(this.state.data.length + 1);
     this.setState({
       data: data
@@ -33,23 +20,28 @@ class App extends Component {
     return (
       <div>
         <button onClick={this.handleClick}>Update!</button>
-        <Updater data={data} />
+        <Title>
+          <span>
+            <b>Karamba</b>
+          </span>
+        </Title>
       </div>
     );
   }
 }
 
-class Updater extends Component {
-  render() {
-    const {data} = this.props;
-    return (
-      <div>
-        {data.map(element => (
-          <p key={element}>{element}</p>
+const Title = props => {
+  console.log(props.children);
+  return (
+    <div>
+      <h3 className="Title">
+        {React.Children.map(props.children, el => (
+          <p>{el}</p>
         ))}
-      </div>
-    );
-  }
-}
+      </h3>
+      <hr />
+    </div>
+  );
+};
 
 ReactDOM.render(<App />, document.getElementById('root'));

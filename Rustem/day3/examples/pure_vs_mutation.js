@@ -7,21 +7,8 @@ class App extends Component {
     data: [1, 2, 3]
   };
 
-  a  = {
-    bbb : "str",
-    str : [
-      {
-        1 : 11
-      },
-      {
-        2 : 11
-      },
-    ]
-  }
-
   handleClick = () => {
     const {data} = this.state;
-    [...data, newdata]
     data.push(this.state.data.length + 1);
     this.setState({
       data: data
