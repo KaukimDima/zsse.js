@@ -1,37 +1,48 @@
 import React, { Component } from 'react';
 import './App.css';
-import Test2 from './test/Test2';
+import TodoShow from "./ToDo/TodoShow";
 class App extends Component {
-
   state = {
-    inputs : 1,
-    reply:[]
+    inputs: 1,
+    todoso_id: [1, 5, 9],
+    result : []
   };
+
+  componentDidMount() {
+    this.state.todoso_id.forEach( (v, i, arr) =>  {
+      fetch(`https://jsonplaceholder.typicode.com/todos/${v}`).
+        then( data => data.json() ).
+        then( json => this.setState({
+          result : [...this.state.result, json]
+        }));
+    });
+  }
 
   newInput = e => {
     e.target.preventDefault;
-    let {inputs} = this.state;
-    inputs += 1
+    let { inputs } = this.state;
+    inputs += 1;
     this.setState({ inputs: inputs });
-    console.log(this.state);
-  }
-  
+  };
 
   render() {
     let arr = [];
-    for(let i=0; i < this.state.inputs; i++) {
-     arr.push(<input data-id={i} key={i} onClick={this.conLog} />);
+    for (let i = 0; i < this.state.inputs; i++) {
+      arr.push(<input data-id={i} key={i} onClick={this.conLog} />);
     }
-    return <div>
-        <form action="">
+    console.log(this.state);
+    return (
+      <div>
+        <form onSubmit action="">
           <button type="button" onClick={this.newInput}>
             add
           </button>
           {arr}
-          <button>submit</button>
+          <button type="submit">submit</button>
         </form>
-        <Test2 />
-      </div>;
+        <TodoShow result={this.state.result} />
+      </div>
+    );
   }
 }
 

@@ -26,3 +26,9 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.completed {
+  background: green;
+}
+.not_completed {
+  background-color: red;
+}
