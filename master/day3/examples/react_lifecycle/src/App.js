@@ -35,11 +35,11 @@ class App extends Component {
   render() {
     let arr = [];
     for(let i=0; i < this.state.inputs.length; i++) {
-      arr.push(<input key={i} onClick={this.conLog} />);
+      arr.push(<input key={i} data-id={i} onClick={this.conLog} />);
     }
     return <div>
       <form action="">
-        
+
         <button onClick={this.newInput}>add</button>
         <button>submit</button>
       </form>
