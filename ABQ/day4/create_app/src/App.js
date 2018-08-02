@@ -34,18 +34,32 @@ class App extends Component {
 }
 }
 
-const Routing = () => (
-  <Router>
-       <ul>
-          <li><Link to="/userList">User List</Link></li>
-          <li><Link to="/topics">Get user by id</Link></li>
+const Routing = () => {
+  return (
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">UserList</Link>
+          </li>
+          <li>
+            <Link to="/getUser">GetUser</Link>
+          </li>
         </ul>
-        <Route exact path = "/userList" component = {UserList} />
-        <Route exact path = "/getUser" component = {GetUser} />
 
-  </Router>
-);
+        <hr />
 
+        <Route exact path="/" component={UserList} />
+        <Route path="/getUser/:id" component={GetUser} />
+        <Route
+          exact
+          path="/getUser"
+          render={() => <h3>Please select a users.</h3>}
+        />
+      </div>
+    </Router>
+  );
+};
   
 export default App;
 
