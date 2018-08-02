@@ -5,17 +5,6 @@ import Routing from './Routing/Routing';
 
 class App extends Component {
 
-	state = {
-		users : []
-	}
-
-	componentDidMount() {
-		fetch('https://jsonplaceholder.typicode.com/users')
-			.then(res => res.json())
-			.then(json => this.setState({ users : json }));
-		console.log(this.state);
-	}
-
   render() {
     return (
       <div className="App">
