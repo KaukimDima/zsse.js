@@ -37,7 +37,6 @@ class App extends Component {
 const Routing = () => {
   return (
     <Router>
-      <div>
         <ul>
           <li>
             <Link to="/">UserList</Link>
@@ -56,7 +55,6 @@ const Routing = () => {
           path="/getUser"
           render={() => <h3>Please select a users.</h3>}
         />
-      </div>
     </Router>
   );
 };
