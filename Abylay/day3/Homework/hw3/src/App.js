@@ -1,63 +1,58 @@
 import React, { Component } from 'react';
 import './App.css';
-//import collectid from './test/Test1';
+import TodoShow from './test/Test1';
 //import showlist from './test/Test2';
 class App extends Component {
 
   state = {
     inputs : [1],
-    reply:[]
+    todos_id:[1,5,9],
+    result:[],
   };
-  componentDidMount() {
-    //const{reply}=this.state;
-    //const self = this;
-    fetch("https://jsonplaceholder.typicode.com/todos/")
-      .then(response => response.json())
-      .then(json => {
-        this.setState({ reply: json }),
-        console.log(this.state.reply)
-      });
-  }
   
-  getIndex = ( el ) => {
-      const children = el.parentNode.childNodes;
-      let i = 0;
-      for (; i < children.length; i++) {
-        if (children[i] === el) {
-          return i;
-        }
-      }
-    return -1;
-  }
-
-  conLog = e => {
-    console.log(this.getIndex(e.target));
-  }
-
   newInput = e => {
-    //e.preventDefault;
+    //e.target.preventDefault;
     console.log(e);
     let {inputs} = this.state;
-    inputs.push(1);
-    this.setState({ inputs: inputs });
+    inputs +=1;
+    this.setState({ inputs: inputs});
   }
 
-  
+  submitter = e => {
+    //e.target.preventDefault;
+    let input;
+    let arr=[];
+    input= document.getElementsByTagName("input");
+    for (let i=0;i < input.length; i++) {
+    arr.push(+input[i].value);
+    }
+    console.log("arr", arr);
+    let new_obj = [];
+    arr.forEach( (v) => {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${v}`)
+      .then(response => response.json())
+      .then(json => new_obj.push(json))});
+    this.setState({result: new_obj})
+  }
 
   render() {
-    let arr = [];
+
+    
+    let array=[];
     for(let i=0; i < this.state.inputs.length; i++) {
-     arr.push(<input key={i} onClick={this.conLog} />);
+     array.push(<input data-id={i} key={i} onClick={this.conLog} />);
     }
-    return ( <div>
-      
+    return  ( <div>
+      <form  >
+        <button  onClick={this.newInput} type="button">add</button>
+        { array }
+        <button type="button" onClick={this.submitter}> submit</button>
        
-        <button onClick={this.newInput}>add</button>
-        <button>submit</button>
-        
-      { arr }
-      </div>
-    )
+        </form>
+         <TodoShow 
+         result={this.state.result}/>
+         </div>
+    );
   }
 }
 
