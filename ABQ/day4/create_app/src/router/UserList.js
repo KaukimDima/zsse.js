@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { BrowserRouter as Router, HashRouter, Route, Link } from "react-router-dom";
 
 class UserList extends Component { 
 
@@ -19,15 +19,27 @@ render(){
     console.log(this.state.users);
 
 return(
-    <div> <p>{this.state.users.map( 
-        (el, i) => 
-        <p key = {i}>{el.email}</p>
-    )} </p>
+    <Router>
+    <div> 
+    {this.state.users.map(            
+            (el, i) => 
+            <Link to   = "/userList/{el.id}"> 
+            <p key = {i}> {el.email}  </p> 
+            </Link>
+
+     <Route path="/userList/:id" render = {  }/>
+    )} 
+
+
     </div>
+    </Router>
 )
 }
 };
 
+const justFunc = () => {
+
+}
 
 
 export default UserList;
