@@ -36,5 +36,14 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+<<<<<<< HEAD
 
 
+=======
+.completed {
+  background: green;
+}
+.not_completed {
+  background-color: red;
+}
+>>>>>>> ee8a3e5294c87827a663bea2a25c2840d415c402
