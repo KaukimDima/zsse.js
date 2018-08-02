@@ -1,35 +1,37 @@
-import React, { Component } from "react";
-import "./App.css";
-import {
-  BrowserRouter as Router,
-  HashRouter,
-  Route,
-  Link
-} from "react-router-dom";
-import GetUser from "./router/GetUser";
-import UserList from "./router/UserList";
+import React, { Component } from 'react';
+import './App.css';
+import { BrowserRouter as Router, HashRouter, Route, Link } from "react-router-dom";
+import GetUser from './router/GetUser';
+import UserList from "./router/UserList"
 class App extends Component {
+
   state = {
     ShowList: true
-  };
+  }
+
 
   render() {
     return (
-      <div>
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
+    <div>
+ <div className="App">
 
-          <Routing />
+<header className="App-header">
+  <h1 className="App-title">Welcome to React</h1>
+</header>
 
-          <footer>
-            <h1>FOOTER</h1>
-          </footer>
-        </div>
+
+
+      <Routing />
+
+       <footer><h1>FOOTER</h1></footer>
       </div>
+      
+      </div>
+
+
+
     );
-  }
+}
 }
 
 const Routing = () => {
@@ -58,5 +60,6 @@ const Routing = () => {
     </Router>
   );
 };
-
+  
 export default App;
+
