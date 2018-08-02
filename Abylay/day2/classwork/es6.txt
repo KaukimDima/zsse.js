@@ -1,0 +1,27 @@
+https://es6console.com/
+
+class Animal - родитель
+    constructor 
+        name
+        height
+        color
+    
+    canfly
+        True
+    static getName
+        
+    class pinguin
+        constructor
+            weight (перезаписать и добавить вес)
+        color 
+            black
+        fly
+            false
+
+    class seagull
+        color 
+            white
+        fly 
+            true
+
+
