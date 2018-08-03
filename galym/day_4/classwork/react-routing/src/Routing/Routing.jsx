@@ -29,7 +29,7 @@ class Routing extends Component {
             <hr />
 
             <Route exact path="/" component={ Home } />
-            <Route path="/about" component={ About } />
+            <Route path="/about/:id" component={ About } />
             <Route path="/users" component={ User } />
           </div>
         </Router>
