@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class User extends Component {
 	
@@ -29,7 +29,6 @@ class User extends Component {
 						<li 
 							key={el.id}
 							className="list-group-item"
-							id={el.id}
 						>
 							<Link to={`about/${el.id}`} >
 								Name: {el.name} <br />
