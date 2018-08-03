@@ -25,11 +25,12 @@ return(
     {users.map(            
             (el) => 
             
-                <Link to = {`/getUser/${el.id}`}> 
-                 <p key={el.id}> Name: {el.name}  
+                <div key = {el.id}> 
+                 Name: {el.name}  
                  
-                        email:  {el.email}</p>   
-                </Link>          
+                 email:  {el.email}
+
+                </div>          
     )}
     </ul>
     
