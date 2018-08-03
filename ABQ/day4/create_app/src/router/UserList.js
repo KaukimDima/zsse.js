@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
-
+import { BrowserRouter as Router, HashRouter, Route, Link } from "react-router-dom";
+import EachUser from './EachUser'
 class UserList extends Component { 
 
 state = {
@@ -17,15 +17,36 @@ componentDidMount(){
 
 render(){
     console.log(this.state.users);
-
+    const {users} = this.state;
 return(
-    <div> <p>{this.state.users.map( 
-        (el, i) => 
-        <p key = {i}>{el.email}</p>
-    )} </p>
+    
+        <Router>
+            <div>
+        <ul>
+    {users.map(            
+            (el) => 
+            
+                <Link to = {`/eachUser/${el.id}`}> 
+                 <p key={el.id}>{el.email}</p>   
+                </Link>          
+    )}
+    </ul>
+    {/* {users.map(            
+            (el) => 
+
+     <Route exact path={`/eachUser/${el.id}`} 
+     render={props => <EachUser key = {props.id} someprops={el.id} {...props} />}  */}
+    {/* //  render = {
+    //      () => 
+    //         <h1> ID: {el.id} </h1>
+         
+    //  } 
+    />
+    )} */}
     </div>
-)
-}
+    </Router>
+    
+)}
 };
 
 
