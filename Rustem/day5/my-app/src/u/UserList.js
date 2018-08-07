@@ -25,7 +25,8 @@ return(
     {users.map(            
             (el) => 
             
-                <div key = {el.id}> 
+                <div key = {el.id}>
+                 
                  Name: {el.name}  
                  
                  email:  {el.email}
