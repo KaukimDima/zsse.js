@@ -37,12 +37,18 @@ handleInput = (e) => {
 }
 
 handleSubmit = (event) => {
+
+  const {isLog} = this.state;
+
   event.target.preventDefault();
+
   alert(132231);
 
   this.setState({ isLog: false });
 
-  console.log(this.state)
+  this.setState({ isLog: false });
+
+  console.log(isLog);
 }
 
   render() {
@@ -69,7 +75,7 @@ handleSubmit = (event) => {
 
 
           <button onClick={this.handleSubmit}>
-            submut
+            submit
           </button>
 
           <div> {this.state.isLog} </div>
