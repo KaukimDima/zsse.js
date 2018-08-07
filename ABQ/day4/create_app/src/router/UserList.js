@@ -20,7 +20,7 @@ render(){
     const {users} = this.state;
 return(
     
-        <Router>
+        
             <div>
         <ul>
     {users.map(            
@@ -44,7 +44,7 @@ return(
     />
     )} */}
     </div>
-    </Router>
+
     
 )}
 };

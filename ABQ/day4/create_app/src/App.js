@@ -48,7 +48,7 @@ const Routing = () => {
 
           <Route exact path="/" render={props => <UserList someprop="getUser" {...props} />} />
           <Route path="/getUser" component={GetUser} />
-          <Route path="/eachUser" component={EachUser} />
+          <Route path="/eachUser/:id" component={EachUser} />
           {/* <Route exact path="/getUser" render={() => <h3>
                 Please select a users.
               </h3>} /> */}
