@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, HashRouter, Route, Link } from "react-router-dom";
 import UserList from './router/UserList'
@@ -18,8 +17,6 @@ state = {
       <div>
 
         <Routing/>
-
-         
 
       </div>
     );
