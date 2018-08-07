@@ -1,40 +1,42 @@
 import React, { Component } from 'react';
 import './App.css';
 
+
+
 class App extends Component {
+	
+	state = {
+		commentBody: ''
+	};
 
-  state = {
+	handleKeyDown = e => {
+		const { addComment } = this.props;
+		const { commentBody } = this.state;
+		if (e.keyCode === 13) {
+			addComment(commentBody);
+			this.setState({ commentBody: '' });
+		}
+	}
 
-    commentBody: ""
-    
-  };
-  
-  handleClick = e => {
-  
-    const {addComment} = this.props;
-
-    const {commentBody} = this.state;
-
-    addComment(commentBody);
-  
-  }
+	handleChange = e => {
+	this.setState({ commentBody: e.target.value });
+	}
 
   render() {
-
-    const{comments} = this.props;
-
+		const { comments } = this.props;
     return (
       <div className="App">
-        <input type = "button" value="click" onClick ={this.handleClick} />
-
-        <div>
-
-          {/* {comments.map((el,i) => <div key = {i} > {el} </div>)} */}
-
-          </div>
+				<input
+					value={ this.state.commentBody }
+					onKeyDown={ this.handleKeyDown }
+					onChange={ this.handleChange }
+				/>
+				{<div>
+					{ comments.map( (el, i) => <div key={i}><b>{el}</b></div>) }
+				</div>}
       </div>
     );
-  }
+  } 
 }
 
 export default App;
