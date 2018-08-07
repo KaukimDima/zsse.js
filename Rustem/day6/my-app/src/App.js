@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  state = {
+
+    commentBody: ""
+    
+  };
+  
+  handleClick = e => {
+  
+    const {addComment} = this.props;
+
+    const {commentBody} = this.state;
+
+    addComment(commentBody);
+  
+  
+  }
   render() {
+
+    const{comments} = this.props
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <input type = "button" value="click" onClick ={this.handleClick} />
+
+        <div>
+
+          {comments.map((el,i) => <div key = {i} > {el} </div>)}
+
+          </div>
       </div>
     );
   }
