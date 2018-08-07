@@ -17,18 +17,19 @@ class App extends Component {
 
     addComment(commentBody);
   
-  
   }
+
   render() {
 
-    const{comments} = this.props
+    const{comments} = this.props;
+
     return (
       <div className="App">
         <input type = "button" value="click" onClick ={this.handleClick} />
 
         <div>
 
-          {comments.map((el,i) => <div key = {i} > {el} </div>)}
+          {/* {comments.map((el,i) => <div key = {i} > {el} </div>)} */}
 
           </div>
       </div>
