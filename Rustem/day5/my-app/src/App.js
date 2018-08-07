@@ -43,10 +43,8 @@ handleSubmit = (event) => {
   event.target.preventDefault();
 
   alert(132231);
-
-  this.setState({ isLog: false });
-
-  this.setState({ isLog: false });
+  
+  this.setState({ isLog: true });
 
   console.log(isLog);
 }
