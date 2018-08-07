@@ -29,26 +29,26 @@ class App extends PureComponent {
   render() {
     const {comments} = this.props;
     return (
-      <main>
+      <div>
         <input
           value={this.state.commentBody}
           onChange={this.handleChangeComment}
           onKeyDown={this.handleKeyDown}
         />
         {comments.map((comment, i) => (
-          <section key={[comment, i].join('_')}>
-            <p>{comment}</p>
-          </section>
+          <div key={[comment, i].join('_')}>
+            <h3>{comment}</h3>
+          </div>
         ))}
-      </main>
+      </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  commentsCount: getCommentsCounts(state),
-  comments: getComments(state)
-});
+const mapStateToProps = state => {
+  console.log(state);
+  return { commentsCount: getCommentsCounts(state), comments: getComments(state) };
+};
 
 const mapDispatchToProps = {
   addComment
