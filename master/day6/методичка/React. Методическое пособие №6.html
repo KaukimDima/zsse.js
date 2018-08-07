@@ -1,0 +1,2302 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://react1.tilda.ws/metod-6 -->
+<html data-livestyle-extension="available">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React. Методическое пособие №6</title>
+    <meta property="og:url" content="http://react1.tilda.ws/metod-6">
+    <meta property="og:title" content="React. Методическое пособие №6">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://static.tildacdn.com/tild3463-6365-4639-b763-383935616239/Artboard_1.png">
+    <meta property="fb:app_id" content="257953674358265">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="http://tilda.ws/">
+    <link rel="dns-prefetch" href="http://static.tildacdn.com/">
+    <link rel="canonical" href="http://react1.tilda.ws/metod-6">
+    <link rel="shortcut icon" href="http://static.tildacdn.com/img/tildafavicon.ico" type="image/x-icon">
+    <!-- Assets -->
+    <link rel="stylesheet" href="./React. Методическое пособие №6_files/tilda-grid-3.0.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./React. Методическое пособие №6_files/tilda-blocks-2.12.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./React. Методическое пособие №6_files/tilda-animation-1.0.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./React. Методическое пособие №6_files/tilda-slds-1.4.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./React. Методическое пособие №6_files/tilda-zoom-2.0.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./React. Методическое пособие №6_files/highlight.min.css" type="text/css" media="all">
+    <script type="text/javascript" id="tildastatscript" async="" src="./React. Методическое пособие №6_files/tildastat.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №6_files/jquery-1.10.2.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №6_files/tilda-scripts-2.8.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №6_files/tilda-blocks-2.7.js.Без названия"></script>
+    <script src="./React. Методическое пособие №6_files/tilda-animation-1.0.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №6_files/tilda-slds-1.4.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №6_files/hammer.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №6_files/tilda-zoom-2.0.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №6_files/highlight.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №6_files/lazyload-1.3.min.js.Без названия"></script>
+    <style type="text/css">
+        /*.lleo_errorSelection *::-moz-selection,
+        .lleo_errorSelection *::selection,
+        .lleo_errorSelection *::-webkit-selection {
+            background-color: red !important;
+            color: #fff !important;;
+        }*/
+
+        #lleo_dialog,
+        #lleo_dialog * {
+            color: #000 !important;
+            font: normal 13px Arial, Helvetica !important;
+            line-height: 15px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: none !important;
+            border: none 0 !important;
+            position: static !important;
+            vertical-align: baseline !important;
+            overflow: visible !important;
+            width: auto !important;
+            height: auto !important;
+            max-width: none !important;
+            max-height: none !important;
+            float: none !important;
+            visibility: visible !important;
+            text-align: left !important;
+            text-transform: none !important;
+            border-collapse: separate !important;
+            border-spacing: 2px !important;
+            box-sizing: content-box !important;
+            box-shadow: none !important;
+            opacity: 1 !important;
+            text-shadow: none !important;
+            letter-spacing: normal !important;
+            -webkit-filter: none !important;
+            -moz-filter: none !important;
+            filter: none !important;
+        }
+
+        #lleo_dialog *:before,
+        #lleo_dialog *:after {
+            content: '';
+        }
+
+        #lleo_dialog iframe {
+            height: 0 !important;
+            width: 0 !important;
+        }
+
+        #lleo_dialog {
+            position: absolute !important;
+            background: #fff !important;
+            border: solid 1px #ccc !important;
+            padding: 7px 0 0 !important;
+            left: -999px;
+            top: -999px;
+            width: 440px !important;
+            overflow: hidden;
+            display: block !important;
+            z-index: 999999999 !important;
+            box-shadow: 8px 16px 30px rgba(0, 0, 0, 0.16) !important;
+            border-radius: 3px !important;
+            opacity: 0 !important;
+            -webkit-transform: translateY(15px);
+            -moz-transform: translateY(15px);
+            -ms-transform: translateY(15px);
+            -o-transform: translateY(15px);
+            transform: translateY(15px);
+        }
+
+        #lleo_dialog.lleo_show_small {
+            width: 150px !important;
+        }
+
+        #lleo_dialog.lleo_show {
+            opacity: 1 !important;
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+            transform: translateY(0);
+            -webkit-transition: -webkit-transform 0.3s, opacity 0.3s !important;
+            -moz-transition: -moz-transform 0.3s, opacity 0.3s !important;
+            -ms-transition: -ms-transform 0.3s, opacity 0.3s !important;
+            -o-transition: -o-transform 0.3s, opacity 0.3s !important;
+            transition: transform 0.3s, opacity 0.3s !important;
+        }
+
+        #lleo_dialog.lleo_collapse {
+            opacity: 0 !important;
+            -webkit-transform: scale(0.25, 0.1) translate(-550px, 100px);
+            -moz-transform: scale(0.25, 0.1) translate(-550px, 100px);
+            -ms-transform: scale(0.25, 0.1) translate(-550px, 100px);
+            -o-transform: scale(0.25, 0.1) translate(-550px, 100px);
+            transform: scale(0.25, 0.1) translate(-550px, 100px);
+            -webkit-transition: -webkit-transform 0.4s, opacity 0.4s !important;
+            -moz-transition: -moz-transform 0.4s, opacity 0.4s !important;
+            -ms-transition: -ms-transform 0.4s, opacity 0.4s !important;
+            -o-transition: -o-transform 0.4s, opacity 0.4s !important;
+            transition: transform 0.4s, opacity 0.4s !important;
+        }
+
+        #lleo_dialog input::-webkit-input-placeholder {
+            color: #aaa !important;
+        }
+
+        #lleo_dialog .lleo_has_pic #lleo_word {
+            margin-right: 80px !important;
+        }
+
+        #lleo_dialog #lleo_translationsContainer1 {
+            position: relative !important;
+        }
+
+        #lleo_dialog #lleo_translationsContainer2 {
+            padding: 7px 0 0 !important;
+            vertical-align: middle !important;
+        }
+
+        #lleo_dialog #lleo_word {
+            color: #000 !important;
+            margin: 0 5px 2px 0 !important;
+            /*float: left !important;*/
+        }
+
+        #lleo_dialog .lleo_has_sound #lleo_word {
+            margin-left: 30px !important;
+        }
+
+        #lleo_dialog #lleo_text {
+            font-weight: bold !important;
+            color: #d56e00 !important;
+            text-decoration: none !important;
+            cursor: default !important;
+        }
+
+        /*
+        #lleo_dialog #lleo_text.lleo_known {
+            cursor: pointer !important;
+            text-decoration: underline !important;
+        }
+        */
+
+        /*#lleo_dialog #lleo_closeBtn {
+            position: absolute !important;
+            right: 6px !important;
+            top: 5px !important;
+            line-height: 1px !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            font-size: 0 !important;
+            color: #aaa !important;
+            display: block !important;
+        	z-index: 9999999999 !important;
+        	width: 7px !important;
+        	height: 7px !important;
+        	padding: 0 !important;
+        	margin: 0 !important;
+        }*/
+
+        #lleo_dialog #lleo_optionsBtn {
+            position: absolute !important;
+            right: 3px !important;
+            top: 5px !important;
+            line-height: 1px !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            font-size: 13px !important;
+            color: #aaa !important;
+            padding: 2px !important;
+            display: none;
+        }
+
+        #lleo_dialog.lleo_optionsShown #lleo_optionsBtn {
+            display: block !important;
+        }
+
+        #lleo_dialog #lleo_optionsBtn img {
+            width: 12px !important;
+            height: 12px !important;
+        }
+
+        #lleo_dialog #lleo_sound {
+            float: left !important;
+            width: 16px !important;
+            height: 16px !important;
+            margin-left: 9px !important;
+            margin-right: 3px !important;
+            background: 0 0 no-repeat !important;
+            cursor: pointer !important;
+            display: none !important;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAfNJREFUeNq0U01IVFEU/u57Oo5WhBRIBBptykWLYBa2soWiEKQQEbrSFsGbVRQKQc2iFqGitXqvjQxCoCJCqyI0aBUtZILaJNUuYWYWo8HovJ/707nP94bnz0rxwvfOuefd8517fi5TSuE4i50YwZ3l37ZhNlpgzFkaaM/G9sHF1YskNrT+7l4PjMOcb78t2JL71uxgB+2UlfxHTtq5N94fIOh/88kWgWfl73ZCSQkpeGg3H091JY6dI2S00qA/N3KO3dDUYhFgEmZGurG+w9FqApIHsVM7kaTF9Nhn0r8Q7hPWQgIRuNaH3AMUA4W/Lkdh04cpFS43G0TgxQTvCdMETVAk3KynIHwXZU/ge8XDt7KH9bKLjU0P2zVO5LsEpSejVRJ9UR18EtfqKegovs9R3Q6w9c/H1o4Aa2Jwm1lIvn9RJ4w9RdRRzqcYrpwycCll4Cy1lnkS3Bc6vfBg28v8aRIfI78zhB/1GygROH3jLyyzMQ0zlUZuZBSlKkeLoegGtTjYLcJ8pF+NakHOFC2J6w+f25mxSfWrWFF/ShXVPTGvtN14NNkVnxlYWJkgZEL7/vwKr55lKSVnaGYWkuYgrgG172uUv47+U7fw0EHaJXmalUQy/HqO6lBzEsVjJC4Q8kd6TETQpjuaGOvjv8b/AgwA/ij1XMx58NIAAAAASUVORK5CYII=) !important;
+        }
+
+        #lleo_dialog .lleo_has_sound #lleo_sound {
+            display: block !important;
+        }
+
+        #lleo_dialog #lleo_soundWave {
+            border: solid 5px #4495CC !important;
+            border-radius: 5px !important;
+            position: absolute !important;
+            left: -5px !important;
+            top: -5px !important;
+            right: -5px !important;
+            bottom: -5px !important;
+            z-index: 0 !important;
+            opacity: 0.9 !important;
+            display: none !important;
+        }
+
+        #lleo_dialog #lleo_soundWave.lleo_beforePlaying {
+            display: block !important;
+        }
+
+        #lleo_dialog #lleo_soundWave.lleo_playing {
+            opacity: 0 !important;
+            border-width: 20px !important;
+            border-radius: 30px !important;
+
+            -webkit-transform: scale(1.07, 1.1) !important;
+            -moz-transform: scale(1.07, 1.1) !important;
+            -ms-transform: scale(1.07, 1.1) !important;
+            transform: scale(1.07, 1.1) !important;
+
+            -webkit-transition: all 0.6s !important;
+            -moz-transition: all 0.6s !important;
+            -ms-transition: all 0.6s !important;
+            transition: all 0.6s !important;
+        }
+
+
+        #lleo_dialog #lleo_picOuter {
+            position: absolute !important;
+            float: right !important;
+            top: 4px;
+            right: 5px;
+            z-index: 9 !important;
+            display: none !important;
+            width: 100px !important;
+        }
+
+        #lleo_dialog.lleo_optionsShown #lleo_picOuter {
+            right: 25px;
+        }
+
+        #lleo_dialog .lleo_has_pic #lleo_picOuter {
+            display: block !important;
+        }
+
+        #lleo_dialog #lleo_picOuter:hover {
+            width: auto !important;
+            z-index: 11 !important;
+        }
+
+        #lleo_dialog #lleo_pic,
+        #lleo_dialog #lleo_picBig {
+            position: absolute !important;
+            top: 0 !important;
+            right: 0 !important;
+            border: solid 2px #fff !important;
+            -webkit-border-radius: 2px !important;
+            -moz-border-radius: 2px !important;
+            border-radius: 2px !important;
+            z-index: 1 !important;
+        }
+
+        #lleo_dialog #lleo_pic {
+            position: relative !important;
+            border: none !important;
+            width: 30px !important;
+        }
+
+        #lleo_dialog #lleo_picBig {
+            box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.3);
+            z-index: 2 !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+
+        #lleo_dialog #lleo_picOuter:hover #lleo_picBig {
+            visibility: visible !important;
+            opacity: 1 !important;
+            -webkit-transition: opacity 0.3s !important;
+            -webkit-transition-delay: 0.3s !important;
+        }
+
+        #lleo_dialog #lleo_transcription {
+            margin: 0 80px 4px 31px !important;
+            color: #aaaaaa !important;
+        }
+
+        #lleo_dialog .lleo_no_trans {
+            color: #aaa !important;
+        }
+
+        #lleo_dialog .ll-translation-counter {
+            float: right !important;
+            font-size: 11px !important;
+            color: #aaa !important;
+            padding: 2px 2px 1px 10px !important;
+        }
+
+        #lleo_dialog .ll-translation-text {
+            float: left !important;
+            /*width: 80% !important;*/
+        }
+
+        #lleo_dialog #lleo_trans a {
+            color: #3F669F !important;
+            text-decoration: none !important;
+            text-overflow: ellipsis !important;
+            padding: 1px 4px !important;
+            overflow: hidden !important;
+            float: left !important;
+            width: 320px !important;
+        }
+
+        #lleo_dialog .ll-translation-item {
+            color: #3F669F !important;
+            border: solid 1px #fff !important;
+            padding: 3px !important;
+            width: 100% !important;
+            float: left !important;
+            -moz-border-radius: 2px !important;
+            -webkit-border-radius: 2px !important;
+            border-radius: 2px !important;
+        }
+
+        #lleo_dialog .ll-translation-item:hover {
+            border: solid 1px #9FC2C9 !important;
+            background: #EDF4F6 !important;
+            cursor: pointer !important;
+        }
+
+        #lleo_dialog .ll-translation-item:hover .ll-translation-counter {
+            color: #83a0a6 !important;
+        }
+
+        #lleo_dialog .ll-translation-marker {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAWSURBVBhXY7RPm/+fAQkwIXNAbMICAJQ8AkvqWg/SAAAAAElFTkSuQmCC) !important;
+            display: inline-block !important;
+            width: 4px !important;
+            height: 4px !important;
+            margin: 7px 5px 2px 2px !important;
+            float: left !important;
+        }
+
+        #lleo_dialog #lleo_icons {
+            color: #aaa !important;
+            font-size: 11px !important;
+            background: #f8f8f8 !important;
+            padding: 10px 10px 10px 16px !important;
+        }
+
+        #lleo_icons a {
+            display: inline-block !important;
+            width: 16px !important;
+            height: 16px !important;
+            margin: 0 10px -4px 3px !important;
+            text-decoration: none !important;
+            opacity: 0.5 !important;
+            background: url(data:image/png;base64,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) !important;
+        }
+
+        #lleo_icons a:hover {
+            opacity: 1 !important;
+        }
+
+        #lleo_icons a.lleo_google {
+            background-position: -34px 0 !important;
+        }
+
+        #lleo_icons a.lleo_multitran {
+            background-position: -64px 0 !important;
+        }
+
+        #lleo_icons a.lleo_lingvo {
+            background-position: -51px 0 !important;
+            width: 12px !important;
+        }
+
+        #lleo_icons a.lleo_dict {
+            background-position: -17px 0 !important;
+        }
+
+        #lleo_icons a.lleo_linguee {
+            background-position: -81px 0 !important;
+        }
+
+        #lleo_icons a.lleo_michaelis {
+            background-position: -98px 0 !important;
+        }
+
+        #lleo_dialog #lleo_contextContainer {
+            margin: 0 !important;
+            padding: 3px 15px 8px 10px !important;
+            background: #eee !important;
+            background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee)) !important;
+            background: -moz-linear-gradient(-90deg, #fff, #eee) !important;
+            border-bottom: solid 1px #ddd !important;
+            border-top-left-radius: 3px !important;
+            border-top-right-radius: 3px !important;
+            display: none !important;
+            overflow: hidden !important;
+        }
+
+        #lleo_dialog .lleo_has_context #lleo_contextContainer {
+            display: block !important;
+        }
+
+        #lleo_dialog #lleo_context {
+            color: #444 !important;
+            text-shadow: 1px 1px 0 #f4f4f4 !important;
+            line-height: 12px !important;
+            font-size: 11px !important;
+            margin-left: 2px !important;
+        }
+
+        #lleo_dialog #lleo_context b {
+            line-height: 12px !important;
+            color: #000 !important;
+            font-weight: bold !important;
+            font-size: 11px !important;
+        }
+
+        /*#lleo_dialog #lleo_gBrand {
+            color: #aaa !important;
+            font-size: 10px !important;
+            */
+
+        /*padding-right: 52px !important;*/
+
+        /*
+            padding-bottom: 14px !important;
+            margin: -3px 4px 0 4px !important;
+            background: left bottom url(data:image/png;base64,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) no-repeat !important;
+            display: inline-block !important;
+            float: right !important;
+        }
+        #lleo_dialog #lleo_gBrand.hidden {
+            display: none !important;
+        }*/
+
+        #lleo_dialog #lleo_translateContextLink {
+            color: #444 !important;
+            text-shadow: 1px 1px 0 #f4f4f4 !important;
+            background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#ddd)) !important;
+            background: -moz-linear-gradient(-90deg, #f4f4f4, #ddd) !important;
+            border: solid 1px !important;
+            box-shadow: 1px 1px 0 #f6f6f6 !important;
+            border-color: #999 #aaa #aaa #999 !important;
+            -moz-border-radius: 2px !important;
+            -webkit-border-radius: 2px !important;
+            border-radius: 2px !important;
+            padding: 0 3px !important;
+            font-size: 11px !important;
+            text-decoration: none !important;
+            margin: 1px 5px 0 !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+        }
+
+        #lleo_dialog #lleo_translateContextLink:hover {
+            background: #f8f8f8 !important;
+        }
+
+        #lleo_dialog #lleo_translateContextLink.hidden {
+            visibility: hidden !important;
+        }
+
+        #lleo_dialog #lleo_setTransForm {
+            display: block !important;
+            margin-top: 3px !important;
+            padding-top: 5px !important;
+            /* Set position and background because the form might be overlapped by an image when no translations */
+            position: relative !important;
+            background: #fff !important;
+            z-index: 10 !important;
+            padding-bottom: 10px !important;
+            padding-left: 16px !important;
+        }
+
+        #lleo_dialog .lleo-custom-translation {
+            padding: 4px 5px !important;
+            border: solid 1px #ddd !important;
+            border-radius: 2px !important;
+            width: 90% !important;
+            min-width: 270px !important;
+            background: -webkit-gradient(linear, 0 0, 0 20, from(#f1f1f1), to(#fff)) !important;
+            background: -moz-linear-gradient(-90deg, #f1f1f1, #fff) !important;
+            font: normal 13px Arial, Helvetica !important;
+            line-height: 15px !important;
+        }
+
+        #lleo_dialog .lleo-custom-translation:hover {
+            border: solid 1px #aaa !important;
+        }
+
+        #lleo_dialog .lleo-custom-translation:focus {
+            background: #FFFEC9 !important;
+        }
+
+        #lleo_dialog *.hidden {
+            display: none !important;
+        }
+
+        #lleo_dialog .infinitive {
+            color: #D56E00 !important;
+            text-decoration: none;
+            border-bottom: 1px dotted #D56E00 !important;
+        }
+
+        #lleo_dialog .infinitive:hover {
+            border: none !important;
+        }
+
+        #lleo_dialog .lleo_separator {
+            height: 1px !important;
+            background: #eee;
+            margin-top: 10px !important;
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, #eee 8%, rgba(255, 255, 255, 1) 80%) !important;
+            background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, #eee 8%, rgba(255, 255, 255, 1) 80%) !important;
+            background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, #eee 8%, rgba(255, 255, 255, 1) 80%) !important;
+            background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, #eee 8%, rgba(255, 255, 255, 1) 80%) !important;
+        }
+
+        #lleo_dialog #lleo_trans {
+            /*border-top: 1px solid #eeeeee !important;*/
+            padding: 5px 30px 0 14px !important;
+            zoom: 1;
+        }
+
+        #lleo_dialog .lleo_clearfix {
+            display: block !important;
+            clear: both !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            font-size: 0 !important;
+        }
+
+
+        #lleo_dialog #lleo_picOuter table {
+            width: 44px !important;
+            position: absolute !important;
+            right: 0 !important;
+            top: 0 !important;
+            vertical-align: middle !important;
+        }
+
+        #lleo_dialog #lleo_picOuter td {
+            width: 38px !important;
+            height: 38px !important;
+            /*border: 1px solid #eeeeee !important;*/
+            vertical-align: middle !important;
+            text-align: center !important;
+        }
+
+        #lleo_dialog #lleo_picOuter td div {
+            height: 38px !important;
+            overflow: hidden !important;
+        }
+
+        #lleo_dialog .lleo_empty {
+            margin: 0 5px 7px !important;
+        }
+
+        #lleo_youtubeExportBtn {
+            margin-left: 10px;
+            height: 24px;
+        }
+
+        #lleo_youtubeExportBtn i {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: 0 0 url(https://d144fqpiyasmrr.cloudfront.net/plugins/all/images/i16.png) !important;
+        }
+
+        #lleo_youtubeExportBtn .yt-uix-button-content {
+            font-size: 12px;
+            line-height: 2px;
+        }
+
+
+        /*** Parsed Lyrics Content *****************************/
+
+        .lleo_lyrics tran {
+            background: transparent !important;
+            border-radius: 2px !important;
+            text-shadow: none !important;
+            cursor: pointer !important;
+        }
+
+        .lleo_lyrics tran:hover {
+            color: #fff !important;
+            background: #C77213 !important;
+            -webkit-transition: all 0.1s !important;
+            -moz-transition: all 0.1s !important;
+            -ms-transition: all 0.1s !important;
+            -o-transition: all 0.1s !important;
+            transition: all 0.1s !important;
+        }
+
+        .lleo_songName {
+            border: solid 1px #ffd47c;
+            background: #fff1c2;
+            border-radius: 2px;
+        }
+
+        .lleo_hidden_iframe {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body class="t-body" style="margin: 0px;" cz-shortcut-listen="true">
+    <!--allrecords-->
+    <div id="allrecords" class="t-records" data-hook="blocks-collection-content-node" data-tilda-project-id="441083" data-tilda-page-id="1929054"
+        data-tilda-page-alias="metod-6" data-tilda-formskey="d8791aa2b2bea6010580d17ea444b0a2">
+        <div id="rec38156246" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_showed r_anim" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="396">
+            <!-- T396 -->
+            <style>
+                #rec38156246 .t396__artboard {
+                    height: 290px;
+                    background-color: #ffffff;
+                }
+
+                #rec38156246 .t396__filter {
+                    height: 290px;
+                }
+
+                #rec38156246 .t396__carrier {
+                    height: 290px;
+                    background-position: center center;
+                    background-attachment: scroll;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+
+                @media screen and (max-width: 1199px) {
+                    #rec38156246 .t396__artboard {}
+                    #rec38156246 .t396__filter {}
+                    #rec38156246 .t396__carrier {
+                        background-attachment: scroll;
+                    }
+                }
+
+                @media screen and (max-width: 959px) {
+                    #rec38156246 .t396__artboard {
+                        height: 520px;
+                    }
+                    #rec38156246 .t396__filter {
+                        height: 520px;
+                    }
+                    #rec38156246 .t396__carrier {
+                        height: 520px;
+                    }
+                }
+
+                @media screen and (max-width: 639px) {
+                    #rec38156246 .t396__artboard {
+                        height: 420px;
+                    }
+                    #rec38156246 .t396__filter {
+                        height: 420px;
+                    }
+                    #rec38156246 .t396__carrier {
+                        height: 420px;
+                    }
+                }
+
+                @media screen and (max-width: 479px) {
+                    #rec38156246 .t396__artboard {
+                        height: 330px;
+                    }
+                    #rec38156246 .t396__filter {
+                        height: 330px;
+                    }
+                    #rec38156246 .t396__carrier {
+                        height: 330px;
+                    }
+                }
+
+                #rec38156246 .tn-elem[data-elem-id="1470210033144"] {
+                    z-index: 4;
+                    top: calc(145px - 0px + 3px);
+                    left: calc(50% - 180px + 0px);
+                    width: 360px;
+                }
+
+                #rec38156246 .tn-elem[data-elem-id="1470210033144"] .tn-atom {
+                    background-position: center center;
+                    border-color: transparent;
+                    border-style: solid;
+                }
+
+                @media screen and (max-width: 1199px) {}
+
+                @media screen and (max-width: 959px) {}
+
+                @media screen and (max-width: 639px) {}
+
+                @media screen and (max-width: 479px) {}
+            </style>
+            <div class="t396">
+                <div class="t396__artboard rendered" data-artboard-recid="38156246" data-artboard-height="290" data-artboard-height-res-640="520"
+                    data-artboard-height-res-480="420" data-artboard-height-res-320="330" data-artboard-height_vh="" data-artboard-valign="center"
+                    data-artboard-proxy-min-offset-top="0" data-artboard-proxy-min-height="290" data-artboard-proxy-max-height="290">
+                    <div class="t396__carrier" data-artboard-recid="38156246"></div>
+                    <div class="t396__filter" data-artboard-recid="38156246"></div>
+                    <div class="t396__elem tn-elem tn-elem__381562461470210033144" data-elem-id="1470210033144" data-elem-type="image" data-field-top-value="3"
+                        data-field-top-res-960-value="0.5" data-field-top-res-640-value="-10" data-field-left-value="0" data-field-left-res-960-value="0"
+                        data-field-left-res-640-value="-1.5" data-field-width-value="360" data-field-width-res-960-value="900"
+                        data-field-width-res-640-value="59" data-field-axisy-value="center" data-field-axisx-value="center" data-field-container-value="window"
+                        data-field-topunits-value="" data-field-leftunits-value="" data-field-heightunits-value="" data-field-widthunits-value=""
+                        data-field-widthunits-res-640-value="%" data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+                        style="left: 451.5px; top: 64px; width: 360px;">
+                        <div class="tn-atom">
+                            <img class="tn-atom__img t-img loaded" data-original="https://static.tildacdn.com/tild3730-3332-4631-b563-303538383163/reactlogo.png"
+                                imgfield="tn_img_1470210033144" src="./React. Методическое пособие №6_files/reactlogo.png"> </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function () {
+                    t396_init('38156246');
+                });
+            </script>
+            <!-- /T396 -->
+        </div>
+        <div id="rec38156247" class="r t-rec t-rec_pt_60 t-rec_pb_60" style="padding-top:60px;padding-bottom:60px;background-color:#f2f2f2; "
+            data-record-type="373" data-bg-color="#f2f2f2" data-animationappear="off">
+            <!-- T373 -->
+            <div class="t373">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t373__wrapper">
+                            <div class="t373__col">
+                                <div class="t373__circle " style="border: 0px solid #000; ">
+                                    <div class="t373__title t-title" field="number" style="">/</div>
+                                </div>
+                            </div>
+                            <div class="t373__col">
+                                <div class="t373__text t-text t-text_md" field="text">
+                                    <strong>Оглавление
+                                        <br>
+                                    </strong>
+                                    <br>
+                                    <ol>
+                                        <li>
+                                            <a style="">Как работает Redux</a>
+                                        </li>
+                                        <li>
+                                            <a style="">3 Принципа работы Redux</a>
+                                        </li>
+                                        <li>
+                                            <a style="">Actions</a>
+                                        </li>
+                                        <li>
+                                            <a style="">Actions Creators</a>
+                                        </li>
+                                        <li>
+                                            <a style="">Reducers</a>
+                                        </li>
+                                        <li>
+                                            <a style="">Store</a>
+                                        </li>
+                                        <li>
+                                            <a style="">Redux и react</a>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38157447" class="r t-rec t-rec_pt_60 t-rec_pb_15 r_hidden r_anim" style="padding-top:60px;padding-bottom:15px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">Как работает Redux</div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38156248" class="r t-rec t-rec_pt_30 t-rec_pb_60 r_hidden r_anim" style="padding-top:30px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <a href="https://redux.js.org/">Redux</a> является внешним контейнером состояния для JavaScript-приложений.
+                            <br>
+                            <br>Редакс выделяется из сотни библиотек и фреймворков тем, что грамотно решает множество разных
+                            вопросов путем введения простой и предсказуемой модели состояний, уклон на функциональное программирование
+                            и неизменяемые данные, предоставления компактного API. Сама по себе библиотека очень маленькая,
+                            и выучить её API не сложно.
+                            <br>
+                            <br> Redux — это инструмент управления как состоянием данных, так и состоянием интерфейса в JavaScript-приложениях.
+                            Он подходит для одностраничных приложений, при росте которых управление состоянием со временем
+                            становится сложным.
+                            <br>
+                            <br> Redux не связан с каким-то определенным фреймворком, и хотя разрабатывался для React, может
+                            использоваться
+                            <a href="https://www.npmjs.com/package/ng-redux">с Angular</a>, Vue или jQuery.
+                            <br>
+                            <br> Данные в React проходят через компоненты, сверху вниз. Это называется «однонаправленный поток
+                            данных» — поток данных проходит в одном направлении, от родителя к ребенку. При этом не очевидно,
+                            как два компонента, не связанные отношением родитель-ребенок, будут взаимодействовать между собой:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38156879" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_hidden r_anim" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="3">
+            <!-- T107 -->
+            <div class="t107">
+                <div class="t-align_center" itemscope="" itemtype="http://schema.org/ImageObject">
+                    <meta itemprop="image" content="https://static.tildacdn.com/tild3065-3533-4465-b334-323635623332/__20171117__142606.png">
+                    <img src="./React. Методическое пособие №6_files/__20171117__142606.png" data-original="https://static.tildacdn.com/tild3065-3533-4465-b334-323635623332/__20171117__142606.png"
+                        class="t107__width t-width t-width_6 t-img" imgfield="img"> </div>
+            </div>
+        </div>
+        <div id="rec38157097" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">В React не рекомендуется реализовывать прямое взаимодействие компонент-компонент. Это считается плохой
+                            практикой, приводит к ошибкам и
+                            <a href="https://en.wikipedia.org/wiki/Spaghetti_code">спагетти-коду</a> — старый термин для запутанного кода.
+                            <br>
+                            <br> Вот здесь и будет полезен Redux. Redux предлагает хранить все состояние приложения в одном месте,
+                            называемом «store» («хранилище»).
+                            <br>
+                            <br> Компоненты «отправляют» изменение состояния в хранилище, а не напрямую другим компонентам. Компоненты,
+                            которые должны быть в курсе этих изменений, «подписываются» на хранилище:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38157138" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_hidden r_anim" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="3">
+            <!-- T107 -->
+            <div class="t107">
+                <div class="t-align_center" itemscope="" itemtype="http://schema.org/ImageObject">
+                    <meta itemprop="image" content="https://static.tildacdn.com/tild6632-6461-4263-a631-616566643935/__20171117__142616.png">
+                    <img src="./React. Методическое пособие №6_files/__20171117__142616.png" data-original="https://static.tildacdn.com/tild6632-6461-4263-a631-616566643935/__20171117__142616.png"
+                        class="t107__width t-width t-width_6 t-img" imgfield="img"> </div>
+            </div>
+        </div>
+        <div id="rec38157228" class="r t-rec t-rec_pt_60 t-rec_pb_30 r_hidden r_anim" style="padding-top:60px;padding-bottom:30px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Хранилище может рассматриваться, как «посредник» во всех изменениях состояния приложения.
+                            <br>
+                            <br> С Redux компоненты не связываются друг с другом напрямую, все изменения должны пройти через
+                            единственный источник истины, через хранилище.
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38157244" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_hidden r_anim" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="3">
+            <!-- T107 -->
+            <div class="t107">
+                <div class="t-align_center" itemscope="" itemtype="http://schema.org/ImageObject">
+                    <meta itemprop="image" content="https://static.tildacdn.com/tild6435-3366-4565-b530-636233303963/__20171117__142801.png">
+                    <img src="./React. Методическое пособие №6_files/__20171117__142801.png" data-original="https://static.tildacdn.com/tild6435-3366-4565-b530-636233303963/__20171117__142801.png"
+                        class="t107__width t-width t-width_6 t-img" imgfield="img"> </div>
+            </div>
+        </div>
+        <div id="rec38156249" class="r t-rec t-rec_pt_60 t-rec_pb_0 r_hidden r_anim" style="padding-top:60px;padding-bottom:0px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">3 принципа работы redux</div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38156250" class="r t-rec t-rec_pt_45 t-rec_pb_30 r_hidden r_anim" style="padding-top:45px;padding-bottom:30px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Redux — это инструмент, вдохновленный шаблоном Flux .
+                            <br>
+                            <br> Есть множество руководств, где сравниваются Redux и Flux. Они называют Redux Flux или Flux-like,
+                            в зависимости от требований, предъявляемых при сравнении. В конечном итоге, это не важно. Facebook
+                            настолько любит и поддерживает Redux, что они
+                            <a href="https://twitter.com/dan_abramov/status/671135846830075904">наняли его разработчика, Дена Абрамова</a>.
+                            <br>
+                            <br>
+                            <strong>Redux может быть описан тремя фундаментальными принципами</strong>
+                            <strong>:</strong>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38161675" class="r t-rec t-rec_pt_15 t-rec_pb_15 r_hidden r_anim" style="padding-top:15px;padding-bottom:15px; "
+            data-record-type="373">
+            <!-- T373 -->
+            <div class="t373">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t373__wrapper">
+                            <div class="t373__col">
+                                <div class="t373__circle " style="border: 0px solid #000; ">
+                                    <div class="t373__title t-title" field="number" style="">1</div>
+                                </div>
+                            </div>
+                            <div class="t373__col">
+                                <div class="t373__text t-text t-text_md" field="text">
+                                    <strong>Единственный источник истины
+                                        <br>
+                                    </strong>
+                                    <br> Redux использует только одно хранилище для всего состояния приложения. Поскольку состояние
+                                    находится в одном месте, его называет единственным источником истины.
+                                    <br>
+                                    <br> Это упрощает отладку приложения, когда мы имеем дело с единственным деревом состояния.
+                                    Вы также можете сохранять состояние вашего приложения для ускорения процесса разработки.
+                                    И с единственным деревом состояния вы получаете функциональность типа Undo/Redo из коробки.
+                                    <br>
+                                    <br> Структура данных хранилища полностью зависит от вас, но для реального приложения это,
+                                    как правило, объект с несколькими уровнями вложенности.
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38161744" class="r t-rec t-rec_pt_15 t-rec_pb_15 r_hidden r_anim" style="padding-top:15px;padding-bottom:15px; "
+            data-record-type="373">
+            <!-- T373 -->
+            <div class="t373">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t373__wrapper">
+                            <div class="t373__col">
+                                <div class="t373__circle " style="border: 0px solid #000; ">
+                                    <div class="t373__title t-title" field="number" style="">2</div>
+                                </div>
+                            </div>
+                            <div class="t373__col">
+                                <div class="t373__text t-text t-text_md" field="text">
+                                    <strong>Cостояние доступно только для чтения</strong>
+                                    <br>
+                                    <br>
+                                    <br> Согласно документации Redux, «Единственный способ изменить состояние — передать «action»—
+                                    объект, описывающий, что произошло».
+                                    <br>
+                                    <br> Это означает, что приложение не может напрямую изменить состояние. Вместо этого, необходимо
+                                    передать «action», чтобы выразить намерение изменить состояние в хранилище.
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38161817" class="r t-rec t-rec_pt_15 t-rec_pb_15 r_hidden r_anim" style="padding-top:15px;padding-bottom:15px; "
+            data-record-type="373">
+            <!-- T373 -->
+            <div class="t373">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t373__wrapper">
+                            <div class="t373__col">
+                                <div class="t373__circle " style="border: 0px solid #000; ">
+                                    <div class="t373__title t-title" field="number" style="">3</div>
+                                </div>
+                            </div>
+                            <div class="t373__col">
+                                <div class="t373__text t-text t-text_md" field="text">
+                                    <strong>Изменения делаются «чистыми» функциями</strong>
+                                    <br>
+                                    <br> Итак, Redux не позволяет изменять состояние напрямую. Вместо этого «action» описывает,
+                                    какие изменения необходимо сделать. Редьюсеры (reducers) — это функции, которые обрабатывают
+                                    «action» и могут вносить изменения в состояние.
+                                    <br>
+                                    <br> Редьюсеры должны быть реализованы как "чистые" функции (pure functions), термин, описывающий
+                                    функции, удовлетворяющие следующим условиям:
+                                    <br>
+                                    <br>
+                                    <em>Они не должны делать внешних вызовов по сети или базе данных.</em>
+                                    <br>
+                                    <br>
+                                    <em>Они возвращают значение, зависящее только от переданных параметров.</em>
+                                    <br>
+                                    <br>
+                                    <em>Их аргументы являются неизменяемыми, т.е. функции не должны их изменять.</em>
+                                    <br>
+                                    <br>
+                                    <em>Вызов чистой функции с теми же аргументами всегда возвращает одинаковый результат.</em>
+                                    <br>
+                                    <br>
+                                    <em>Эти функции называют "чистыми", потому что они не делают ничего, только возвращают значение,
+                                        зависящее от параметров. Они не зависят от какой-либо из частей системы.</em>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38161880" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Немного забежим вперед, чтобы изложение материала было удобнее и понятнее, хранилище состояния будем
+                            называть Store. Он имеет очень маленький API, состоящий всего из четырех методов:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38161947" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-comment">//Отправить действие в store </span>
+store.dispatch(action) 
+
+<span class="hljs-comment">//Добавляет слушателя</span>
+store.subscribe(listener) 
+
+<span class="hljs-comment">//Возвращает текущее состояние вашего приложения </span>
+store.getState() 
+
+<span class="hljs-comment">//Заменяет редьюсер, который в настоящее время используется хранилищем </span>
+replaceReducer(nextReducer) </code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38186464" class="r t-rec t-rec_pt_60 t-rec_pb_15 r_hidden r_anim" style="padding-top:60px;padding-bottom:15px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">Actions</div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38161999" class="r t-rec t-rec_pt_30 t-rec_pb_45 r_hidden r_anim" style="padding-top:30px;padding-bottom:45px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <br>
+                            <span style="font-size: 20px;">Как говорилось ранее, «единственный способ изменить состояние — передать «action»— объект, описывающий,
+                                что произошло». Action — это структуры, которые передают данные из вашего приложения в хранилище.
+                                <br>Например, вот действие, которое представляет добавление нового пункта в список дел: </span>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38162164" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs">{ 
+  type: <span class="hljs-string">'ADD_TODO'</span>, 
+} </code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38162211" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>Action</strong> — это обычные JavaScript-объекты. Действия должны иметь поле
+                            <strong>type</strong>, которое указывает на тип исполняемого действия. Типы должны, как правило, определяться,
+                            как строковые константы.
+                            <br>
+                            <br>
+                            <strong>Action</strong> должен:
+                            <br>
+                            <ul>
+                                <li> Быть плоским объектом.</li>
+                                <li>Иметь поле
+                                    <strong>type.
+                                        <br>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <strong>
+                                <br>Action</strong> может:
+                            <br>
+                            <ul>
+                                <li>Иметь свойство
+                                    <strong>error</strong>. </li>
+                                <li>Иметь свойство
+                                    <strong>payload</strong>. </li>
+                                <li>Иметь свойство
+                                    <strong>meta</strong>. </li>
+                            </ul>
+                            <strong>
+                                <br>error</strong>
+                            <br> Необязательное свойство error может быть установлено в true, если действие представляет ошибку.
+                            <br>
+                            <br>
+                            <strong>payload</strong>
+                            <br> Необязательное свойство полезной нагрузки (
+                            <strong>payload</strong>) может быть любым типом значения. Она представляет собой полезную нагрузку (данные)
+                            действия.
+                            <br>
+                            <br> Например, в действии добавления нового пункта в список дел, может быть заголовок:
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38162352" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs">{
+  type: <span class="hljs-string">'ADD_TODO'</span>,
+  payload: <span class="hljs-string">'Todo title text'</span>,
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38162390" class="r t-rec t-rec_pt_30 t-rec_pb_30 r_hidden r_anim" style="padding-top:30px;padding-bottom:30px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Или какие-либо другие данные:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38162442" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs">{
+  type: <span class="hljs-string">'ADD_TODO'</span>,
+  payload: {
+	text: <span class="hljs-string">'Todo title text'</span>,
+	date: <span class="hljs-string">'15/11/2017'</span>,
+  }
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38162462" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <div style="text-align:left;" data-customstyle="yes">
+                                <strong>meta</strong>
+                                <br> Необязательное свойство может быть любым типом значения. Он предназначен для любой дополнительной
+                                информации, которая не является частью полезной нагрузки.
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38186626" class="r t-rec t-rec_pt_60 t-rec_pb_45 r_hidden r_anim" style="padding-top:60px;padding-bottom:45px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">Actions Creators</div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38162805" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>Генераторы действий (Action Creators) — </strong>не что иное, как функции, которые создают действия.
+                            Довольно просто путать термины "action" и "action creator," поэтому постарайтесь использовать
+                            правильный термин.
+                            <br>
+                            <br>В Redux генераторы действий (action creators) просто возвращают action:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38162966" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addTodo</span>(<span class="hljs-params">text</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: ADD_TODO,
+    payload: text
+  }
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38186757" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">Reducers</div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38163031" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>Редьюсер (reducer) </strong>
+                            <a href="https://rajdee.gitbooks.io/redux-in-russian/content/docs/basics/Actions.html">
+                                <br>Действия (Actions)</a> описывают тот факт, что
+                            <em>что-то совершилось</em>, но не определяют, как в ответ изменяется состояние (state) приложения.
+                            Это задача для редьюсеров (reducers).
+                            <br>
+                            <br> Редьюсер (reducer) — это чистая функция, которая принимает предыдущее состояние и действие (state
+                            и action) и возвращает следующее состояние (новую версию предыдущего).
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38163182" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs">(previousState, action) =&gt; newState</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38163211" class="r t-rec t-rec_pt_60 t-rec_pb_15 r_hidden r_anim" style="padding-top:60px;padding-bottom:15px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Функция называется редьюсером (reducer) потому, что ее можно передать в
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">Array.prototype.reduce(reducer, ?initialValue)</a>.
+                            <br>
+                            <br> Очень важно, чтобы редьюсеры оставались чистыми функциями. Вот список того, чего
+                            <strong>никогда</strong> нельзя делать в редьюсере:
+                            <br>
+                            <br>
+                            <strong>- Непосредственно изменять то, что пришло в аргументах функции;</strong>
+                            <br>
+                            <strong>- Выполнять какие-либо сайд-эффекты: обращаться к API или осуществлять переход по роутам;</strong>
+                            <br>
+                            <strong>- Вызывать не чистые функции, например</strong>
+                            <strong>Date.now()</strong>
+                            <strong>или</strong>
+                            <strong>Math.random()</strong>
+                            <strong>.</strong>
+                            <br>
+                            <br>
+                            <em>Получая аргументы одного типа, редьюсер должен вычислять новую версию состояния и возвращать
+                                ее. Никаких сюрпризов. Никаких сайд-эффектов. Никаких обращений к стороннему API.</em>
+                            <strong>
+                                <em data-redactor-tag="em">Никаких изменений (mutations).</em>
+                            </strong>
+                            <em>Только вычисление новой версии состояния.</em>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38163236" class="r t-rec t-rec_pt_0 t-rec_pb_60 r_hidden r_anim" style="padding-top:0px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Давайте попробуем написать свой редьюсер.
+                            <br>Мы начнем с определения начального состояния (initial state). В первый раз Redux вызовет редьюсер
+                            с неопределенным состоянием (state === undefined). Это наш шанс инициализировать начальное состояние
+                            приложения:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38163322" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-keyword">const</span> initialState = {
+  todos: []
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">todoApp</span>(<span class="hljs-params">state, action</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> state === <span class="hljs-string">'undefined'</span>) {
+    <span class="hljs-keyword">return</span> initialState
+  }
+
+  <span class="hljs-comment">// Пока не обрабатываем никаких действий</span>
+  <span class="hljs-comment">// и просто возвращаем состояние, которое приняли в качестве параметра</span>
+  <span class="hljs-keyword">return</span> state
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38163352" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Использование
+                            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Default_parameters">синтаксиса аргументов по умолчанию из ES6</a> для более компактного написания — просто аккуратный
+                            трюк:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38163375" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">todoApp</span>(<span class="hljs-params">state = initialState, action</span>) </span>{
+  <span class="hljs-comment">// Пока не обрабатываем никаких действий</span>
+  <span class="hljs-comment">// и просто возвращаем состояние, которое приняли в качестве параметра</span>
+  <span class="hljs-keyword">return</span> state
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38163445" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Теперь давайте начнем обрабатывать действие "ADD__TODO". Все, что нужно сделать — изменить todos
+                            в состоянии приложения. Это просто:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38163463" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">todoApp</span>(<span class="hljs-params">state = initialState, action</span>) </span>{
+  <span class="hljs-keyword">switch</span> (action.type) {
+  <span class="hljs-keyword">case</span> “ADD__TODO”:
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign({}, state, {
+      todos: [...state.todos, {
+        text: action.text,
+      }]
+    });    
+  <span class="hljs-keyword">default</span>:
+    <span class="hljs-keyword">return</span> state;
+  }
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38163504" class="r t-rec t-rec_pt_60 t-rec_pb_30 r_hidden r_anim" style="padding-top:60px;padding-bottom:30px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Обратите внимание:
+                            <br>
+                            <br>
+                            <ol>
+                                <li>
+                                    <strong>Мы не изменяем</strong>
+                                    <strong>state</strong> Мы, с помощью
+                                    <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Object.assign()</a>, создаем обновленную копию state.Object.assign(state, { visibilityFilter:
+                                    action.filter }) — тоже не верный вариант. В этом случае первый аргумент будет изменен.
+                                    Вы
+                                    <strong>должны</strong> передать первым аргументом пустой объект. Вы также можете попробовать
+                                    использовать экспериментальный
+                                    <a href="https://github.com/sebmarkbage/ecmascript-rest-spread">object spread syntax</a>, предложенный в ES7. В этом случае можно просто написать { ...state,
+                                    ...newState } </li>
+                                <li> Если в операторе switch мы попадаем в default ветку, то
+                                    <strong>возвращаем предыдущую версию состояния</strong> — состояние без изменений. Очень важно
+                                    возвращать предыдущую версию состояния (state) для любого неизвестного/необрабатываемого
+                                    действия (action). </li>
+                            </ol>
+                            <br>
+                            <br> С ростом нашего приложения логика поведения будет разрастаться.
+                            <br> Например, создадим редьюсер который отвечает за скрытие\показ выполненных задач:
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38163530" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">visibilityFilter</span>(<span class="hljs-params">state = “SHOW_ALL”, action</span>) </span>{
+  <span class="hljs-keyword">switch</span> (action.type) {
+  <span class="hljs-keyword">case</span> “SET_VISIBILITY_FILTER”:
+    <span class="hljs-keyword">return</span> action.filter;
+  <span class="hljs-keyword">default</span>:
+    <span class="hljs-keyword">return</span> state;
+  }
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38163580" class="r t-rec t-rec_pt_30 t-rec_pb_60 r_hidden r_anim" style="padding-top:30px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">В таком случае наш главный редьюсер:
+                            <br>
+                            <br>
+                            <ul>
+                                <li>Вызывает другие редьюсеры, обрабатывающие части состояния; </li>
+                                <li>Собирает отдельно обработанные части состояния в один цельный объект. Также главному редьюсеру
+                                    больше нет необходимости знать полное начальное состояние. Достаточно того, что каждый
+                                    дочерний редьюсер возвращает свое начальное состояние, если при первом вызове получает
+                                    undefined вместо state.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38163605" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">todos</span>(<span class="hljs-params">state = { todos :[] }, action</span>) </span>{
+  <span class="hljs-keyword">switch</span> (action.type) {
+  <span class="hljs-keyword">case</span> “ADD__TODO”:
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign({}, state, {
+      todos: [...state.todos, {
+        text: action.text,
+      }]
+    });    
+  <span class="hljs-keyword">default</span>:
+    <span class="hljs-keyword">return</span> state;
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">visibilityFilter</span>(<span class="hljs-params">state = “SHOW_ALL”, action</span>) </span>{
+  <span class="hljs-keyword">switch</span> (action.type) {
+  <span class="hljs-keyword">case</span> “SET_VISIBILITY_FILTER”:
+    <span class="hljs-keyword">return</span> action.filter;
+  <span class="hljs-keyword">default</span>:
+    <span class="hljs-keyword">return</span> state;
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">todoApp</span>(<span class="hljs-params">state = {}, action</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    visibilityFilter: visibilityFilter(state.visibilityFilter, action),
+    todos: todos(state.todos, action)
+  };
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38163642" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Уже выглядит лучше! Когда приложение разрастается, мы можем выносить редьюсеры в отдельные файлы
+                            и поддерживать их совершенно независимыми. Это дает нам возможность управлять различными разделами/срезами
+                            наших данных.
+                            <br>
+                            <br> Наконец, Redux предоставляет утилиту, называемую combineReducers(), которая реализует точно
+                            такой же логический шаблон, который мы только что реализовали в todoApp. С ее помощью мы можем
+                            переписать todoApp следующим образом:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38163675" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-keyword">import</span> { combineReducers } <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>;
+
+<span class="hljs-keyword">const</span> todoApp = combineReducers({
+  visibilityFilter,
+  todos
+});
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> todoApp;</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38163686" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Обратите внимание, что это полностью эквивалентно такому коду:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38163717" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">todoApp</span>(<span class="hljs-params">state, action</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    visibilityFilter: visibilityFilter(state.visibilityFilter, action),
+    todos: todos(state.todos, action)
+  };
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38163742" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>combineReducers()</strong> — генерирует функцию, которая вызывает ваши редьюсеры, передавая им
+                            в качестве одного из аргументов
+                            <strong>срез глобального состояния, который выбирается в соответствии с именем его ключа в глобальном
+                                состоянии</strong>, и затем снова собирает результаты всех вызовов в один объект.
+                            <a href="https://github.com/rackt/redux/issues/428#issuecomment-129223274">Тут нет никакой магии.</a>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38186795" class="r t-rec t-rec_pt_30 t-rec_pb_30 r_hidden r_anim" style="padding-top:30px;padding-bottom:30px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">Store</div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38163811" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">В предыдущих разделах мы определили действия (actions), которые представляют факт того, что "что-то
+                            случилось" и редьюсеры, которые обновляют состояние (state) в соответствии с этими действиями.
+                            <br>
+                            <br>
+                            <strong>Хранилище (Store)</strong> — это объект, который соединяет эти части вместе. Хранилище берет
+                            на себя следующие задачи:
+                            <br>— Содержит состояние приложения (application state);
+                            <br> — Предоставляет доступ к состоянию с помощью getState();
+                            <br> — Предоставляет возможность обновления состояния с помощью dispatch(action);
+                            <br> — Регистрирует слушателей (listeners) c помощью subscribe(listener).
+                            <br>
+                            <br> Очень легко создать Хранилище (Store), если у вас есть редьюсер.
+                            <br> В предыдущем разделе мы использовали
+                            <a href="https://rajdee.gitbooks.io/redux-in-russian/content/docs/api/combineReducers.html">combineReducers()</a> для комбинирования редьюсеров в один глобальный редьюсер.
+                            <br>
+                            <br> Теперь мы их импортируем и передадим в createStore().
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38163953" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-keyword">import</span> { createStore } <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>
+<span class="hljs-keyword">import</span> todoApp <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers'</span>
+let store = createStore(todoApp)</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38163965" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Вы можете объявить начальное состояние, передав его вторым аргументом в createStore(). Это полезно
+                            для пробрасывания состояния на клиент из состояния приложения Redux, работающего на сервере,
+                            когда вы пишете универсальное приложение.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38163976" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-keyword">let</span> store = createStore(todoApp, <span class="hljs-built_in">window</span>.STATE_FROM_SERVER)
+</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38163999" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">На текущий момент у нас есть созданное хранилище, давайте проверим, как работает наше приложение!
+                            Даже без UI-части мы уже можем проверить логику обновления состояния.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38164030" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-keyword">import</span> { addTodo, setVisibilityFilter} <span class="hljs-keyword">from</span> <span class="hljs-string">'./actions'</span>
+<span class="hljs-keyword">import</span> { createStore } <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>
+<span class="hljs-keyword">import</span> todoApp <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers'</span>
+
+let store = createStore(todoApp)
+
+// Выведем в консоль начальное состояние
+console.log(store.getState())
+
+// Каждый раз при обновлении состояния — выводим его
+// Отметим, что subscribe() возвращает функцию для отмены регистрации слушателя
+let unsubscribe = store.subscribe(() =&gt;
+  console.log(store.getState())
+)
+
+// Отправим несколько действий
+store.dispatch(addTodo(<span class="hljs-string">'Learn about actions'</span>))
+store.dispatch(addTodo(<span class="hljs-string">'Learn about reducers'</span>))
+store.dispatch(addTodo(<span class="hljs-string">'Learn about store'</span>))
+store.dispatch(setVisibilityFilter(“HIDE_COMPLETED”))
+
+// Прекратим слушать обновление состояния
+unsubscribe()</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38164098" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Вы можете видеть, как выполнение кода, приведенного выше, меняет состояние, содержащееся в хранилище:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38164146" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_hidden r_anim" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="3">
+            <!-- T107 -->
+            <div class="t107">
+                <div class="t-align_center" itemscope="" itemtype="http://schema.org/ImageObject">
+                    <meta itemprop="image" content="https://static.tildacdn.com/tild3366-3936-4535-b739-396665323637/__20171117__153457.png">
+                    <img src="./React. Методическое пособие №6_files/__20171117__153457.png" data-original="https://static.tildacdn.com/tild3366-3936-4535-b739-396665323637/__20171117__153457.png"
+                        class="t107__width t-width t-width_6 t-img" imgfield="img"> </div>
+            </div>
+        </div>
+        <div id="rec38186819" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">Redux и react</div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38164161" class="r t-rec t-rec_pt_30 t-rec_pb_60 r_hidden r_anim" style="padding-top:30px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Как мы уже обсудили, Redux — это независимый фреймворк. Понимание основных концепций Redux важно
+                            до того, как вы только задумаетесь о том, как он работает с React. Но теперь мы применим Redux.
+                            <br>
+                            <br> Подтянем Redux и react-redux в наш проект:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38164195" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="bash hljs">npm i redux react-redux --save
+</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38164208" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Итак, первый компонент из мира react-redux - &lt;Provider /&gt;
+                            <br>
+                            <br> Компонентам необходим доступ к Redux-хранилищу (store), для того, чтобы они могли подписаться
+                            на него. Как вариант — передать его как props в каждый контейнер. Однако это становится утомительным,
+                            так как вы должны подключать store, даже если представления просто рендерят контейнер глубоко
+                            в дереве компонентов.
+                            <br>
+                            <br> Мы рекомендуем другой вариант — использовать специальный React Redux компонент
+                            <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#provider-store">&lt;Provider&gt;</a>, вызов которого делает хранилище доступным всем контейнерам в приложении
+                            без его явной передачи. Вам нужно только воспользоваться им единожды, когда вы рендерите корневой
+                            компонент:
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38164290" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-comment">// index.js</span>
+<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> { createStore } <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>
+<span class="hljs-keyword">import</span> todoApp <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers'</span>
+<span class="hljs-keyword">import</span> { render } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>
+<span class="hljs-keyword">import</span> { Provider } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-redux'</span>
+
+let store = createStore(todoApp)
+
+render(
+  &lt;Provider store={store}&gt;
+    &lt;App /&gt;
+  &lt;/Provider&gt;,
+  document.getElementById(<span class="hljs-string">'root'</span>)</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38164310" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Чтобы компонент мог использовать части Redux-дерева состояний, технически он должен использовать
+                            <a href="https://rajdee.gitbooks.io/redux-in-russian/content/docs/api/Store.html#subscribe">store.subscribe()</a> ,
+                            <br>
+                            <br> Вы можете написать компонент-контейнер вручную, но вместо этого предлагаем генерировать контейнеры
+                            с помощью библиотечной функции React Redux. HOC
+                            <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options">connect()</a> предоставляет много полезных оптимизаций для предотвращения ненужных ре-рендеров.
+                            <br>
+                            <br>Чтобы использовать connect(), вам нужно определить специальную функцию mapStateToProps, которая
+                            говорит, как трансформировать текущее Redux-состояние хранилища в props, которые вы хотите передать
+                            в компонент.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38164452" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-keyword">const</span> mapStateToProps = (state) =&gt; {
+  <span class="hljs-keyword">return</span> {
+    todos: state.todos
+  }
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38164475" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">В дополнение к чтению состояния компонента могут отправлять действия (dispatch actions). В похожем
+                            стиле вы можете определить функцию mapDispatchToProps(), которая получает метод
+                            <a href="https://rajdee.gitbooks.io/redux-in-russian/content/docs/api/Store.html#dispatch">dispatch()</a> и возвращает колбек props, который вы можете вставить в компонент:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38164531" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-keyword">const</span> mapDispatchToProps = (dispatch) =&gt; {
+  <span class="hljs-keyword">return</span> {
+    addTodo: (title) =&gt; {
+      dispatch(addTodo(title))
+    }
+  }
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec38164554" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Наконец, вызовом connect() мы создаем todosContainer и передаем эти две функции:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec38164561" class="r t-rec t-rec_pt_0 t-rec_pb_180" style="padding-top:0px;padding-bottom:180px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-keyword">import</span> { connect } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-redux'</span>
+
+class todosContainer extends Component {
+  state={
+    inputValue:’’	
+  }
+  render() {
+    const { addTodo , todos } = this.props;
+    <span class="hljs-keyword">const</span> { inputValue } = <span class="hljs-keyword">this</span>.state;
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.change}</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">inputValue</span> }/&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{()=</span>&gt;</span>addTodo(inputValue)}&gt;Добавить<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>{ todos.map((item,index)=&gt;<span class="hljs-tag">&lt;<span class="hljs-title">Todo</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{index+item}</span> <span class="hljs-attribute">data</span>=<span class="hljs-value">{item}</span>&gt;</span>)</span> }&lt;<span class="hljs-regexp">/ul&gt;
+	&lt;/</span>div&gt;
+  }
+  change=(e)=&gt;<span class="hljs-keyword">this</span>.setState({inputValue:e.target.value})
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>&nbsp; connect(
+  mapStateToProps,
+  mapDispatchToProps
+)( todosContainer&nbsp;)</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () { hljs.initHighlightingOnLoad(); });
+            </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+    </div>
+    <!--/allrecords-->
+    <!-- Tilda copyright. Don't remove this line -->
+    <!-- Stat -->
+    <script>
+        (function (d, w, k) { w.setTimeout(function () { var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n) }; s.type = "text/javascript"; s.id = 'tildastatscript'; s.key = k; s.async = !0; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//stat.tildacdn.com/js/tildastat.min.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, !1) } else { f() } }, 2000) })(document, window, '5725ccd9e33aadf9dc80c76ad185388d'); if (!window.mainTracker) { window.mainTracker = 'tilda'; }
+    </script>
+</body>
+
+</html>
