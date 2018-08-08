@@ -1,20 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import createStore from "./store";
-
-
-const store = createStore();
-
-store.dispatch({
-  'type' : "ADD_COMMMENT",
-  'payload' : "some comment",
-});
-
-store.dispatch({
-  'type' : "ADD_USER",
-  'payload' : "new user",
-});
 
 class App extends Component {
   render() {
