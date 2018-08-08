@@ -27,6 +27,7 @@ class App extends PureComponent {
     }
   };
   render() {
+    const comment = comment ? comment : [];
     const {comments} = this.props;
     return (
       <div>

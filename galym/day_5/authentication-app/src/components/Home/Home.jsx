@@ -65,4 +65,4 @@ const mapDispatchtoProps = {
 export default connect(
 	mapStatetoProps,
 	mapDispatchtoProps
-)(Home);;
+)(Home);

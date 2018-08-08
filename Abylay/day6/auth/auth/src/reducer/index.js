@@ -4,7 +4,7 @@ const createId = () => {
     id =id + 1;
     return id;
 }
-const handleblogs = (state=[], action) => {
+const handleblogs = (state={'result' : [], count : 0 }, action) => {
     const createId=this.state;
     switch (action.type) {
         case "ADD_BLOG" :
@@ -36,7 +36,7 @@ const count = (state=0,action) => {
     }
 }
 
-const users = combineReducers({
+export default combineReducers({
     count,
     handleblogs
 })
@@ -46,5 +46,5 @@ const users = combineReducers({
 
 export default users;
 
-export const getBlogs = state => state.handleblogs.text;
+export const getBlogs = state => state.handleblogs;
 export const getBlogsCount = state => state.handleblogs.count;

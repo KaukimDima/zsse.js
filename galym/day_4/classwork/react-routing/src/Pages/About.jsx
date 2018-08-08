@@ -14,7 +14,7 @@ class About extends Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log(this.state);
     const { user } = this.state;
     return (
       <div className="About">
