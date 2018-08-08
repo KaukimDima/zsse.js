@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider, connect } from 'react-redux';
-import { addRecord } from './actions/recordsActions';
+import { addRecord, removeRecord } from './actions/recordsActions';
 import { getRecords } from './reducers';
 import createStore from './store';
 
@@ -16,7 +16,8 @@ const mapStatetoProps = state => ({
 });
 
 const mapDispatchtoProps = {
-	addRecord
+	addRecord,
+	removeRecord
 };
 
 const AppWithRedux = connect(

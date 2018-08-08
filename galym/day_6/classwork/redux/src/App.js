@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
-
 class App extends Component {
 	
 	state = {
@@ -31,9 +29,7 @@ class App extends Component {
 					onKeyDown={ this.handleKeyDown }
 					onChange={ this.handleChange }
 				/>
-				{<div>
-					{ comments.map( (el, i) => <div key={i}><b>{el}</b></div>) }
-				</div>}
+				{ comments.map( (el, i) => <div key={i}><b>{el}</b></div>) }
       </div>
     );
   }
