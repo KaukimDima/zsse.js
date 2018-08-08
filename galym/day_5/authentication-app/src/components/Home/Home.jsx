@@ -34,22 +34,21 @@ class Home extends Component {
 	
 	render() {
 		const { records } = this.props;
-		return (
-      <div className="Home">
-				<h1>My Blog</h1>
+		console.log(records);
+		return <div className="Home">
+        <h1>My Blog</h1>
 
-				<input
-					value={ this.state.recordBody }
-					onKeyDown={ this.handleKeyDown }
-					onChange={ this.handleChange }
-					placeholder="Type text..."
-				/>
+        <input value={this.state.recordBody} onKeyDown={this.handleKeyDown} onChange={this.handleChange} placeholder="Type text..." />
 
-				{ records.map( (el, i) => 
-					<h3 data-index={i} key={i} onClick={this.removeItem}>{ el.text }</h3>
-				)}
-      </div>
-    );
+        <div>
+          {records.map((el, i) => (
+            <h3 data-index={el.id} key={i} onClick={this.removeItem}>
+              {el.text}
+            </h3>
+          ))}
+
+        </div>
+      </div>;
   }
 }
 

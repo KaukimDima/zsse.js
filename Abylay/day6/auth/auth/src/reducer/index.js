@@ -43,8 +43,5 @@ export default combineReducers({
 
 
 
-
-export default users;
-
 export const getBlogs = state => state.handleblogs;
 export const getBlogsCount = state => state.handleblogs.count;

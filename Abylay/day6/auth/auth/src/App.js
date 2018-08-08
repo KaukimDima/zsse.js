@@ -31,13 +31,13 @@ class App extends Component {
   }
  
   handleSubmit = (event) => {
-    event.target.preventDefault();
+    event.preventDefault();
+    console.log(event.target);
    // const data = new FormData(event.target);
-    console.log(event.target.username)
     fetch(`https://zsse.herokuapp.com/api/${event.target.username}`)
     .then(response => response.json())
     .then(json => console.log(json)) 
-    
+    return false;
   }
   
   render() {

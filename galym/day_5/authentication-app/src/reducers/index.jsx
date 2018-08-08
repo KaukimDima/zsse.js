@@ -16,9 +16,8 @@ const records = ( state = [], action ) => {
 				}
 			];
 		case 'REMOVE_RECORD':
-			state.splice(action.payload, 1);
-			console.log(state);
-			return state;
+			const arr = state.filter((el) => el.id != action.payload);
+			return arr;
 		default:
 			return state;
 	}
