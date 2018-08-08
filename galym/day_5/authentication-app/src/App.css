@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+ul {
+	display: flex;
+	width: 500px;
+	margin: 0 auto;
+	padding: 20px;
+	justify-content: space-around;
+}
+li {
+	list-style-type: none;
+	font-style: italic;
+}
+a {
+	text-decoration: none;
+	font-size: 20px;
+}
