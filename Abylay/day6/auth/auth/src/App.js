@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 
 
-const handleResponse = response => {
-  if (!response.json) {
-    this.setState({ isLogged: true });
-  }
-};
-
-
 class App extends Component {
  
  
@@ -27,6 +20,26 @@ class App extends Component {
   state = {
     isLoggedIn : false
   }
+   
+  handleResponse = () => {
+    let response=this.state;
+    let isLoggedIn=this.state;
+    if (!response) {
+      this.setState({isLoggedIn : true})
+    }
+    console.log(isLoggedIn)
+  }
+ 
+  handleSubmit = (event) => {
+    event.target.preventDefault();
+   // const data = new FormData(event.target);
+    console.log(event.target.username)
+    fetch(`https://zsse.herokuapp.com/api/${event.target.username}`)
+    .then(response => response.json())
+    .then(json => console.log(json)) 
+    
+  }
+  
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
