@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import {addRecord} from "../../actions/recordsActions";
+import { getRecords } from "../../reducers";
 
 class Home extends Component {
 
@@ -40,4 +43,15 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const mapStatetoProps = state => ({
+  records: getRecords(state)
+});
+
+const mapDispatchtoProps = {
+  addRecord
+};
+
+export default connect(
+  mapStatetoProps,
+  mapDispatchtoProps
+)(Home);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-/* import Routing from './components/Routing/Routing'; */
+import Routing from './components/Routing/Routing'; 
 class App extends Component {
 	
 	constructor( props ) {
@@ -8,41 +8,29 @@ class App extends Component {
 		console.log(props)
 	}
 	
-	state = {
-		recordBody: ''
-	}
+	// state = {
+	// 	recordBody: ''
+	// }
 
-	handleKeyDown = e => {
-		const { addRecord } = this.props;
-		const { recordBody } = this.state;
-		if (e.keyCode === 13) {
-			addRecord(recordBody);
-			console.log(this.props)
-			/* this.setState({ recordBody: '' }); */
-		}
-	}
+	// handleKeyDown = e => {
+	// 	const { addRecord } = this.props;
+	// 	const { recordBody } = this.state;
+	// 	if (e.keyCode === 13) {
+	// 		addRecord(recordBody);
+	// 		console.log(this.props)
+	// 		/* this.setState({ recordBody: '' }); */
+	// 	}
+	// }
 
-	handleChange = e => {
-		this.setState({ recordBody: e.target.value });
-	}
+	// handleChange = e => {
+	// 	this.setState({ recordBody: e.target.value });
+	// }
 	
 	render() {
 		const { records } = this.props;
 		return (
       <div className="App">
-				<h1>HOME</h1>
-
-				<input
-					value={ this.state.recordBody }
-					onKeyDown={ this.handleKeyDown }
-					onChange={ this.handleChange }
-				/>
-
-				{
-					records.map( (record, i) => [
-						<div key={i}><h3>{record}</h3></div> 
-					])
-				}
+		  <Routing />
       </div>
     );
   }
