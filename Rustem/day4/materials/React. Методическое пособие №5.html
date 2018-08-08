@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://react1.tilda.ws/metod-5 -->
+<html data-livestyle-extension="available">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React. Методическое пособие №5</title>
+    <meta property="og:url" content="http://react1.tilda.ws/metod-5">
+    <meta property="og:title" content="React. Методическое пособие №5">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://static.tildacdn.com/lib/unsplash/584177e5-e5d4-b734-65ff-77e70b7407be/photo.jpg">
+    <meta property="fb:app_id" content="257953674358265">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="http://tilda.ws/">
+    <link rel="dns-prefetch" href="http://static.tildacdn.com/">
+    <link rel="canonical" href="http://react1.tilda.ws/metod-5">
+    <link rel="shortcut icon" href="http://static.tildacdn.com/img/tildafavicon.ico" type="image/x-icon">
+    <!-- Assets -->
+    <link rel="stylesheet" href="./React. Методическое пособие №5_files/tilda-grid-3.0.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./React. Методическое пособие №5_files/tilda-blocks-2.12.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./React. Методическое пособие №5_files/tilda-animation-1.0.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./React. Методическое пособие №5_files/tilda-slds-1.4.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./React. Методическое пособие №5_files/tilda-zoom-2.0.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./React. Методическое пособие №5_files/highlight.min.css" type="text/css" media="all">
+    <script type="text/javascript" id="tildastatscript" async="" src="./React. Методическое пособие №5_files/tildastat.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №5_files/jquery-1.10.2.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №5_files/tilda-scripts-2.8.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №5_files/tilda-blocks-2.7.js.Без названия"></script>
+    <script src="./React. Методическое пособие №5_files/tilda-animation-1.0.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №5_files/tilda-slds-1.4.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №5_files/hammer.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №5_files/tilda-zoom-2.0.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №5_files/highlight.min.js.Без названия"></script>
+    <script src="./React. Методическое пособие №5_files/lazyload-1.3.min.js.Без названия"></script>
+    <style type="text/css">
+        /*.lleo_errorSelection *::-moz-selection,
+.lleo_errorSelection *::selection,
+.lleo_errorSelection *::-webkit-selection {
+    background-color: red !important;
+    color: #fff !important;;
+}*/
+
+        #lleo_dialog,
+        #lleo_dialog * {
+            color: #000 !important;
+            font: normal 13px Arial, Helvetica !important;
+            line-height: 15px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: none !important;
+            border: none 0 !important;
+            position: static !important;
+            vertical-align: baseline !important;
+            overflow: visible !important;
+            width: auto !important;
+            height: auto !important;
+            max-width: none !important;
+            max-height: none !important;
+            float: none !important;
+            visibility: visible !important;
+            text-align: left !important;
+            text-transform: none !important;
+            border-collapse: separate !important;
+            border-spacing: 2px !important;
+            box-sizing: content-box !important;
+            box-shadow: none !important;
+            opacity: 1 !important;
+            text-shadow: none !important;
+            letter-spacing: normal !important;
+            -webkit-filter: none !important;
+            -moz-filter: none !important;
+            filter: none !important;
+        }
+
+        #lleo_dialog *:before,
+        #lleo_dialog *:after {
+            content: '';
+        }
+
+        #lleo_dialog iframe {
+            height: 0 !important;
+            width: 0 !important;
+        }
+
+        #lleo_dialog {
+            position: absolute !important;
+            background: #fff !important;
+            border: solid 1px #ccc !important;
+            padding: 7px 0 0 !important;
+            left: -999px;
+            top: -999px;
+            width: 440px !important;
+            overflow: hidden;
+            display: block !important;
+            z-index: 999999999 !important;
+            box-shadow: 8px 16px 30px rgba(0, 0, 0, 0.16) !important;
+            border-radius: 3px !important;
+            opacity: 0 !important;
+            -webkit-transform: translateY(15px);
+            -moz-transform: translateY(15px);
+            -ms-transform: translateY(15px);
+            -o-transform: translateY(15px);
+            transform: translateY(15px);
+        }
+
+        #lleo_dialog.lleo_show_small {
+            width: 150px !important;
+        }
+
+        #lleo_dialog.lleo_show {
+            opacity: 1 !important;
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+            transform: translateY(0);
+            -webkit-transition: -webkit-transform 0.3s, opacity 0.3s !important;
+            -moz-transition: -moz-transform 0.3s, opacity 0.3s !important;
+            -ms-transition: -ms-transform 0.3s, opacity 0.3s !important;
+            -o-transition: -o-transform 0.3s, opacity 0.3s !important;
+            transition: transform 0.3s, opacity 0.3s !important;
+        }
+
+        #lleo_dialog.lleo_collapse {
+            opacity: 0 !important;
+            -webkit-transform: scale(0.25, 0.1) translate(-550px, 100px);
+            -moz-transform: scale(0.25, 0.1) translate(-550px, 100px);
+            -ms-transform: scale(0.25, 0.1) translate(-550px, 100px);
+            -o-transform: scale(0.25, 0.1) translate(-550px, 100px);
+            transform: scale(0.25, 0.1) translate(-550px, 100px);
+            -webkit-transition: -webkit-transform 0.4s, opacity 0.4s !important;
+            -moz-transition: -moz-transform 0.4s, opacity 0.4s !important;
+            -ms-transition: -ms-transform 0.4s, opacity 0.4s !important;
+            -o-transition: -o-transform 0.4s, opacity 0.4s !important;
+            transition: transform 0.4s, opacity 0.4s !important;
+        }
+
+        #lleo_dialog input::-webkit-input-placeholder {
+            color: #aaa !important;
+        }
+
+        #lleo_dialog .lleo_has_pic #lleo_word {
+            margin-right: 80px !important;
+        }
+
+        #lleo_dialog #lleo_translationsContainer1 {
+            position: relative !important;
+        }
+
+        #lleo_dialog #lleo_translationsContainer2 {
+            padding: 7px 0 0 !important;
+            vertical-align: middle !important;
+        }
+
+        #lleo_dialog #lleo_word {
+            color: #000 !important;
+            margin: 0 5px 2px 0 !important;
+            /*float: left !important;*/
+        }
+
+        #lleo_dialog .lleo_has_sound #lleo_word {
+            margin-left: 30px !important;
+        }
+
+        #lleo_dialog #lleo_text {
+            font-weight: bold !important;
+            color: #d56e00 !important;
+            text-decoration: none !important;
+            cursor: default !important;
+        }
+
+        /*
+#lleo_dialog #lleo_text.lleo_known {
+    cursor: pointer !important;
+    text-decoration: underline !important;
+}
+*/
+
+        /*#lleo_dialog #lleo_closeBtn {
+    position: absolute !important;
+    right: 6px !important;
+    top: 5px !important;
+    line-height: 1px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 0 !important;
+    color: #aaa !important;
+    display: block !important;
+	z-index: 9999999999 !important;
+	width: 7px !important;
+	height: 7px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}*/
+
+        #lleo_dialog #lleo_optionsBtn {
+            position: absolute !important;
+            right: 3px !important;
+            top: 5px !important;
+            line-height: 1px !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            font-size: 13px !important;
+            color: #aaa !important;
+            padding: 2px !important;
+            display: none;
+        }
+
+        #lleo_dialog.lleo_optionsShown #lleo_optionsBtn {
+            display: block !important;
+        }
+
+        #lleo_dialog #lleo_optionsBtn img {
+            width: 12px !important;
+            height: 12px !important;
+        }
+
+        #lleo_dialog #lleo_sound {
+            float: left !important;
+            width: 16px !important;
+            height: 16px !important;
+            margin-left: 9px !important;
+            margin-right: 3px !important;
+            background: 0 0 no-repeat !important;
+            cursor: pointer !important;
+            display: none !important;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAfNJREFUeNq0U01IVFEU/u57Oo5WhBRIBBptykWLYBa2soWiEKQQEbrSFsGbVRQKQc2iFqGitXqvjQxCoCJCqyI0aBUtZILaJNUuYWYWo8HovJ/707nP94bnz0rxwvfOuefd8517fi5TSuE4i50YwZ3l37ZhNlpgzFkaaM/G9sHF1YskNrT+7l4PjMOcb78t2JL71uxgB+2UlfxHTtq5N94fIOh/88kWgWfl73ZCSQkpeGg3H091JY6dI2S00qA/N3KO3dDUYhFgEmZGurG+w9FqApIHsVM7kaTF9Nhn0r8Q7hPWQgIRuNaH3AMUA4W/Lkdh04cpFS43G0TgxQTvCdMETVAk3KynIHwXZU/ge8XDt7KH9bKLjU0P2zVO5LsEpSejVRJ9UR18EtfqKegovs9R3Q6w9c/H1o4Aa2Jwm1lIvn9RJ4w9RdRRzqcYrpwycCll4Cy1lnkS3Bc6vfBg28v8aRIfI78zhB/1GygROH3jLyyzMQ0zlUZuZBSlKkeLoegGtTjYLcJ8pF+NakHOFC2J6w+f25mxSfWrWFF/ShXVPTGvtN14NNkVnxlYWJkgZEL7/vwKr55lKSVnaGYWkuYgrgG172uUv47+U7fw0EHaJXmalUQy/HqO6lBzEsVjJC4Q8kd6TETQpjuaGOvjv8b/AgwA/ij1XMx58NIAAAAASUVORK5CYII=) !important;
+        }
+
+        #lleo_dialog .lleo_has_sound #lleo_sound {
+            display: block !important;
+        }
+
+        #lleo_dialog #lleo_soundWave {
+            border: solid 5px #4495CC !important;
+            border-radius: 5px !important;
+            position: absolute !important;
+            left: -5px !important;
+            top: -5px !important;
+            right: -5px !important;
+            bottom: -5px !important;
+            z-index: 0 !important;
+            opacity: 0.9 !important;
+            display: none !important;
+        }
+
+        #lleo_dialog #lleo_soundWave.lleo_beforePlaying {
+            display: block !important;
+        }
+
+        #lleo_dialog #lleo_soundWave.lleo_playing {
+            opacity: 0 !important;
+            border-width: 20px !important;
+            border-radius: 30px !important;
+
+            -webkit-transform: scale(1.07, 1.1) !important;
+            -moz-transform: scale(1.07, 1.1) !important;
+            -ms-transform: scale(1.07, 1.1) !important;
+            transform: scale(1.07, 1.1) !important;
+
+            -webkit-transition: all 0.6s !important;
+            -moz-transition: all 0.6s !important;
+            -ms-transition: all 0.6s !important;
+            transition: all 0.6s !important;
+        }
+
+
+        #lleo_dialog #lleo_picOuter {
+            position: absolute !important;
+            float: right !important;
+            top: 4px;
+            right: 5px;
+            z-index: 9 !important;
+            display: none !important;
+            width: 100px !important;
+        }
+
+        #lleo_dialog.lleo_optionsShown #lleo_picOuter {
+            right: 25px;
+        }
+
+        #lleo_dialog .lleo_has_pic #lleo_picOuter {
+            display: block !important;
+        }
+
+        #lleo_dialog #lleo_picOuter:hover {
+            width: auto !important;
+            z-index: 11 !important;
+        }
+
+        #lleo_dialog #lleo_pic,
+        #lleo_dialog #lleo_picBig {
+            position: absolute !important;
+            top: 0 !important;
+            right: 0 !important;
+            border: solid 2px #fff !important;
+            -webkit-border-radius: 2px !important;
+            -moz-border-radius: 2px !important;
+            border-radius: 2px !important;
+            z-index: 1 !important;
+        }
+
+        #lleo_dialog #lleo_pic {
+            position: relative !important;
+            border: none !important;
+            width: 30px !important;
+        }
+
+        #lleo_dialog #lleo_picBig {
+            box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.3);
+            z-index: 2 !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+
+        #lleo_dialog #lleo_picOuter:hover #lleo_picBig {
+            visibility: visible !important;
+            opacity: 1 !important;
+            -webkit-transition: opacity 0.3s !important;
+            -webkit-transition-delay: 0.3s !important;
+        }
+
+        #lleo_dialog #lleo_transcription {
+            margin: 0 80px 4px 31px !important;
+            color: #aaaaaa !important;
+        }
+
+        #lleo_dialog .lleo_no_trans {
+            color: #aaa !important;
+        }
+
+        #lleo_dialog .ll-translation-counter {
+            float: right !important;
+            font-size: 11px !important;
+            color: #aaa !important;
+            padding: 2px 2px 1px 10px !important;
+        }
+
+        #lleo_dialog .ll-translation-text {
+            float: left !important;
+            /*width: 80% !important;*/
+        }
+
+        #lleo_dialog #lleo_trans a {
+            color: #3F669F !important;
+            text-decoration: none !important;
+            text-overflow: ellipsis !important;
+            padding: 1px 4px !important;
+            overflow: hidden !important;
+            float: left !important;
+            width: 320px !important;
+        }
+
+        #lleo_dialog .ll-translation-item {
+            color: #3F669F !important;
+            border: solid 1px #fff !important;
+            padding: 3px !important;
+            width: 100% !important;
+            float: left !important;
+            -moz-border-radius: 2px !important;
+            -webkit-border-radius: 2px !important;
+            border-radius: 2px !important;
+        }
+
+        #lleo_dialog .ll-translation-item:hover {
+            border: solid 1px #9FC2C9 !important;
+            background: #EDF4F6 !important;
+            cursor: pointer !important;
+        }
+
+        #lleo_dialog .ll-translation-item:hover .ll-translation-counter {
+            color: #83a0a6 !important;
+        }
+
+        #lleo_dialog .ll-translation-marker {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAWSURBVBhXY7RPm/+fAQkwIXNAbMICAJQ8AkvqWg/SAAAAAElFTkSuQmCC) !important;
+            display: inline-block !important;
+            width: 4px !important;
+            height: 4px !important;
+            margin: 7px 5px 2px 2px !important;
+            float: left !important;
+        }
+
+        #lleo_dialog #lleo_icons {
+            color: #aaa !important;
+            font-size: 11px !important;
+            background: #f8f8f8 !important;
+            padding: 10px 10px 10px 16px !important;
+        }
+
+        #lleo_icons a {
+            display: inline-block !important;
+            width: 16px !important;
+            height: 16px !important;
+            margin: 0 10px -4px 3px !important;
+            text-decoration: none !important;
+            opacity: 0.5 !important;
+            background: url(data:image/png;base64,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) !important;
+        }
+
+        #lleo_icons a:hover {
+            opacity: 1 !important;
+        }
+
+        #lleo_icons a.lleo_google {
+            background-position: -34px 0 !important;
+        }
+
+        #lleo_icons a.lleo_multitran {
+            background-position: -64px 0 !important;
+        }
+
+        #lleo_icons a.lleo_lingvo {
+            background-position: -51px 0 !important;
+            width: 12px !important;
+        }
+
+        #lleo_icons a.lleo_dict {
+            background-position: -17px 0 !important;
+        }
+
+        #lleo_icons a.lleo_linguee {
+            background-position: -81px 0 !important;
+        }
+
+        #lleo_icons a.lleo_michaelis {
+            background-position: -98px 0 !important;
+        }
+
+        #lleo_dialog #lleo_contextContainer {
+            margin: 0 !important;
+            padding: 3px 15px 8px 10px !important;
+            background: #eee !important;
+            background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee)) !important;
+            background: -moz-linear-gradient(-90deg, #fff, #eee) !important;
+            border-bottom: solid 1px #ddd !important;
+            border-top-left-radius: 3px !important;
+            border-top-right-radius: 3px !important;
+            display: none !important;
+            overflow: hidden !important;
+        }
+
+        #lleo_dialog .lleo_has_context #lleo_contextContainer {
+            display: block !important;
+        }
+
+        #lleo_dialog #lleo_context {
+            color: #444 !important;
+            text-shadow: 1px 1px 0 #f4f4f4 !important;
+            line-height: 12px !important;
+            font-size: 11px !important;
+            margin-left: 2px !important;
+        }
+
+        #lleo_dialog #lleo_context b {
+            line-height: 12px !important;
+            color: #000 !important;
+            font-weight: bold !important;
+            font-size: 11px !important;
+        }
+
+        /*#lleo_dialog #lleo_gBrand {
+    color: #aaa !important;
+    font-size: 10px !important;
+    */
+
+        /*padding-right: 52px !important;*/
+
+        /*
+    padding-bottom: 14px !important;
+    margin: -3px 4px 0 4px !important;
+    background: left bottom url(data:image/png;base64,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) no-repeat !important;
+    display: inline-block !important;
+    float: right !important;
+}
+#lleo_dialog #lleo_gBrand.hidden {
+    display: none !important;
+}*/
+
+        #lleo_dialog #lleo_translateContextLink {
+            color: #444 !important;
+            text-shadow: 1px 1px 0 #f4f4f4 !important;
+            background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#ddd)) !important;
+            background: -moz-linear-gradient(-90deg, #f4f4f4, #ddd) !important;
+            border: solid 1px !important;
+            box-shadow: 1px 1px 0 #f6f6f6 !important;
+            border-color: #999 #aaa #aaa #999 !important;
+            -moz-border-radius: 2px !important;
+            -webkit-border-radius: 2px !important;
+            border-radius: 2px !important;
+            padding: 0 3px !important;
+            font-size: 11px !important;
+            text-decoration: none !important;
+            margin: 1px 5px 0 !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+        }
+
+        #lleo_dialog #lleo_translateContextLink:hover {
+            background: #f8f8f8 !important;
+        }
+
+        #lleo_dialog #lleo_translateContextLink.hidden {
+            visibility: hidden !important;
+        }
+
+        #lleo_dialog #lleo_setTransForm {
+            display: block !important;
+            margin-top: 3px !important;
+            padding-top: 5px !important;
+            /* Set position and background because the form might be overlapped by an image when no translations */
+            position: relative !important;
+            background: #fff !important;
+            z-index: 10 !important;
+            padding-bottom: 10px !important;
+            padding-left: 16px !important;
+        }
+
+        #lleo_dialog .lleo-custom-translation {
+            padding: 4px 5px !important;
+            border: solid 1px #ddd !important;
+            border-radius: 2px !important;
+            width: 90% !important;
+            min-width: 270px !important;
+            background: -webkit-gradient(linear, 0 0, 0 20, from(#f1f1f1), to(#fff)) !important;
+            background: -moz-linear-gradient(-90deg, #f1f1f1, #fff) !important;
+            font: normal 13px Arial, Helvetica !important;
+            line-height: 15px !important;
+        }
+
+        #lleo_dialog .lleo-custom-translation:hover {
+            border: solid 1px #aaa !important;
+        }
+
+        #lleo_dialog .lleo-custom-translation:focus {
+            background: #FFFEC9 !important;
+        }
+
+        #lleo_dialog *.hidden {
+            display: none !important;
+        }
+
+        #lleo_dialog .infinitive {
+            color: #D56E00 !important;
+            text-decoration: none;
+            border-bottom: 1px dotted #D56E00 !important;
+        }
+
+        #lleo_dialog .infinitive:hover {
+            border: none !important;
+        }
+
+        #lleo_dialog .lleo_separator {
+            height: 1px !important;
+            background: #eee;
+            margin-top: 10px !important;
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, #eee 8%, rgba(255, 255, 255, 1) 80%) !important;
+            background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, #eee 8%, rgba(255, 255, 255, 1) 80%) !important;
+            background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, #eee 8%, rgba(255, 255, 255, 1) 80%) !important;
+            background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, #eee 8%, rgba(255, 255, 255, 1) 80%) !important;
+        }
+
+        #lleo_dialog #lleo_trans {
+            /*border-top: 1px solid #eeeeee !important;*/
+            padding: 5px 30px 0 14px !important;
+            zoom: 1;
+        }
+
+        #lleo_dialog .lleo_clearfix {
+            display: block !important;
+            clear: both !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            font-size: 0 !important;
+        }
+
+
+        #lleo_dialog #lleo_picOuter table {
+            width: 44px !important;
+            position: absolute !important;
+            right: 0 !important;
+            top: 0 !important;
+            vertical-align: middle !important;
+        }
+
+        #lleo_dialog #lleo_picOuter td {
+            width: 38px !important;
+            height: 38px !important;
+            /*border: 1px solid #eeeeee !important;*/
+            vertical-align: middle !important;
+            text-align: center !important;
+        }
+
+        #lleo_dialog #lleo_picOuter td div {
+            height: 38px !important;
+            overflow: hidden !important;
+        }
+
+        #lleo_dialog .lleo_empty {
+            margin: 0 5px 7px !important;
+        }
+
+        #lleo_youtubeExportBtn {
+            margin-left: 10px;
+            height: 24px;
+        }
+
+        #lleo_youtubeExportBtn i {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: 0 0 url(https://d144fqpiyasmrr.cloudfront.net/plugins/all/images/i16.png) !important;
+        }
+
+        #lleo_youtubeExportBtn .yt-uix-button-content {
+            font-size: 12px;
+            line-height: 2px;
+        }
+
+
+        /*** Parsed Lyrics Content *****************************/
+
+        .lleo_lyrics tran {
+            background: transparent !important;
+            border-radius: 2px !important;
+            text-shadow: none !important;
+            cursor: pointer !important;
+        }
+
+        .lleo_lyrics tran:hover {
+            color: #fff !important;
+            background: #C77213 !important;
+            -webkit-transition: all 0.1s !important;
+            -moz-transition: all 0.1s !important;
+            -ms-transition: all 0.1s !important;
+            -o-transition: all 0.1s !important;
+            transition: all 0.1s !important;
+        }
+
+        .lleo_songName {
+            border: solid 1px #ffd47c;
+            background: #fff1c2;
+            border-radius: 2px;
+        }
+
+        .lleo_hidden_iframe {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body class="t-body" style="margin: 0px;" cz-shortcut-listen="true">
+    <!--allrecords-->
+    <div id="allrecords" class="t-records" data-hook="blocks-collection-content-node" data-tilda-project-id="441083" data-tilda-page-id="1914238"
+        data-tilda-page-alias="metod-5" data-tilda-formskey="d8791aa2b2bea6010580d17ea444b0a2">
+        <div id="rec37897591" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_showed r_anim" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="396">
+            <!-- T396 -->
+            <style>
+                #rec37897591 .t396__artboard {
+                    height: 290px;
+                    background-color: #ffffff;
+                }
+
+                #rec37897591 .t396__filter {
+                    height: 290px;
+                }
+
+                #rec37897591 .t396__carrier {
+                    height: 290px;
+                    background-position: center center;
+                    background-attachment: scroll;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+
+                @media screen and (max-width: 1199px) {
+                    #rec37897591 .t396__artboard {}
+                    #rec37897591 .t396__filter {}
+                    #rec37897591 .t396__carrier {
+                        background-attachment: scroll;
+                    }
+                }
+
+                @media screen and (max-width: 959px) {
+                    #rec37897591 .t396__artboard {
+                        height: 520px;
+                    }
+                    #rec37897591 .t396__filter {
+                        height: 520px;
+                    }
+                    #rec37897591 .t396__carrier {
+                        height: 520px;
+                    }
+                }
+
+                @media screen and (max-width: 639px) {
+                    #rec37897591 .t396__artboard {
+                        height: 420px;
+                    }
+                    #rec37897591 .t396__filter {
+                        height: 420px;
+                    }
+                    #rec37897591 .t396__carrier {
+                        height: 420px;
+                    }
+                }
+
+                @media screen and (max-width: 479px) {
+                    #rec37897591 .t396__artboard {
+                        height: 330px;
+                    }
+                    #rec37897591 .t396__filter {
+                        height: 330px;
+                    }
+                    #rec37897591 .t396__carrier {
+                        height: 330px;
+                    }
+                }
+
+                #rec37897591 .tn-elem[data-elem-id="1470210033144"] {
+                    z-index: 4;
+                    top: calc(145px - 0px + 3px);
+                    left: calc(50% - 180px + 0px);
+                    width: 360px;
+                }
+
+                #rec37897591 .tn-elem[data-elem-id="1470210033144"] .tn-atom {
+                    background-position: center center;
+                    border-color: transparent;
+                    border-style: solid;
+                }
+
+                @media screen and (max-width: 1199px) {}
+
+                @media screen and (max-width: 959px) {}
+
+                @media screen and (max-width: 639px) {}
+
+                @media screen and (max-width: 479px) {}
+            </style>
+            <div class="t396">
+                <div class="t396__artboard rendered" data-artboard-recid="37897591" data-artboard-height="290" data-artboard-height-res-640="520"
+                    data-artboard-height-res-480="420" data-artboard-height-res-320="330" data-artboard-height_vh="" data-artboard-valign="center"
+                    data-artboard-proxy-min-offset-top="0" data-artboard-proxy-min-height="290" data-artboard-proxy-max-height="290">
+                    <div class="t396__carrier" data-artboard-recid="37897591"></div>
+                    <div class="t396__filter" data-artboard-recid="37897591"></div>
+                    <div class="t396__elem tn-elem tn-elem__378975911470210033144" data-elem-id="1470210033144" data-elem-type="image"
+                        data-field-top-value="3" data-field-top-res-960-value="0.5" data-field-top-res-640-value="-10" data-field-left-value="0"
+                        data-field-left-res-960-value="0" data-field-left-res-640-value="-1.5" data-field-width-value="360" data-field-width-res-960-value="900"
+                        data-field-width-res-640-value="59" data-field-axisy-value="center" data-field-axisx-value="center" data-field-container-value="window"
+                        data-field-topunits-value="" data-field-leftunits-value="" data-field-heightunits-value="" data-field-widthunits-value=""
+                        data-field-widthunits-res-640-value="%" data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+                        style="left: 451.5px; top: 64px; width: 360px;">
+                        <div class="tn-atom">
+                            <img class="tn-atom__img t-img loaded" data-original="https://static.tildacdn.com/tild3730-3332-4631-b563-303538383163/reactlogo.png"
+                                imgfield="tn_img_1470210033144" src="./React. Методическое пособие №5_files/reactlogo.png"> </div>
+                    </div>
+                </div>
+            </div>
+            <script>$(document).ready(function () {
+                    t396_init('37897591');
+                });</script>
+            <!-- /T396 -->
+        </div>
+        <div id="rec37897593" class="r t-rec t-rec_pt_60 t-rec_pb_60" style="padding-top:60px;padding-bottom:60px;background-color:#f2f2f2; "
+            data-record-type="373" data-bg-color="#f2f2f2" data-animationappear="off">
+            <!-- T373 -->
+            <div class="t373">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t373__wrapper">
+                            <div class="t373__col">
+                                <div class="t373__circle " style="border: 0px solid #000; ">
+                                    <div class="t373__title t-title" field="number" style="">/</div>
+                                </div>
+                            </div>
+                            <div class="t373__col">
+                                <div class="t373__text t-text t-text_md" field="text">
+                                    <strong>Оглавление</strong>
+                                    <br>
+                                    <br>
+                                    <ol>
+                                        <li>
+                                            <u>Статический и динамический роутинг</u>
+                                        </li>
+                                        <li>
+                                            <u>Работа с реакт-роутер</u>
+                                        </li>
+                                        <li>
+                                            <u>Вложенные роуты</u>
+                                        </li>
+                                        <li>
+                                            <u>Switch и редиректы</u>
+                                        </li>
+                                        <li>
+                                            <u>API react-router</u>
+                                        </li>
+                                    </ol>
+                                    <ol></ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37897594" class="r t-rec t-rec_pt_45 t-rec_pb_60 r_anim r_showed" style="padding-top:45px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>Реакт-роутер</strong> — основной способ делать клиентский роутинг в реакте.
+                            <br>
+                            <br> Роутинг в браузере работает с помощью DOM api, а именно, window.history.
+                            <br>Это апи позволяет смотреть историю посещения текущей вкладки браузера, добавлять новые пути в
+                            историю вкладки, заменять текущий путь, а также переходить назад и вперед по истории.
+                            <br>
+                            <br> Реакт-роутер использует это апи и предоставляет возможность описать роутинг приложения используя
+                            компоненты, HOC и контекст. Работать с контекстом напрямую не нужно, вся работа будет сделана
+                            компонентами помощниками.
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37897595" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_anim r_showed" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">
+                                <strong>1.</strong> Статический и динамический роутинг</div>
+                            <svg class="t676__divider t676__divider_rotate"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37897596" class="r t-rec t-rec_pt_45 t-rec_pb_30 r_anim r_showed" style="padding-top:45px;padding-bottom:30px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Начиная с версии 4, реакт-роутер использует динамический роутинг, который немного отличается от привычного
+                            статического, но позволяет делать больше и элегантнее, и больше вписывается в мир реакта.
+                            <br>
+                            <br>Пример статического роутинга — это когда в одном месте описаны все роуты приложения и методы/классы/функции,
+                            отвечающие за обработку роута(пример koa-router):
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37897597" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="auto hljs javascript">router
+ .get(<span class="hljs-string">'/'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>*(<span class="hljs-params">next</span>) </span>{
+   <span class="hljs-keyword">this</span>.body = <span class="hljs-string">'Hello World!'</span>;
+ })
+ .post(<span class="hljs-string">'/users'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>*(<span class="hljs-params">next</span>) </span>{
+   <span class="hljs-comment">// ...</span>
+ })
+ .put(<span class="hljs-string">'/users/:id'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>*(<span class="hljs-params">next</span>) </span>{
+   <span class="hljs-comment">// ...</span>
+ })
+ .del(<span class="hljs-string">'/users/:id'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>*(<span class="hljs-params">next</span>) </span>{
+   <span class="hljs-comment">// ...</span>
+ });</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37897598" class="r t-rec t-rec_pt_30 t-rec_pb_60 r_anim r_showed" style="padding-top:30px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Пример взят из koa-router, но так же работает любая система описания роутинга в django, ruby on rails,
+                            angular, ember, в любой системе на клиенте или сервере. Это классический пример описания роутинга
+                            приложения, и реакт-роутер называет это статическим роутингом.
+                            <br>
+                            <br> Динамический роутинг в противовес предлагает, во-первых, использовать роутинг в render методах
+                            компонент, во-вторых, менять его в зависимости от тех условий, которые сейчас необходимы приложению.
+                            Рендеринг происходит на этапе выполнения приложения, а не заранее, и это немного отличается в
+                            описании в сравнении со статическим роутингом.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37898534" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_anim r_showed" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">
+                                <strong>2.</strong> Работа с реакт-роутер</div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37898535" class="r t-rec t-rec_pt_45 t-rec_pb_30 r_anim r_showed" style="padding-top:45px;padding-bottom:30px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Для установки нужно воспользоваться командой:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37898536" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="auto hljs nginx"><span class="hljs-title">yarn</span> add react-router-dom</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37898537" class="r t-rec t-rec_pt_30 t-rec_pb_60 r_anim r_showed" style="padding-top:30px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Также существует пакет react-router-native для работы на мобильных устройствах вместе с react-native,
+                            и react-router, который содержит общий код для этих библиотек.
+                            <br>
+                            <br> Первое, что нужно сделать — это обернуть корневой компонент с помощью BrowserRouter:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37898609" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="auto hljs javascript"><span class="hljs-keyword">import</span> {BrowserRouter} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-router-dom'</span>;
+
+ReactDOM.render(
+ <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">BrowserRouter</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">App</span> /&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-title">BrowserRouter</span>&gt;</span>,
+ document.getElementById('root')
+);</span></code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37898643" class="r t-rec t-rec_pt_30 t-rec_pb_0" style="padding-top:30px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__descr t-descr t-descr_xs" field="descr">Теперь можно использовать компоненты реакт-роутера в приложении.
+                            <br> А вот и сам роутинг в приложении:
+                            <br>
+                        </div>
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="auto hljs xml">import React from 'react';
+import {Link, Route} from 'react-router-dom';
+
+const Home = () =&gt; <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Home page<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>;
+const About = () =&gt; <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>About page<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>;
+const Topics = () =&gt; <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Topics page<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>;
+
+const App = () =&gt; (
+ <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">"/"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">"/about"</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">"/topics"</span>&gt;</span>Topics<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+
+   <span class="hljs-tag">&lt;<span class="hljs-title">hr</span> /&gt;</span>
+
+   <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">exact</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/"</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">{Home}</span> /&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/about"</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">{About}</span> /&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/topics"</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">{Topics}</span> /&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+);
+
+export default App;</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37898671" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_anim r_showed" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Обратите внимание, компоненты Route находятся рядом с обычными компонентами. Принцип работы реакт-роутера
+                            прост, там где есть соответствие пути браузерной строки и пути описанным в Route, там и происходит
+                            рендер компоненты. Реакт-роутер заменяет компоненту Route, у которой путь совпадает, на компоненту,
+                            которую нужно отрендерить компонентой Route. Те компоненты, путь которых не совпадает, просто
+                            не рендерятся, компонента Route в таком случае возвращает null, и содержимое не отражается.
+                            <br>
+                            <br> Для работы с переходами по страницам используется компонента Link, которая превращается в тег
+                            a, но реакт-роутер обрабатывает переход так, чтобы не было перезагрузки страницы. Роутер ловит
+                            событие клика на ссылку, отменят его, и делает push в window.history, браузер переходит на новый
+                            путь без перезагрузки страницы.
+                            <br>
+                            <br> Компоненты, которые возвращает компонент Route получают в props дополнительный параметры:
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37899452" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="auto hljs bash">match = {
+ isExact: <span class="hljs-literal">true</span>,
+ params: {},
+ path: <span class="hljs-string">'/topics'</span>,
+ url: <span class="hljs-string">'/topics'</span>
+}
+
+location = {
+ <span class="hljs-built_in">hash</span>: <span class="hljs-string">""</span>,
+ pathname: <span class="hljs-string">"/topics"</span>,
+ search: <span class="hljs-string">""</span>,
+ state: {}
+}</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37899608" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_anim r_showed" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">и history.
+                            <br>
+                            <br>
+                            <strong>Match </strong>содержит данные по соответствию пути и роута и дополнительные параметры.
+                            <br>
+                            <br>
+                            <strong>IsExact</strong> говорит о том, что путь в браузерной строке полностью соответствует роуту.
+                            <br>
+                            <br> В
+                            <strong>params</strong> находятся дополнительные ключи, которые можно спарсить из роута, если путь использует
+                            регулярное выражение или
+                            <em>/topics/:id.</em>
+                            <br>
+                            <br>
+                            <strong>Path</strong> — это путь с которым проводили сравнение. Полезен для создания вложенных Route.
+                            <br>
+                            <br>
+                            <strong>Url</strong> — это полный путь, полезен для создания вложенных Link.
+                            <br>
+                            <br>
+                            <br> Если использовать регулярные выражения в Route, например, /topics/:id, в path будет /topics/:id,
+                            а в url /topics/1.
+                            <br>
+                            <br> Location объясняет, где приложение сейчас, какие значения в адресной строке. Также объекты Location
+                            могут быть переданы в Link, и тогда навигацию можно делать не только по соответствию Url, но
+                            и по истории браузера, например, в state можно указать место, откуда был совершен переход, и
+                            сделать свою кнопку назад для возврата на предыдущую страницу.
+                            <br>
+                            <br>
+                            <strong>History</strong> — это объект, который использует библиотеку
+                            <a href="https://github.com/ReactTraining/history">history</a> для удобной работы с сессией и историей переходов. Также реакт-роутер может работать
+                            с якорными переходами, когда url меняется не целиком, а только после якоря #.
+                            <br>
+                            <br>
+                            <u>History объект обычно содержит в себе следующие ключи: </u>
+                            <br>
+                            <br>
+                            <strong>length</strong> — длина истории, количество location в стеке истории.
+                            <br>
+                            <br>
+                            <strong>action</strong> — текущее действие, выполненное с историей: PUSH, REPLACE или POP. Соответствует
+                            переходу на страницу, замене текущей страницы и переходу назад.
+                            <br>
+                            <br>
+                            <strong>location</strong> — текущая локация, соответствует location, переданному отдельно через prop.
+                            <br>
+                            <br>
+                            <strong>push</strong> — функция, с помощью которой происходит переход по истории.
+                            <br>
+                            <br>
+                            <strong>replace</strong> — функция для замены текущего пути.
+                            <br>
+                            <br>
+                            <strong>go(n) </strong>— функция для указания номера пути в стеке истории путей.
+                            <br>
+                            <br>
+                            <strong>goBack </strong>— функция для перехода назад (go(-1)).
+                            <br>
+                            <br>
+                            <strong>goForward</strong> — функция для перехода вперед(go(1)).
+                            <br>
+                            <br>
+                            <strong>block(promt)</strong> — функция для остановки перехода пользователя, которая вызовет окно confirm
+                            с просьбой не покидать страницу ("Вы уверены что хотите закрыть страницу?").
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37900102" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_hidden r_anim" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">
+                                <strong>3.</strong> Вложенные роуты
+                                <br>
+                            </div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37900177" class="r t-rec t-rec_pt_90 t-rec_pb_0" style="padding-top:90px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="javascript hljs"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> {Link, Route} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-router-dom'</span>;
+
+<span class="hljs-keyword">const</span> Home = () =&gt; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Home page<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>;</span>
+<span class="hljs-keyword">const</span> Cats = ({match}) =&gt; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Cats page {match.params.id}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>;</span>
+<span class="hljs-keyword">const</span> Hobbies = ({match}) =&gt; (
+ <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Hobbies page {match.params.id}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">{`${match.url}</span>/<span class="hljs-attribute">cats</span>/<span class="hljs-attribute">1</span>`}&gt;</span>cats 1<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">{`${match.url}</span>/<span class="hljs-attribute">cats</span>/<span class="hljs-attribute">2</span>`}&gt;</span>cats 2<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">{`${match.path}</span>/<span class="hljs-attribute">cats</span>/<span class="hljs-attribute">:id</span>`} <span class="hljs-attribute">component</span>=<span class="hljs-value">{Cats}</span> /&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+)</span>;
+<span class="hljs-keyword">const</span> About = ({match}) =&gt; (
+ <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>About page<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">{`${match.url}</span>/<span class="hljs-attribute">hobbies</span>/<span class="hljs-attribute">1</span>`}&gt;</span>Hobbies 1<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">{`${match.url}</span>/<span class="hljs-attribute">hobbies</span>/<span class="hljs-attribute">2</span>`}&gt;</span>Hobbies 2<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">{`${match.url}</span>/<span class="hljs-attribute">hobbies</span>/<span class="hljs-attribute">3</span>`}&gt;</span>Hobbies 3<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">hr</span> /&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">{`${match.path}</span>/<span class="hljs-attribute">hobbies</span>/<span class="hljs-attribute">:id</span>`} <span class="hljs-attribute">component</span>=<span class="hljs-value">{Hobbies}</span> /&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+)</span>;
+<span class="hljs-keyword">const</span> App = () =&gt; (
+ <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">"/"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">"/about"</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">hr</span> /&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">exact</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/"</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">{Home}</span> /&gt;</span> 
+   <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/about"</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">{About}</span> /&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+)</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> App;</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37900347" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">Вложенные роуты работают так же, как и ожидалось. Route размещаются в потомках, и если роут соответствует
+                            браузерной строке — роут рендерит свой компонент. Стоит обратить внимание на формирование ссылок
+                            и роутов. Для вложенных компонент идёт конкатенация с текущем роутом, в случае компоненты Hobbies
+                            ссылки в match будут: /hobbies/1, а ссылки в линк будут: /hobbies/1/cats/1. С роутами все тоже
+                            самое, но ссылки во вложенных роутах уже будут такими: /hobbies/:id/cats/:id.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37900378" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_hidden r_anim" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">
+                                <strong>4.</strong> Switch и редиректы
+                                <br>
+                            </div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37900408" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> Для работы роутинга компоненты Route обычно оборачивают в компонент Switch. Его преимущество в том,
+                            что он проверяет, какой из детей соответствует текущему location и выполняет рендеринг только
+                            этой компоненты. По этой причине в DOM не попадут роуты, которые возвращают null, их рендеринг
+                            не будет вызван и в целом они не будут отработаны, что экономит клиентам процессор :-)
+                            <br>
+                            <br> Также это позволяет обрабатывать ошибки 404, и делать редиректы с разных путей на разные пути.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37900432" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__descr t-descr t-descr_xs" field="descr">Пример:</div>
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="auto hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">Switch</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/"</span> <span class="hljs-attribute">exact</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">{Home}</span> /&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">Redirect</span> <span class="hljs-attribute">from</span>=<span class="hljs-value">"/old-match"</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">"/will-match"</span> /&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/will-match"</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">{WillMatch}</span> /&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">{NoMatch}</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">Switch</span>&gt;</span>;</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37900503" class="r t-rec t-rec_pt_60 t-rec_pb_60 r_hidden r_anim" style="padding-top:60px;padding-bottom:60px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md "> В данном случае редирект будет только с пути old-match, а если не один из роутов не совпадет — выполнится
+                            Route без пути, и исполнится компонент NoMatch.
+                            <br>
+                            <br> Компонент Switch последовательно смотрит детей и сравнивает их path и флаги exact и strict.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37900519" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_hidden r_anim" style="padding-top:0px;padding-bottom:0px; "
+            data-record-type="676">
+            <!-- T676 -->
+            <div class="t676">
+                <div class="t-container">
+                    <div class="t-row">
+                        <div class="t-col t-col_8 t-prefix_2">
+                            <svg class="t676__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                            <div class="t676__text-impact t-text-impact t-text-impact_md" field="text">
+                                <strong>5.</strong> API react-router
+                                <br>
+                            </div>
+                            <svg class="t676__divider t676__divider_rotate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
+                                <path d="M62.3 12L50 3.5 37.7 12 25.4 3.5 13.1 12 0 2.9 1.7.6l11.4 7.9L25.4 0l12.3 8.5L50 0l12.3 8.5L74.6 0l12.3 8.5L98.3.6l1.7 2.3L86.9 12 74.6 3.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37900636" class="r t-rec t-rec_pt_60 t-rec_pb_0 r_hidden r_anim" style="padding-top:60px;padding-bottom:0px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>
+                                <span data-redactor-tag="span" style="color: rgb(237, 149, 55);">BrowserRouter </span>
+                            </strong>
+                            <br>
+                            <br> BrowserRouter — это корневой элемент, который сообщает через контекст о текущем пути, использует
+                            history API для работы с браузерной строкой.
+                            <br>
+                            <br> props:
+                            <br>
+                            <br>
+                            <ul>
+                                <li> basename: string. Базовый путь для ваших путей, полезно, если на сайте частично роутингом
+                                    занимается другое приложение и необходимо создать роутинг только для определенного сегмента
+                                    url.
+                                    <br>
+                                    <br> </li>
+                                <li> getUserConfirmation: func. Функция для создания подтверждения на каждый переход по истории.
+                                    <br>
+                                    <br> </li>
+                                <li> forceRefresh: bool. Если значение true реакт роутер будет делать переходы с перезагрузкой
+                                    страницы. Полезно, когда браузер не поддерживает history API.
+                                    <br>
+                                    <br> </li>
+                                <li> keyLength: number. Для поля key, которое помещается в каждый объект location. PureComponent
+                                    таким образом может понять, что мы обновили страницу, но путь остался прежнем.
+                                    <br>
+                                    <br> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37900781" class="r t-rec t-rec_pt_60 t-rec_pb_0 r_hidden r_anim" style="padding-top:60px;padding-bottom:0px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>
+                                <span data-redactor-tag="span" style="color: rgb(237, 149, 55);">
+                                    <strong></strong>HashRouter </span>
+                            </strong>
+                            <br>
+                            <br> HashRouter — аналог BrowserRouter, но вся работа происходит с якорными ссылками.
+                            <br>
+                            <br> props:
+                            <br>
+                            <br>
+                            <ul>
+                                <li> basename: string
+                                    <br>
+                                    <br> </li>
+                                <li> getUserConfirmation: func
+                                    <br>
+                                    <br> </li>
+                                <li> hashType: string. Доступно 3 опции, по умолчанию slash:
+                                    <br>
+                                    <br>
+                                    <ul>
+                                        <li> slash — #/about/hobbies
+                                            <br>
+                                            <br> </li>
+                                        <li> noslash — #about/hobbies
+                                            <br>
+                                            <br> </li>
+                                        <li> hashbang — #!/about/hobbies
+                                            <br>
+                                            <br> </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37900905" class="r t-rec t-rec_pt_60 t-rec_pb_0 r_hidden r_anim" style="padding-top:60px;padding-bottom:0px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>
+                                <span data-redactor-tag="span" style="color: rgb(237, 149, 55);">
+                                    <strong></strong>MemoryRouter</span>
+                            </strong>
+                            <br>
+                            <br> Аналог BrowserRouter, но адресная строка такого роутера будет в памяти, полезно для написания
+                            тестов.
+                            <br>
+                            <br>
+                            <br> props:
+                            <br>
+                            <br>
+                            <ul>
+                                <li> initialEntries: array. Список location в истории роутинга.
+                                    <br>
+                                    <br> </li>
+                                <li> initialIndex: number. Индекс, указывающий на значение в initialEntries.
+                                    <br>
+                                    <br> </li>
+                                <li> getUserConfirmation: func.
+                                    <br>
+                                    <br> </li>
+                                <li> keyLength: number.
+                                    <br>
+                                    <br> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37901014" class="r t-rec t-rec_pt_60 t-rec_pb_0 r_hidden r_anim" style="padding-top:60px;padding-bottom:0px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>
+                                <span data-redactor-tag="span" style="color: rgb(237, 149, 55);">StaticRouter</span>
+                            </strong>
+                            <br>
+                            <br> Роутер, который никогда не меняет location. Полезен для server-side-rendering на стороне сервера,
+                            когда нет переходов и только одна точка входа.
+                            <br>
+                            <br> Также этот роутер может быть полезен в тестах.
+                            <br>
+                            <br> props:
+                            <br>
+                            <br>
+                            <ul>
+                                <li> basename: string
+                                    <br>
+                                    <br> </li>
+                                <li> location: string. URL который получает сервер, req.url на node серверах.
+                                    <br>
+                                    <br> </li>
+                                <li> location: object. Объект локации.
+                                    <br>
+                                    <br> </li>
+                                <li> context: object. Простой объект js, можно использовать пустой. Компоненты могут складывать
+                                    туда данные во время рендеринг, нужен для server-side-rendering.
+                                    <br>
+                                    <br> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37901118" class="r t-rec t-rec_pt_60 t-rec_pb_0 r_hidden r_anim" style="padding-top:60px;padding-bottom:0px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>
+                                <span data-redactor-tag="span" style="color: rgb(237, 149, 55);">Router</span>
+                            </strong>
+                            <br>
+                            <br> Компонент Router является предком компонентов BrowserRouter, HashRouter, MemoryRouter, NativeRouter
+                            и StaticRouter. Самое популярное использование интерфейса этого компонента — хранение переходов
+                            на странице с системой управления состояниями, типа redux или mobx.
+                            <br>
+                            <br> props:
+                            <br>
+                            <br>history: object. Объект
+                            <a href="https://github.com/ReactTraining/history">истории</a> для менеджмента истории.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37901158" class="r t-rec t-rec_pt_60 t-rec_pb_0 r_hidden r_anim" style="padding-top:60px;padding-bottom:0px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>
+                                <span data-redactor-tag="span" style="color: rgb(237, 149, 55);">Link</span>
+                            </strong>
+                            <br>
+                            <br> Основной способ создавать ссылки с помощью react-router.
+                            <br>
+                            <br> props:
+                            <br>
+                            <br>
+                            <ul>
+                                <li> to: string. Путь, на который нужно сделать переход.
+                                    <br>
+                                    <br> </li>
+                                <li> to: object. Объект location для перехода.
+                                    <br>
+                                    <br> </li>
+                                <li> replace: bool. Если установлен в true текущий location будет замещен новым.
+                                    <br>
+                                    <br> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37901201" class="r t-rec t-rec_pt_60 t-rec_pb_30 r_hidden r_anim" style="padding-top:60px;padding-bottom:30px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>
+                                <span data-redactor-tag="span" style="color: rgb(237, 149, 55);">NavLink</span>
+                            </strong>
+                            <br>
+                            <br> Специальная версия Link, имеет дополнительный атрибут указания css-класса или стилей, которые
+                            будет присвоены если ссылка NavLink совпадает с путем в браузере.
+                            <br>
+                            <br> props:
+                            <br>
+                            <br>
+                            <ul>
+                                <li> activeClassName: string. Класс, который будет присвоен элементу, если ссылка совпадает. Значение
+                                    будет добавлено к className.
+                                    <br>
+                                    <br> </li>
+                                <li> activeStyle: object. Стиль, который будет присвоен элементу, если совпадает.
+                                    <br>
+                                    <br> </li>
+                                <li> exact: bool. Если значение true, то будет проверка на точное совпадение, а не на вхождение.
+                                    <br>
+                                    <br> </li>
+                                <li> strict: bool. Если значение true, конечный слэш будет учтен при сравнении путей.
+                                    <br>
+                                    <br> </li>
+                                <li> isActive: func. Функция для добавления дополнительной логики для определения, совпадают ли
+                                    пути или нет. Аргументами функции будут объекты match и location.
+                                    <br>
+                                    <br> </li>
+                                <li> location: object. Функция в isActive сравнивает текущий location из истории браузера. Если
+                                    нужно сравнивать с другим location, то передать его можно в этой переменной.
+                                    <br>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37901243" class="r t-rec t-rec_pt_60 t-rec_pb_0 r_hidden r_anim" style="padding-top:60px;padding-bottom:0px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>
+                                <span data-redactor-tag="span" style="color: rgb(237, 149, 55);">Prompt</span>
+                            </strong>
+                            <br>
+                            <br> Компонент, который будет выводить окно с вопросом о согласии с переходом.
+                            <br>
+                            <br> props:
+                            <br>
+                            <br>
+                            <ul>
+                                <li> message: string. Строка, которая будет показа в браузере.
+                                    <br>
+                                    <br> </li>
+                                <li> message: func. Функция, которая будет вызвана с передачей нового объекта location. Функция
+                                    должна возвращать строку. </li>
+                            </ul>
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37901341" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="auto hljs javascript">&lt;Prompt 
+message={location =&gt; <span class="hljs-string">`Are you sure you want to go to <span class="hljs-subst">${location.pathname}</span>?`</span>} 
+/&gt;; </code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37901356" class="r t-rec t-rec_pt_15 t-rec_pb_0 r_hidden r_anim" style="padding-top:15px;padding-bottom:0px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <ul>
+                                <li>when: bool. Если передать true, будет вызвано окно при переходе, если false — то нет.
+                                    <br>
+                                    <br> </li>
+                            </ul>
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37901500" class="r t-rec t-rec_pt_60 t-rec_pb_0 r_hidden r_anim" style="padding-top:60px;padding-bottom:0px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>
+                                <span data-redactor-tag="span" style="color: rgb(237, 149, 55);">Redirect</span>
+                            </strong>
+                            <br>
+                            <br> Компонент который производит редирект на новый адрес каждый раз когда его рендерят. Новый путь
+                            заменит текущий.
+                            <br>
+                            <br> props:
+                            <br>
+                            <br>
+                            <ul>
+                                <li> to: string. Путь, на который нужно сделать переход.
+                                    <br>
+                                    <br> </li>
+                                <li> to: object. Объект location для перехода.
+                                    <br>
+                                    <br> </li>
+                                <li> push: bool. Если true, переход будет добавлен, и не заменит текущий путь.
+                                    <br>
+                                    <br> </li>
+                                <li> from: string. Путь с которого нужно сделать редирект. Используется в Switch.
+                                    <br> </li>
+                            </ul>
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37901616" class="r t-rec t-rec_pt_60 t-rec_pb_0 r_hidden r_anim" style="padding-top:60px;padding-bottom:0px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>
+                                <span data-redactor-tag="span" style="color: rgb(237, 149, 55);">Route</span>
+                            </strong>
+                            <br>
+                            <br> Компонент, который рендерит своё содержимое в том случае, когда происходит совпадение адреса.
+                            Если нет совпадения — возвращает null.
+                            <br>
+                            <br> Route позволяет 3 способами указать то, что нужно отрендерить: component, render и children.
+                            Каждый из этих параметров полезен по своему. Возможно использовать одновременно только один из
+                            этих способов. Самый практичный из них — component.
+                            <br>
+                            <br> props:
+                            <br>
+                            <br>
+                            <ul>
+                                <li> component: Component. Реакт компонент, который будет отрендерен, когда путь роута совпадет.
+                                    Компоненту будет переданы параметры location, match и history. При передаче в этот параметр
+                                    функции, а не компонент(Component, PureComponent), будет заново произведен ререндер,
+                                    каждый раз когда рендериться родитель. Происходит unmounting и mounting каждый раз. Если
+                                    использовать component, то будет только update компоненты.</li>
+                            </ul>
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37901814" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off"
+            data-record-type="285">
+            <!-- t264 -->
+            <div class="t264">
+                <div class="t-container">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div class="t264__wrapper t-text t-text_xs" style="border: 0px solid #f8f8f8;">
+                            <pre><code class="auto hljs coffeescript"><span class="hljs-regexp">//</span>Для работы с inline rendering, то есть для таких случаев, как:
+
+<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &lt;p&gt;Home page&lt;/p&gt;
+
+<span class="hljs-regexp">//</span>нужно использовать параметр render.</code></pre> </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript"> $(document).ready(function () { hljs.initHighlightingOnLoad(); }); </script>
+            <style type="text/css">
+                .t264 .hljs {
+                    background-color: ;
+                }
+            </style>
+        </div>
+        <div id="rec37901766" class="r t-rec t-rec_pt_30 t-rec_pb_0 r_hidden r_anim" style="padding-top:30px;padding-bottom:0px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <ul>
+                                <li> render: func. Этот параметр позволяет добавлять inline rendering, который будет исполнен
+                                    без unmounting и mounting каждый раз, когда родитель производит render. Функции, как
+                                    и в случае метода component, будут переданы параметры location, match и history.
+                                    <br>
+                                    <br> </li>
+                                <li> children: func. Существуют ситуации, когда рендер необходимо произвести вне зависимости от
+                                    того, совпал путь или нет. В таком случае параметр children может помочь. Children работает
+                                    так же как и render, если путь не совпадает, аргумент рендер функции match будет null.
+                                    Такое поведение может быть полезно для работы с анимациями при переходе с одной страницы
+                                    на другую.
+                                    <br>
+                                    <br> </li>
+                                <li> path: string. Путь, по которому Route будет отрисовывать свое содержимое.
+                                    <br>
+                                    <br> </li>
+                                <li> exact: bool. Если установлен в true, содержимое будет отрендерено только в случае полного
+                                    совпадения. Полезно, когда используется корневой путь — /. Если указан false, то вхождение
+                                    path в путь адресной строки будет вызывать рендер содержимого.
+                                    <br>
+                                    <br> </li>
+                                <li> strict: bool. Когда указан true, слэш на конце строки будет учтён при сравнении.
+                                    <br>
+                                    <br> </li>
+                                <li> location: object. Компонент Route будет сравнивать объект текущий location с объектом переданным
+                                    в location компоненты. Это бывает нужно для сравнения location с текущем location, для
+                                    проверки входит ли он в историю путей страницы.
+                                    <br>
+                                    <br> </li>
+                            </ul>
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37902236" class="r t-rec t-rec_pt_60 t-rec_pb_0 r_hidden r_anim" style="padding-top:60px;padding-bottom:0px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>
+                                <span data-redactor-tag="span" style="color: rgb(237, 149, 55);">Switch</span>
+                            </strong>
+                            <br>
+                            <br> Рендерит первый ребенок Route или Redirect, который совпадает с текущем location. Switch рендерит
+                            только одного ребенка, остальные дети не возвращают даже null.
+                            <br>
+                            <br> props:
+                            <br>
+                            <br>
+                            <ul>
+                                <li> location: object. Объект локации который будет использован в сравнении вместо текущего location.
+                                    <br>
+                                    <br> </li>
+                            </ul>
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rec37902278" class="r t-rec t-rec_pt_60 t-rec_pb_135 r_hidden r_anim" style="padding-top:60px;padding-bottom:135px; "
+            data-record-type="106">
+            <!-- T004 -->
+            <div class="t004">
+                <div class="t-container ">
+                    <div class="t-col t-col_8 t-prefix_2">
+                        <div field="text" class="t-text t-text_md ">
+                            <strong>
+                                <span data-redactor-tag="span" style="color: rgb(237, 149, 55);">withRouter</span>
+                            </strong>
+                            <br>
+                            <br> Это HOC, необходим для работы компонент, когда их родитель блокирует обновление contex t(своя
+                            проверка shouldComponentUpdate или PureComponent).
+                            <br>
+                            <br> Этот HOC, добавляет в props оборачиваемой компоненты объекты match, location и history. Также
+                            помогает при работе react-redux при оборачивании компоненты в HOC connect нужно использовать
+                            withRouter оборачивая снаружи connect — withRouter(connect()(App)).
+                            <br>
+                            <br>
+                            <br>
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script> (function (d, w, k) { w.setTimeout(function () { var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n) }; s.type = "text/javascript"; s.id = 'tildastatscript'; s.key = k; s.async = !0; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//stat.tildacdn.com/js/tildastat.min.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, !1) } else { f() } }, 2000) })(document, window, '5725ccd9e33aadf9dc80c76ad185388d'); if (!window.mainTracker) { window.mainTracker = 'tilda'; } </script>
+</body>
+
+</html>

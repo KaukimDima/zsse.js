@@ -5,7 +5,7 @@ import FetchTodoList from "./FetchTodoList/FetchTodoList";
 class App extends Component {
   state = {
     inputs: 1,
-    value: []
+    result: []
   };
 
   getIndex = el => {
@@ -17,19 +17,26 @@ class App extends Component {
     return -1;
   };
 
+  handleAddEvent = e => {
+    let { inputs } = this.state;
+    inputs += 1;
+    this.setState({ inputs: inputs });
+  };
+
   handleFetchEvent = e => {
     const input = document.getElementsByTagName("input");
     let arr = [];
     for (let i = 0; i < input.length; i++) {
       arr.push(+input[i].value);
-    }
-    this.setState({ value: "jghffdg" });
-    console.log(this.state);
-  };
-
-  handleFetchEvent1 = e => {
-    this.setState({ value: "asdasd" });
-    console.log(this.state);
+		}
+		let arr_obj = [];
+     arr.forEach(v => {
+      fetch(`https://jsonplaceholder.typicode.com/todos/${v}`)
+        .then(data => data.json())
+				.then(json => {
+					arr_obj.push(json)
+				});
+		});
   };
 
   render() {
@@ -40,7 +47,6 @@ class App extends Component {
           key={i}
           className="form-control"
           placeholder="Type number..."
-          onClick={this.conLog}
         />
       );
     }
@@ -50,7 +56,7 @@ class App extends Component {
           <button
             type="button"
             className="btn btn-primary"
-            onClick={this.handleFetchEvent1}
+            onClick={this.handleFetchEvent}
           >
             Fetch
           </button>
@@ -68,7 +74,7 @@ class App extends Component {
         {arr}
         <hr />
 
-        <FetchTodoList value="this.state.value" />
+        <FetchTodoList value={this.state.value} />
       </div>
     );
   }
