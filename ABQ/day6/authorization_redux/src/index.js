@@ -82,21 +82,21 @@ class Login extends Component{
         e.preventDefault();
         const {login, password, data} = this.state;
         
-        const dataNeed = [];
-       fetch(`https://zsse.herokuapp.com/api/user/${login}/`)
-       .then(response => response.json())
-       .then(data =>  this.setState({...this.state, data : data}))
-       console.log(data.succes)
-        // if (login == "user" && password == "1"){
-        //     this.props.login(true);
-        //     // console.log(this.props)
-        // }
-
-        if (data.succes == 0){ 
+      
+    //    fetch(`https://zsse.herokuapp.com/api/user/${login}/`)
+    //    .then(response => response.json())
+    //    .then(data =>  this.setState({...this.state, data : data}))
+    //    console.log(data.succes)
+        if (login == "user" && password == "1"){
             this.props.login(true);
+            // console.log(this.props)
+        }
 
-    }}
+    //     if (data.succes == 0){ 
+    //         this.props.login(true);
 
+    // }
+    }
 
     render(){
         return(
