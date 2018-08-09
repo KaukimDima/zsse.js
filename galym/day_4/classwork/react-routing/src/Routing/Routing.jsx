@@ -7,6 +7,7 @@ import {
 import Home from '../Pages/Home';
 import About from '../Pages/About';
 import User from '../Pages/User';
+import urls from './urls'
 
 class Routing extends Component {
   render() {
@@ -19,7 +20,7 @@ class Routing extends Component {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/about">About</Link>
+                <Link to={urls.about}>About</Link>
               </li>
               <li>
                 <Link to="/users">User</Link>
