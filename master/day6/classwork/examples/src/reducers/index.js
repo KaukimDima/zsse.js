@@ -26,7 +26,7 @@ const count = (state = 0, action) => {
   }
 };
 
-const records = (state = [], action) => {
+const records = (state = [1,2,3], action) => {
   switch (action.type) {
     case 'ADD_USER':
       return [...state, action.payload];

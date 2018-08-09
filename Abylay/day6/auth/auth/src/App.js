@@ -1,23 +1,45 @@
 import React, { Component } from 'react';
 import './App.css';
 
-const handleSubmit = (event) => {
-  const {isLoggedin}= this.state;
-  event.target.preventDefault();
- // const data = new FormData(event.target);
-  console.log(event.target.username)
-  fetch(`https://zsse.herokuapp.com/api/${event.target.username}`)
-  .then(response => response.json())
-  .then(json => console.log(json)) 
-  if (! response.json) {
-    this.setState(isLogged : true)
-  }
-}
 
 class App extends Component {
+ 
+ 
+  handleSubmit = (event) => {
+    const {isLoggedin}= this.state;
+    event.target.preventDefault();
+  // const data = new FormData(event.target);
+    console.log(event.target.username)
+    fetch(`https://zsse.herokuapp.com/api/${event.target.username}`)
+    .then(response => response.json())
+    .then(json => console.log(json)) 
+
+
+  }
+  
   state = {
     isLoggedIn : false
   }
+   
+  handleResponse = () => {
+    let response=this.state;
+    let isLoggedIn=this.state;
+    if (!response) {
+      this.setState({isLoggedIn : true})
+    }
+    console.log(isLoggedIn)
+  }
+ 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(event.target);
+   // const data = new FormData(event.target);
+    fetch(`https://zsse.herokuapp.com/api/${event.target.username}`)
+    .then(response => response.json())
+    .then(json => console.log(json)) 
+    return false;
+  }
+  
   render() {
     return (
       <form onSubmit={this.handleSubmit}>

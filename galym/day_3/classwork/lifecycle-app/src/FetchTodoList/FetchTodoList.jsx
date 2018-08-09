@@ -4,11 +4,14 @@ import "./FetchTodoList.css";
 class FetchTodoList extends Component {
   state = {
     list: [],
-    todosId: [1, 5, 9]
+    todosId: []
   };
 
   componentDidMount() {
-    const { todosId } = this.state;
+		const { todosId } = this.state;
+		const { value } = this.props;
+		this.setState({ todosId : value });
+		console.log(`value ${value}`);
     let arr = [];
     todosId.forEach(i => {
       fetch(`https://jsonplaceholder.typicode.com/todos/${i}`)
@@ -16,7 +19,6 @@ class FetchTodoList extends Component {
         .then(json => {
           arr.push(json);
 					this.setState({ list: arr });
-					console.log(arr);
 				});
     });
   }
