@@ -1,59 +1,52 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import Blog from './components/Blog'; 
 
 class App extends Component {
  
- 
-  handleSubmit = (event) => {
-    const {isLoggedin}= this.state;
-    event.target.preventDefault();
-  // const data = new FormData(event.target);
-    console.log(event.target.username)
-    fetch(`https://zsse.herokuapp.com/api/${event.target.username}`)
-    .then(response => response.json())
-    .then(json => console.log(json)) 
-
-
-  }
-  
   state = {
     isLoggedIn : false
   }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    let form=event.target;
+    fetch(`https://zsse.herokuapp.com/api/user/${form.elements.username.value}`)
+    .then(response => response.json())
+    .then(json => this.handleResponse(json) 
+     ) 
+    
    
-  handleResponse = () => {
-    let response=this.state;
+  }
+  handleResponse = (response) => {
+    console.log(Object.values(response))
+    let newarr=Object.values(response);
     let isLoggedIn=this.state;
-    if (!response) {
-      this.setState({isLoggedIn : true})
+    if (!newarr[0]) {
+      this.setState({ isLoggedIn : true })
     }
     console.log(isLoggedIn)
   }
- 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(event.target);
-   // const data = new FormData(event.target);
-    fetch(`https://zsse.herokuapp.com/api/${event.target.username}`)
-    .then(response => response.json())
-    .then(json => console.log(json)) 
-    return false;
-  }
+
   
   render() {
-    return (
+    const isLoggedIn=this.state;
+    return ( 
+      <div>
       <form onSubmit={this.handleSubmit}>
       <label htmlFor="username">Enter username</label>
-      <input id="username" name="username" type="text" />
+      <input  name="username" type="text" />
 
       <label htmlFor="email">Enter your email</label>
-      <input id="email" name="email" type="email" />
+      <input name="email" type="email" />
 
       <label htmlFor="password">Enter your password</label>
-      <input id="password" name="password" type="text" />
+      <input  name="password" type="text" />
 
-      <button>Send data!</button>
+      <button >Send data!</button>
     </form>
+    <Blog isLoggedIn={ isLoggedIn } />
+    </div>
     );
   }
 }
