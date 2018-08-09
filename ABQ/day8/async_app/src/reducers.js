@@ -2,9 +2,9 @@ import {
   fetchFireFlyEpisodsRequest,
   fetchFireFlyEpisodsSuccess,
   fetchFireFlyEpisodsFailure
-} from '../../../../master/day7/examples/react/src/actions';
+} from './actions';
 import {combineReducers} from 'redux';
-import {handleAction, handleActions} from '../../../../../../../Library/Caches/typescript/2.9/node_modules/@types/redux-actions';
+import {handleAction, handleActions} from 'redux-actions';
 
 const result = handleAction(
   fetchFireFlyEpisodsSuccess,

@@ -1,4 +1,4 @@
-import {createActions} from '../../../../../../../../Library/Caches/typescript/2.9/node_modules/@types/redux-actions';
+import {createActions} from 'redux-actions';
 
 export const  {
   some: {
