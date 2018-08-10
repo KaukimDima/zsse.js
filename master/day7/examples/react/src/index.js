@@ -4,6 +4,7 @@ import {Provider} from 'react-redux';
 import createStore from './store';
 import {connect} from 'react-redux';
 import {fetchFireFlyEpisodsRequest} from './actions';
+import App from "./App";
 
 import {
   getEpisodes,
@@ -14,38 +15,6 @@ import {
 
 const store = createStore();
 
-class App extends Component {
-  componentDidMount() {
-    const {
-      isFetched,
-      fetchFireFlyEpisodsRequest
-    } = this.props;
-
-    if (!isFetched) fetchFireFlyEpisodsRequest();
-  }
-
-  render() {
-    const {isFetching, error, episodes} = this.props;
-    console.log(this.props);
-    if (isFetching) {
-      return <p>Идет загрузка</p>;
-    }
-
-    if (error !== null) {
-      return <p style={{color: 'red'}}>Ошибка! {error}</p>;
-    }
-
-    return (
-      <div>
-        {episodes.map((el, i) => (
-          <div key={i}>
-            {<img src={el.image.medium} alt="firefly" />}
-          </div>
-        ))}
-      </div>
-    );
-  }
-}
 
 const mapStateToProps = state => ({
   episodes: getEpisodes(state),
