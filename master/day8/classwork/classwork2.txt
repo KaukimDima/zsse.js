@@ -1,0 +1,12 @@
+Делаем requestrна jsonplaceholder
+Делаем, маршрутизацию, добавляем ещу  одну страницу Todos
+Component Todos
+Routing добавили новый компонент
+Второй middleware, 
+Передаем через redux в компонент props посты после асинхронной загрузки
+ссылка - https://jsonplaceholder.typicode.com/todos
+
+const middleware
+
+componentDidMount()
+    
