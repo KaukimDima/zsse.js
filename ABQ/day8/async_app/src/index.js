@@ -39,7 +39,7 @@ class App extends Component {
       <div>
         {episodes.map((el, i) => (
           <div key={i}>
-            {<img src={el.image.medium} alt="firefly" />}
+            <p>{el.text}</p>
           </div>
         ))}
       </div>

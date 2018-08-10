@@ -11,7 +11,7 @@ const middleware = store => next => action => {
   if (
     action.type === fetchFireFlyEpisodsRequest.toString()
   ) {
-    fetch('http://api.tvmaze.com/shows/180/episodes', {
+    fetch('https://zsse.herokuapp.com/api/blog/', {
       method: 'GET',
       mode: 'cors'
     })
@@ -21,7 +21,7 @@ const middleware = store => next => action => {
       })
       .then(episodes => {
         store.dispatch(
-          fetchFireFlyEpisodsSuccess(episodes)
+          fetchFireFlyEpisodsSuccess(episodes.response)
         );
       })
       .catch(error => {
