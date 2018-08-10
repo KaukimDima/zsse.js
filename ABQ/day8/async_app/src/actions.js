@@ -1,11 +1,11 @@
-import {createActions} from '../../../../../../../../Library/Caches/typescript/2.9/node_modules/@types/redux-actions';
+import {createActions} from 'redux-actions';
 
 export const  {
   some: {
   some: {
       fetchRequest: fetchFireFlyEpisodsRequest,
       fetchSuccess: fetchFireFlyEpisodsSuccess,
-      fetchFailure: fetchBlogFail
+      fetchFailure: fetchFireFlyEpisodsFailure
   }
   }
 } = createActions({
@@ -13,8 +13,7 @@ export const  {
   SOME: {
       FETCH_REQUEST: undefined,
 
-      FETCH_SUCCESS: json => json,
-     
+      FETCH_SUCCESS:  json => json,
 
       FETCH_FAILURE: undefined
   }
@@ -22,3 +21,5 @@ export const  {
 });
 
 
+
+console.log(fetchFireFlyEpisodsFailure)
