@@ -3,7 +3,7 @@ import { addRecord, removeRecord } from '../../actions/recordsActions';
 import { getRecords } from '../../reducers';
 import { connect } from 'react-redux';
 
-class Home extends Component {
+class Blog extends Component {
 
 	constructor( props ) {
 		super();
@@ -35,7 +35,7 @@ class Home extends Component {
 	render() {
 		const { records } = this.props;
 		return (
-      <div className="Home">
+      <div className="Blog">
 				<h1>My Blog</h1>
 
 				<input
@@ -46,7 +46,7 @@ class Home extends Component {
 				/>
 
 				{ records.map( (el, i) => 
-					<h3 data-index={i} key={i} onClick={this.removeItem}>{ el.text }</h3>
+					<h3 data-index={el.id} key={i} onClick={this.removeItem}>{ el.text }</h3>
 				)}
       </div>
     );
@@ -65,4 +65,4 @@ const mapDispatchtoProps = {
 export default connect(
 	mapStatetoProps,
 	mapDispatchtoProps
-)(Home);
+)(Blog);

@@ -4,7 +4,7 @@ import {
   Route,
 	Link,
 } from "react-router-dom";
-import Home from '../Home/Home';
+import Blog from '../Blog/Blog';
 import Login from '../Login/Login';
 /* import urls from './urls' */
 
@@ -16,14 +16,14 @@ class Routing extends Component {
 					<div>
 						<ul>
 							<li>
-								<Link to="/">Home</Link>
+								<Link to="/">Blog</Link>
 							</li>
 						</ul>
 
 						<hr />
 
 						{/* <Route path="*" render={ () => <Redirect to="/login" />} /> */}
-						<Route exact path="/" component={ Home } />
+						<Route exact path="/blog" component={ Blog } />
 						<Route path="/login" component={ Login } />
 					</div>
         </Router>

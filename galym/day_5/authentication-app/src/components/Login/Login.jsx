@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Login.css';
 /* import axios from 'axios'; */
 import { Route, Redirect } from "react-router-dom";
+import { Blog } from '../Blog/Blog';
 
 class Login extends Component {
 	
@@ -25,9 +26,11 @@ class Login extends Component {
 		/* if( username === form.username && password === form.password ) this.setState({ auth : true }); */
 		this.setState({ auth : !auth });
 		if(this.state.auth) {
-			<Route>
-				<Redirect to="/home" login={this.state.form.login} pass={this.state.form.pass} />
-			</Route>
+			<Route
+				render = { props => logged ? <Login /> : <Redirect to='/' /> }
+				exact
+				path='/products/:id'
+			/>
 		}
 	}
 	
