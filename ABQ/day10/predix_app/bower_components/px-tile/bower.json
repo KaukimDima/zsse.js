@@ -1,0 +1,67 @@
+{
+  "name": "px-tile",
+  "version": "3.0.2",
+  "main": [
+    "px-tile.html"
+  ],
+  "ignore": [
+    ".*",
+    "npm-debug.log",
+    "gulpfile.js",
+    "sass",
+    "bower_components",
+    "node_modules",
+    "test",
+    "OSS_Notice.pdf",
+    "scripts",
+    ".github",
+    "px-tile.png",
+    "LICENSE.md",
+    "CONTRIBUTING.md",
+    "HISTORY.md",
+    "README.md",
+    ".jshintrc",
+    ".editorconfig",
+    "*.enc"
+  ],
+  "dependencies": {
+    "polymer": "#1.9 - 2",
+    "px-dropdown": "^4.1.0",
+    "px-icon-set": "^2.1.1",
+    "px-flexbox-design": "^1.0.2",
+    "px-buttons-design": "^2.0.5"
+  },
+  "devDependencies": {
+    "px-demo": "^3.0.0",
+    "px-theme": "^3.0.0",
+    "px-headings-design": "^1.0.3",
+    "px-alert-label": "^2.0.7",
+    "px-shadows-design": "^1.0.2",
+    "px-normalize-design": "^1.0.2",
+    "px-box-sizing-design": "^1.0.2",
+    "px-helpers-design": "^1.0.7",
+    "web-component-tester": "^6.3.0",
+    "px-dark-theme": "^2.1.0",
+    "px-vis": "^4.4.7",
+    "px-simple-horizontal-bar-chart": "^1.0.3"
+  },
+  "resolutions": {
+    "webcomponentsjs": "^1.0.0",
+    "px-api-viewer": "^2.0.0",
+    "iron-doc-viewer": "^3.0.0",
+    "px-code-editor": "^3.0.0"
+  },
+  "variants": {
+    "1.x": {
+      "dependencies": {
+        "polymer": "^1.9.0"
+      },
+      "devDependencies": {
+        "web-component-tester": "^5.0.0"
+      },
+      "resolutions": {
+        "webcomponentsjs": "^0.7.0"
+      }
+    }
+  }
+}
