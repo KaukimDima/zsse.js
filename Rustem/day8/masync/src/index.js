@@ -36,7 +36,6 @@ class App extends Component {
     if (error !== null) {
       return <p style={{color: 'red'}}>Ошибка! {error}</p>;
     }
-    console.log(episodes[3])
 
     return (
       

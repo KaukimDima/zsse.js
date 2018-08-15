@@ -6,25 +6,27 @@ import {
 import {combineReducers} from 'redux';
 import {handleAction, handleActions} from 'redux-actions';
 
+// handleAction(type, reducer, defaultState)
+
 const episodes = handleAction(
-  fetchFireFlyEpisodsSuccess,
-  (state, action) => action.payload,
-  []
+fetchFireFlyEpisodsSuccess,
+(state, action) => action.payload,
+[]
 );
 
 const error = handleAction(
-  fetchFireFlyEpisodsFailure,
-  (state, action) => action.error,
-  null
+fetchFireFlyEpisodsFailure,
+(state, action) => action.error,
+null
 );
 
-const isFetching = handleActions(
-  {
-    [fetchFireFlyEpisodsRequest]: () => true,
-    [fetchFireFlyEpisodsSuccess]: () => false,
-    [fetchFireFlyEpisodsFailure]: () => false
-  },
-  false
+    const isFetching = handleActions(
+{
+  [fetchFireFlyEpisodsRequest]: () => true,
+  [fetchFireFlyEpisodsSuccess]: () => false,
+  [fetchFireFlyEpisodsFailure]: () => false
+},
+false
 );
 
 const isFetched = handleActions(

@@ -1,5 +1,5 @@
  
- import {createStore, applyMiddleware, compose} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import rootReducer from './reducers';
 import {
   fetchFireFlyEpisodsRequest,
@@ -8,10 +8,12 @@ import {
 } from './actions';
 
 const middleware = store => next => action => {
+
+
   if (
     action.type === fetchFireFlyEpisodsRequest.toString()
   ) {
-    fetch('https://zsse.herokuapp.com/api/blog/', {
+    fetch('https://jsonplaceholder.typicode.com/todos', {
       method: 'GET',
       mode: 'cors'
     })
@@ -20,7 +22,7 @@ const middleware = store => next => action => {
       })
       .then(episodes => {
         store.dispatch(
-          fetchFireFlyEpisodsSuccess(episodes.response)
+          fetchFireFlyEpisodsSuccess(episodes)
         );
       })
       .catch(error => {
