@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import { combineReducers, applyMiddleware } from 'redux';
 
 let id = 0;
 const getId = () => {

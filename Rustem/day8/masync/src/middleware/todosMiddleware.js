@@ -1,0 +1,40 @@
+import {createStore, applyMiddleware, compose} from 'redux';
+import {
+  fetchFireFlyEpisodsRequest,
+  fetchFireFlyEpisodsSuccess,
+  fetchFireFlyEpisodsFailure
+} from './actions';
+
+const postMiddleware = store => next => action => {
+  if (
+    action.type === fetchFireFlyEpisodsRequest.toString()
+  ) {
+    fetch('https://jsonplaceholder.typicode.com/todos', {
+      method: 'GET',
+      mode: 'cors'
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(episodes => {
+        store.dispatch(
+          fetchFireFlyEpisodsSuccess(episodes)
+        );
+      })
+      .catch(error => {
+        store.dispatch(fetchFireFlyEpisodsFailure(error));
+      });
+  }
+  return next(action);
+};
+
+/* export default () =>
+  createStore(
+    rootReducer,
+    compose(
+      applyMiddleware(middleware),
+      window.devToolsExtension
+        ? window.__REDUX_DEVTOOLS_EXTENSION__()
+        : f => f
+    )
+  ); */
