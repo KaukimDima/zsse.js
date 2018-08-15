@@ -5,7 +5,7 @@ export const  {
   some: {
       fetchRequest: fetchFireFlyEpisodsRequest,
       fetchSuccess: fetchFireFlyEpisodsSuccess,
-      fetchFailure: fetchFireFlyEpisodsFailure
+      fetchFailure: fetchBlogFail
   }
   }
 } = createActions({
@@ -13,10 +13,8 @@ export const  {
   SOME: {
       FETCH_REQUEST: undefined,
 
-      FETCH_SUCCESS: [
-        json => json,
-        json => ({length: json.length})
-      ],
+      FETCH_SUCCESS: json => json,
+     
 
       FETCH_FAILURE: undefined
   }
@@ -24,5 +22,3 @@ export const  {
 });
 
 
-
-console.log(fetchFireFlyEpisodsFailure)

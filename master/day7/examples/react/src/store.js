@@ -3,7 +3,7 @@ import rootReducer from './reducers';
 import {
   fetchFireFlyEpisodsRequest,
   fetchFireFlyEpisodsSuccess,
-  fetchFireFlyEpisodsFailure
+  fetchBlogFail
 } from './actions';
 
 
@@ -16,16 +16,16 @@ const middleware = store => next => action => {
       mode: 'cors'
     })
       .then(response => {
-        console.log(response);
         return response.json();
       })
       .then(episodes => {
+        console.log('succes')
         store.dispatch(
-          fetchFireFlyEpisodsSuccess(episodes)
+          fetchFireFlyEpisodsSuccess(episodes.response, episodes.response)
         );
       })
       .catch(error => {
-        store.dispatch(fetchFireFlyEpisodsFailure(error));
+        store.dispatch(fetchBlogFail(error));
       });
   }
   return next(action);

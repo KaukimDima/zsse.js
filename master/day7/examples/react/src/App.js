@@ -3,19 +3,35 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  componentDidMount() {
+    const {
+      isFetched,
+      fetchFireFlyEpisodsRequest
+    } = this.props;
+
+    if (!isFetched) fetchFireFlyEpisodsRequest();
+  }
+
   render() {
+    const { isFetching, error, episodes } = this.props;
+    console.log(isFetching);
+    if (isFetching) {
+      return <p>Идет загрузка</p>;
+    }
+
+    if (error !== null) {
+      return <p style={{ color: 'red' }}>Ошибка! {error}</p>;
+    }
+    console.log(this.props.episodes);
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        {/* {episodes.map((el, i) => (
+          <div key={i}>
+            {el.text}
+          </div>
+        ))} */}
       </div>
     );
-  } 
+  }
 }
-
 export default App;
