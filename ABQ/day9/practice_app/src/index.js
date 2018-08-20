@@ -4,6 +4,7 @@ import {Provider} from 'react-redux';
 import createStore from './store';
 import {connect} from 'react-redux';
 import {fetchFireFlyEpisodsRequest} from './actions';
+import GetJson from './GetJson';
 
 import {
   getEpisodes,
@@ -15,33 +16,40 @@ import {
 const store = createStore();
 
 class App extends Component {
-  componentDidMount() {
-    const {
-      isFetched,
-      fetchFireFlyEpisodsRequest
-    } = this.props;
+  state = {
+    click : false
+   }
+  // hadleClcik = e => {
+  //   const {
+  //     isFetched,
+  //     fetchFireFlyEpisodsRequest
+  //   } = this.props;
 
-    if (!isFetched) fetchFireFlyEpisodsRequest();
-  }
+  //   if (!isFetched) fetchFireFlyEpisodsRequest();
+
+  // }
+  // componentDidMount() {
+  //   const {
+  //     isFetched,
+  //     fetchFireFlyEpisodsRequest
+  //   } = this.props;
+
+  //   if (!isFetched) fetchFireFlyEpisodsRequest();
+  // }
 
   render() {
-    const {isFetching, error, episodes} = this.props;
-    console.log(this.props);
-    if (isFetching) {
-      return <p>Идет загрузка</p>;
-    }
-
-    if (error !== null) {
-      return <p style={{color: 'red'}}>Ошибка! {error}</p>;
-    }
+    
 
     return (
       <div>
-        {episodes.map((el, i) => (
+
+        <button type = "button" onClick = { () => this.setState({ click : !this.state.click}) }> CLick it </button>
+        { this.state.click ? <GetJson /> : () => ""}
+        {/* {episodes.map((el, i) => (
           <div key={i}>
             <p>{el.text}</p>
           </div>
-        ))}
+        ))} */}
       </div>
     );
   }
