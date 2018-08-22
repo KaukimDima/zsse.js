@@ -1,0 +1,49 @@
+{
+  "name": "px-alert-label",
+  "version": "2.0.9",
+  "main": [
+    "px-alert-label.html"
+  ],
+  "ignore": [
+    "*.enc",
+    ".*",
+    "node_modules",
+    "bower_components",
+    "sass",
+    "*.md",
+    "scripts",
+    ".github",
+    "gulpfile.js",
+    "wct.conf.json",
+    "test",
+    "OSS_Notice.pdf",
+    "*.png",
+    "npm-debug.log"
+  ],
+  "dependencies": {
+    "polymer": "^1.9.0"
+  },
+  "devDependencies": {
+    "px-theme": "^3.0.0",
+    "px-normalize-design": "^1.0.0",
+    "px-box-sizing-design": "^1.0.0",
+    "web-component-tester": "^4.0.0",
+    "px-demo": "^3.0.0"
+  },
+  "resolutions": {
+    "webcomponentsjs": "^0.7.0"
+  },
+  "variants": {
+    "1.x": {
+      "dependencies": {
+        "polymer": "^1.9.0"
+      },
+      "devDependencies": {
+        "web-component-tester": "^4.0.0"
+      },
+      "resolutions": {
+        "webcomponentsjs": "^0.7.0"
+      }
+    }
+  }
+}

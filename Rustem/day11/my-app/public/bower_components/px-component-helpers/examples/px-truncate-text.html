@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Example | px-truncate-text</title>
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../../polymer/polymer.html"/>
+  <link rel="import" href="../../px-theme/px-theme-styles.html"/>
+  <link rel="import" href="../px-truncate-text.html"/>
+
+  <style>
+    html, body {
+      margin: 0;
+      font-size: 15px;
+      background-color: lightgray;
+    }
+    .container {
+      display: block;
+      width: 200px;
+      margin: 3rem;
+      background-color: white;
+      box-shadow: 0px 1px 1px rgba(0,0,0,.2);
+    }
+    .container--wide {
+      width: 400px;
+    }
+    .container--skinny {
+      width: 200px;
+    }
+    .container--tiny {
+      width: 100px;
+    }
+    .fake-button {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    .fake-button:hover {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <custom-style>
+    <style is="custom-style" include="px-theme-styles"></style>
+  </custom-style>
+
+  <div class="container container--wide">
+    <div class="fake-button">
+      <px-truncate-text text="Steam Generator Alpha A.a97847120ds9"></px-truncate-text>
+    </div>
+    <div class="fake-button">
+      <px-truncate-text text="Steam Generator Beta A.g897dKJez214"></px-truncate-text>
+    </div>
+    <div class="fake-button">
+      <px-truncate-text text="Steam Generator Zeta A.ff8940zkd87z"></px-truncate-text>
+    </div>
+  </div>
+
+  <div class="container container--skinny">
+    <div class="fake-button">
+      <px-truncate-text text="Steam Generator Alpha A.a97847120ds9"></px-truncate-text>
+    </div>
+    <div class="fake-button">
+      <px-truncate-text text="Steam Generator Beta A.g897dKJez214"></px-truncate-text>
+    </div>
+    <div class="fake-button">
+      <px-truncate-text text="Steam Generator Zeta A.ff8940zkd87z"></px-truncate-text>
+    </div>
+  </div>
+
+  <div class="container container--tiny">
+    <div class="fake-button">
+      <px-truncate-text text="Steam Generator Alpha A.a97847120ds9" characters="2"></px-truncate-text>
+    </div>
+    <div class="fake-button">
+      <px-truncate-text text="Steam Generator Beta A.g897dKJez214" characters="2"></px-truncate-text>
+    </div>
+    <div class="fake-button">
+      <px-truncate-text text="Steam Generator Zeta A.ff8940zkd87z" characters="2"></px-truncate-text>
+    </div>
+  </div>
+
+  <div class="container container--tiny">
+    <div class="fake-button">
+      <px-truncate-text text="SteamG1 Tag" characters="0"></px-truncate-text>
+    </div>
+    <div class="fake-button">
+      <px-truncate-text text="SteamG2 Tag" characters="0"></px-truncate-text>
+    </div>
+    <div class="fake-button">
+      <px-truncate-text text="SteamG3 Tag" characters="0"></px-truncate-text>
+    </div>
+  </div>
+</body>
+</html>

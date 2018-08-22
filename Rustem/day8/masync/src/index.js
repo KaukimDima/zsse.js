@@ -15,6 +15,23 @@ import {
 const store = createStore();
 
 class App extends Component {
+
+  state = {
+
+    show:false
+  }
+
+
+  handleClick = e => {
+
+    const {
+      isFetched,
+    } = this.props;
+    if (!isFetched) fetchFireFlyEpisodsRequest();
+
+    this.setState({show:true})
+
+  }
   componentDidMount() {
     const {
       isFetched,
@@ -41,8 +58,10 @@ class App extends Component {
       
       <div>
 
+        <button onClick = {this.handleClick}> click me! </button>
           {episodes.map((el, i) => (
             <h3 key={i}>
+            {el.title}
             </h3>
           ))}
 
