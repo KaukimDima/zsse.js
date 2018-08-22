@@ -22,4 +22,4 @@ export const  {
 
 
 
-console.log(fetchFireFlyEpisodsFailure)
+console.log(fetchFireFlyEpisodsFailure.toString())

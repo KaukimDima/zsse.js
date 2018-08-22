@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { EnhancedApp1 } from "./index";
 
 class App extends Component {
   componentDidMount() {
@@ -14,7 +15,6 @@ class App extends Component {
 
   render() {
     const { isFetching, error, episodes } = this.props;
-    console.log(isFetching);
     if (isFetching) {
       return <p>Идет загрузка</p>;
     }
@@ -22,7 +22,6 @@ class App extends Component {
     if (error !== null) {
       return <p style={{ color: 'red' }}>Ошибка! {error}</p>;
     }
-    console.log(this.props.episodes);
     return (
       <div>
         {/* {episodes.map((el, i) => (
@@ -30,6 +29,7 @@ class App extends Component {
             {el.text}
           </div>
         ))} */}
+        <EnhancedApp1 />
       </div>
     );
   }

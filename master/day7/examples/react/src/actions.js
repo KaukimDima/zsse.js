@@ -1,4 +1,4 @@
-import {createActions} from '../../../../../../../../Library/Caches/typescript/2.9/node_modules/@types/redux-actions';
+import {createActions} from 'redux-actions';
 
 export const  {
   some: {
@@ -20,5 +20,29 @@ export const  {
   }
   }
 });
+
+export const  {
+  fetch: {
+    todos: {
+        fetchRequest: fetchTodosRequest,
+        fetchSuccess: fetchTodosSuccess,
+      fetchFailure: fetchTodosFail
+    }
+  }
+} = createActions({
+  FETCH: {
+    TODOS: {
+        FETCH_REQUEST: undefined,
+
+        FETCH_SUCCESS: json => json,
+      
+
+        FETCH_FAILURE: undefined
+    }
+  }
+});
+
+
+console.log(fetchFireFlyEpisodsRequest)
 
 

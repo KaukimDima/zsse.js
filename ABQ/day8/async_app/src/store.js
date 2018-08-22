@@ -7,7 +7,14 @@ import {
 } from './actions';
 
 
+function store() {
+  return function next() {
+    return 
+  }
+}
+
 const middleware = store => next => action => {
+  console.log(action.type);
   if (
     action.type === fetchFireFlyEpisodsRequest.toString()
   ) {
@@ -16,7 +23,6 @@ const middleware = store => next => action => {
       mode: 'cors'
     })
       .then(response => {
-        console.log(response);
         return response.json();
       })
       .then(episodes => {
