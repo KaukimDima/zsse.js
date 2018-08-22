@@ -13,20 +13,26 @@ class App extends Component {
       innerText : "Inner txext",
       headerValue : "Header value"
   }
-  ]
-  }
- selectedRoute = (el) => {
-    return(
-      {el}
-    )
-  }
-  navData = [
+  ],
+  navData : [
     {
-      "label" : "Dashboard",
+      "label" : "HOME",
       "icon" : "px-fea:home",
+      "id" : "home"
+    },
+    {
+      "label" : "Alerts",
+      "icon" : "px-fea:alerts",
       "id" : "dashboard"
     }
   ]
+  }
+//  selectedRoute = (el) => {
+//     return(
+//       {el}
+//     )
+//   }
+  
   componentDidMount() {
     console.log(this.$alertLabel)
     console.log(this.$accordion)
@@ -71,8 +77,8 @@ class App extends Component {
     normal="[ [45, 54] ]"
        value={this.state.numb}>
         </px-gauge> */}
-
-       <AppNav navData = {this.navData} selectedRoute = {this.selectedRoute}/>
+{/* selectedRoute = {this.selectedRoute} */}
+       <AppNav navData = {this.state.navData} />
         {this.selectedRoute}
       </div>
 
