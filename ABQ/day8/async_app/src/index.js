@@ -26,7 +26,6 @@ class App extends Component {
 
   render() {
     const {isFetching, error, episodes} = this.props;
-    console.log(this.props);
     if (isFetching) {
       return <p>Идет загрузка</p>;
     }
