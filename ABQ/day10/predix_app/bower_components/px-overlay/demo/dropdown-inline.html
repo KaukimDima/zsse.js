@@ -1,0 +1,66 @@
+<!--
+Copyright (c) 2018, General Electric
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>px-dropdown Demo: Custom Trigger</title>
+
+  <!-- Load webcomponentsjs + Polymer -->
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../../polymer/polymer.html"/>
+
+  <!-- Load theme -->
+  <link rel="import" href="../../px-theme/px-theme-styles.html"/>
+  <custom-style>
+    <style include="px-theme-styles" is="custom-style"></style>
+  </custom-style>
+
+  <!-- Load components -->
+  <link rel="import" href="../../px-dropdown/px-dropdown.html"/>
+
+  <style>
+    html {
+      font-size: 15px;
+    }
+    div {
+      display: inline-block;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <px-dropdown
+      items='[{"key":"1","val":"iPhone"},{"key":"2","val":"Android"},{"key":"3","val":"Blackberry"},{"key":"4","val":"I am a menu item so I cannot be selected","disableSelect":true},{"key":"5","val":"Flip Phone","disabled":true}]'>
+    </px-dropdown>
+  </div>
+  <div>
+    <px-dropdown
+      items='[{"key":"1","val":"iPhone"},{"key":"2","val":"Android"},{"key":"3","val":"Blackberry"},{"key":"4","val":"I am a menu item so I cannot be selected","disableSelect":true},{"key":"5","val":"Flip Phone","disabled":true}]'>
+    </px-dropdown>
+  </div>
+  <div>
+  <px-dropdown
+    items='[{"key":"1","val":"iPhone"},{"key":"2","val":"Android"},{"key":"3","val":"Blackberry"},{"key":"4","val":"I am a menu item so I cannot be selected","disableSelect":true},{"key":"5","val":"Flip Phone","disabled":true}]'>
+  </px-dropdown>
+</div>
+
+</body>
+</html>

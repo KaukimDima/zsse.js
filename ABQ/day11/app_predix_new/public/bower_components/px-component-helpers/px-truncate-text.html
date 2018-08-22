@@ -1,0 +1,104 @@
+<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="css/px-truncate-text-styles.html"/>
+
+<!--
+The `px-truncate-text` helper truncates text that does not fit in its container.
+The component uses a purely CSS-based approach but offers middle and end
+truncation options to support different design approaches.
+
+Use this component to gracefully hide text that doesn't fit inside containers
+like buttons, menus, dropdowns, or cells.
+
+### Customize characters for data
+
+Set the `characters` property to the number of characters that should be shown
+at the end of the string when it is truncated. If you know the domain of the
+text that will be truncated, e.g. you know they are asset IDs with an important
+pattern at the front and in the last 4 characters, you can customize the
+truncation behavior to show the user the most useful information.
+
+### Fit in container
+
+By default, the element will fill 100% of the width available to it then
+squish down when its container shrinks. Its recommended to place it inside a
+display block container with a fixed width, but it can fit inside any
+DOM structure that allows it to measure its width with CSS 'width: 100%'.
+
+### Usage
+
+    <div style="display: block; width: 200px;">
+      <px-truncate-text text="Steam Generator Alpha A.a97847120ds9"></px-truncate-text>
+    </div>
+
+@element px-truncate-text
+@blurb Truncates text in the middle or at the end if it doesn't fit in its container
+@homepage index.html
+@demo index.html
+-->
+
+<dom-module id="px-truncate-text">
+  <template>
+    <style include="px-truncate-text-styles"></style>
+    <div class="truncate-container">
+      <div class="truncate-left">[[_leftText]]</div>
+      <div class="truncate-right">[[_rightText]]</div>
+    </div>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: 'px-truncate-text',
+    properties: {
+      /**
+       * Text to truncate. If the text does not fit in the space allowed for the
+       * component it will truncated in the middle or at the end.
+       *
+       * Example: 'Steam Generator Asset No 12345' > 'Steam Gener...12345'
+       */
+      text: String,
+      /**
+       * Number of characters to show at the end of the truncated text when the
+       * text does not fit. Set to `0` to truncate at the end of the text.
+       * If the number of characters is more than the length of the string,
+       * the entire string will be shown and end-truncated.
+       *
+       * Example with characters set to `3`:
+       * 'A bit of text that does not fit' > 'A bit of text...fit'
+       *
+       * Example with characters set to `0`:
+       * 'A bit of text that does not fit' > 'A bit of text tha...'
+       */
+      characters: {
+        type: Number,
+        value: 8
+      },
+      _leftText: {
+        type: String,
+        computed: '_computeLeftText(text, characters)'
+      },
+      _rightText: {
+        type: String,
+        computed: '_computeRightText(text, characters)'
+      }
+    },
+
+    _computeLeftText(text, characters) {
+      if (typeof text === 'string' && typeof characters === 'number') {
+        console.log(text + ' ' + text.length + ' ' + characters);
+        if (characters >= text.length) {
+          return text;
+        }
+        return text.slice(0, text.length-characters);
+      }
+    },
+
+    _computeRightText(text, characters) {
+      if (typeof text === 'string' && typeof characters === 'number') {
+        if (characters >= text.length) {
+          return '';
+        }
+        return text.slice(text.length-characters);
+      }
+    }
+  });
+</script>

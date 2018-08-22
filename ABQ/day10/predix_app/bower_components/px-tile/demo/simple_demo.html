@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Px-tile Demo</title>
+
+    <!--
+      Fast bootstrapping of the webcomponents-lite library. Only loads the library
+      if the browser doesn't natively support web components.
+    -->
+    <script type="text/javascript">
+    (function() {
+      'use strict';
+
+      var onload = function() {
+        // For native Imports, manually fire WebComponentsReady so user code
+        // can use the same code path for native and polyfill'd imports.
+        if (!window.HTMLImports) {
+          document.dispatchEvent(
+            new CustomEvent('WebComponentsReady', {bubbles: true})
+          );
+        }
+      };
+
+      var webComponentsSupported = (
+        'registerElement' in document && 'import' in document.createElement('link') && 'content' in document.createElement('template')
+      );
+
+      if (!webComponentsSupported) {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = '../../webcomponentsjs/webcomponents-lite.js';
+        script.onload = onload;
+        document.head.appendChild(script);
+      } else {
+        onload();
+      }
+    })();
+    </script>
+
+    <link rel="import" href="../../polymer/polymer.html" />
+    <link rel="import" href="../../px-icon-set/px-icon-set.html" />
+    <link rel="import" href="../../px-icon-set/px-icon.html" />
+    <link rel="import" href="../../px-alert-label/px-alert-label.html" />
+    <link rel="import" href="../../px-theme/px-theme-styles.html">
+
+    <custom-style>
+      <style include="px-theme-styles" is="custom-style">
+        px-tile {
+          margin: 1rem;
+          cursor: pointer;
+          /* Customize width and height of px tile */
+          /*--px-tile-width : 20rem;*/
+          --px-tile-height: 19rem;
+          /*  ===== description text truncate adjustment  ========
+          For example, if you want to truncate this description after 3 lines, use 3rem */
+          /* keep in mind that total height of about are (bottom text portion) depends on
+             presence of title, subtitle, description text and actionable button */
+          --px-tile-desc-text-height : 3rem;
+        }
+        .footer {
+          display: flex;
+          align-items: center;
+        }
+        px-alert-label {
+          margin-left: 0.66667rem;
+          --px-alert-label-border-color: white;
+          --px-alert-label-background-color--unknown: transparent;
+          --px-alert-label-text-color--unknown: white;
+        }
+      </style>
+    </custom-style>
+
+    <link rel="import" href="../px-tile.html" />
+
+    <script>
+      function goToLink() {
+        window.location.href = 'https://predix-ui.com';
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <div style="display:flex; flex-wrap:wrap;">
+      <px-tile onclick="goToLink()"
+               main-title="Component Name"
+               description="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.  Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.  Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
+               overlay-description="Overlay description text : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna."
+               hoverable="true">
+        <div class="thumbnail" slot="thumbnail">
+          <img src="turbine.jpg"/>
+        </div>
+        <div class="footer" slot="footer">
+          <px-icon icon="px-fea:tag"></px-icon>
+          <px-alert-label type="unknown" label="Salmon"></px-alert-label>
+          <px-alert-label type="unknown" label="Lime"></px-alert-label>
+          <px-alert-label type="unknown" label="Yeah brah"></px-alert-label>
+        </div>
+      </px-tile>
+      <px-tile onclick="goToLink()"
+               main-title="Component Name"
+               description="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui."
+               overlay-description="Overlay description text : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna."
+               hoverable="true">
+        <div class="thumbnail" slot="thumbnail">
+          <img src="turbine.jpg"/>
+        </div>
+        <div class="footer" slot="footer">
+          <px-icon icon="px-fea:tag"></px-icon>
+          <px-alert-label type="unknown" label="Salmon"></px-alert-label>
+          <px-alert-label type="unknown" label="Lime"></px-alert-label>
+          <px-alert-label type="unknown" label="Yeah brah"></px-alert-label>
+        </div>
+      </px-tile>
+      <px-tile onclick="goToLink()"
+               main-title="Component Name"
+               description="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui."
+               overlay-description="Overlay description text : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna."
+               hoverable="true">
+        <div class="thumbnail" slot="thumbnail">
+          <img src="turbine.jpg"/>
+        </div>
+        <div class="footer" slot="footer">
+          <px-icon icon="px-fea:tag"></px-icon>
+          <px-alert-label type="unknown" label="Salmon"></px-alert-label>
+          <px-alert-label type="unknown" label="Lime"></px-alert-label>
+          <px-alert-label type="unknown" label="Yeah brah"></px-alert-label>
+        </div>
+      </px-tile>
+      <px-tile onclick="goToLink()"
+               main-title="Component Name"
+               description="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui."
+               overlay-description="Overlay description text : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna."
+               hoverable="true">
+        <div class="thumbnail" slot="thumbnail">
+          <img src="turbine.jpg"/>
+        </div>
+        <div class="footer" slot="footer">
+          <px-icon icon="px-fea:tag"></px-icon>
+          <px-alert-label type="unknown" label="Salmon"></px-alert-label>
+          <px-alert-label type="unknown" label="Lime"></px-alert-label>
+          <px-alert-label type="unknown" label="Yeah brah"></px-alert-label>
+        </div>
+      </px-tile>
+      <px-tile onclick="goToLink()"
+               main-title="Component Name"
+               description="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui."
+               overlay-description="Overlay description text : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna."
+               hoverable="true">
+        <div class="thumbnail" slot="thumbnail">
+          <img src="turbine.jpg"/>
+        </div>
+        <div class="footer" slot="footer">
+          <px-icon icon="px-fea:tag"></px-icon>
+          <px-alert-label type="unknown" label="Salmon"></px-alert-label>
+          <px-alert-label type="unknown" label="Lime"></px-alert-label>
+          <px-alert-label type="unknown" label="Yeah brah"></px-alert-label>
+        </div>
+      </px-tile>
+      <px-tile onclick="goToLink()"
+               main-title="Component Name"
+               description="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui."
+               overlay-description="Overlay description text : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna."
+               hoverable="true">
+        <div class="thumbnail" slot="thumbnail">
+          <img src="turbine.jpg"/>
+        </div>
+        <div class="footer" slot="footer">
+          <px-icon icon="px-fea:tag"></px-icon>
+          <px-alert-label type="unknown" label="Salmon"></px-alert-label>
+          <px-alert-label type="unknown" label="Lime"></px-alert-label>
+          <px-alert-label type="unknown" label="Yeah brah"></px-alert-label>
+        </div>
+      </px-tile>
+      <px-tile onclick="goToLink()"
+               main-title="Component Name"
+               description="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui."
+               overlay-description="Overlay description text : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna."
+               hoverable="true">
+        <div class="thumbnail" slot="thumbnail">
+          <img src="turbine.jpg"/>
+        </div>
+        <div class="footer" slot="footer">
+          <px-icon icon="px-fea:tag"></px-icon>
+          <px-alert-label type="unknown" label="Salmon"></px-alert-label>
+          <px-alert-label type="unknown" label="Lime"></px-alert-label>
+          <px-alert-label type="unknown" label="Yeah brah"></px-alert-label>
+        </div>
+      </px-tile>
+      <px-tile onclick="goToLink()"
+               main-title="Component Name"
+               description="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui."
+               overlay-description="Overlay description text : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna."
+               hoverable="true">
+        <div class="thumbnail" slot="thumbnail">
+          <img src="turbine.jpg"/>
+        </div>
+        <div class="footer" slot="footer">
+          <px-icon icon="px-fea:tag"></px-icon>
+          <px-alert-label type="unknown" label="Salmon"></px-alert-label>
+          <px-alert-label type="unknown" label="Lime"></px-alert-label>
+          <px-alert-label type="unknown" label="Yeah brah"></px-alert-label>
+        </div>
+      </px-tile>
+      <px-tile onclick="goToLink()"
+               main-title="Component Name"
+               description="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui."
+               overlay-description="Overlay description text : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna."
+               hoverable="true">
+        <div class="thumbnail" slot="thumbnail">
+          <img src="turbine.jpg"/>
+        </div>
+        <div class="footer" slot="footer">
+          <px-icon icon="px-fea:tag"></px-icon>
+          <px-alert-label type="unknown" label="Salmon"></px-alert-label>
+          <px-alert-label type="unknown" label="Lime"></px-alert-label>
+          <px-alert-label type="unknown" label="Yeah brah"></px-alert-label>
+        </div>
+      </px-tile>
+
+    </div>
+
+  </body>
+</html>

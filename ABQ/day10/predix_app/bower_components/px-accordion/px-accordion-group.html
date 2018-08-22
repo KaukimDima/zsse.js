@@ -1,0 +1,157 @@
+<!--
+Copyright (c) 2018, General Electric
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<!--
+    Relative paths assume component is being run from inside an app or another component, where dependencies are flat
+    siblings. When this component is run from its own repo (e.g. tests, examples), we assume the server is started with
+    'gulp serve' (or similar server setup) to enable correct finding of bower dependencies for local runs.
+-->
+<link rel="import" href="../polymer/polymer.html" />
+<link rel="import" href="css/px-accordion-styles.html" />
+<link rel="import" href="../app-localize-behavior/app-localize-behavior.html" />
+<!--
+
+@blurb renders a accordion component
+@homepage index.html
+@demo index.html
+-->
+
+<dom-module id="px-accordion-group">
+  <template>
+    <style include="px-accordion-styles"></style>
+    <div class="accordion__expand__collapse text--right">
+      <span data-val="expand" class$="accordion__expand {{_getBtnClassName(_expandAllActive)}}" on-tap="_handleExpandAll">{{localize('Expand All')}}</span>
+      <span> | </span>
+      <span data-val="collapse" class$="accordion__collapse {{_getBtnClassName(_collapseAllActive)}}" on-tap="_handleCollapseAll">{{localize('Collapse All')}}</span>
+    </div>
+    <slot id="accordions"></slot>
+  </template>
+  <script>
+    Polymer({
+      is: 'px-accordion-group',
+
+      behaviors: [ Polymer.AppLocalizeBehavior ],
+
+      properties: {
+        /**
+         * A valid IETF language tag as a string that `app-localize-behavior` will
+         * use to localize this component.
+         *
+         * See https://github.com/PolymerElements/app-localize-behavior for API
+         * documentation and more information.
+         */
+        language: {
+          type: String,
+          value: 'en'
+        },
+        /**
+        * Use the key for localization if value for  language is missing. Should
+        * always be true for our components.
+        */
+        useKeyIfMissing: {
+          type: Boolean,
+          value: true
+        },
+        resources: {
+          type: Object,
+          value: function() {
+            return {
+              'en': {
+                "Expand All": "Expand All",
+                "Collapse All": "Collapse All"
+              }
+            }
+          }
+        },
+        _expandAllActive: {
+          type: Boolean,
+          value: false
+        },
+        _collapseAllActive: {
+          type: Boolean,
+          value: false
+        },
+        _accordions: {
+          type: Array,
+          value: null,
+          observer: '_updateAccordionState'
+        }
+      },
+
+      listeners: {
+        'px-accordion-opened-state-changed' : '_updateAccordionState'
+      },
+
+      attached: function() {
+        var boundHandler = this._getChildAccordions.bind(this);
+        this._observer = Polymer.dom(this.$.accordions).observeNodes(boundHandler);
+      },
+
+      detached: function() {
+        Polymer.dom(this.$.accordions).unobserveNodes(this._observer);
+        this._accordions = null;
+      },
+
+      _getBtnClassName: function(active) {
+        return active ? 'actionable' : 'actionable--disabled';
+      },
+
+      _getChildAccordions: function() {
+        this.debounce('get-child-accordions', function() {
+          this._accordions = this.queryAllEffectiveChildren('px-accordion');
+        }, 1);
+      },
+
+      _updateAccordionState: function() {
+        this.debounce('update-accordion-state', function() {
+          if (this._accordions && Array.isArray(this._accordions) && this._accordions.length > 0) {
+            let anyExpanded = false;
+            let anyCollapsed = false;
+            for (let i=0; i<this._accordions.length; i++) {
+              if (anyExpanded && anyCollapsed) {
+                break;
+              }
+              if (this._accordions[i].opened === true) {
+                anyExpanded = true;
+              }
+              if (this._accordions[i].opened === false) {
+                anyCollapsed = true;
+              }
+            }
+            this._expandAllActive = anyCollapsed;
+            this._collapseAllActive = anyExpanded;
+          }
+        }, 1);
+      },
+
+      _handleExpandAll: function() {
+        if (this._accordions && Array.isArray(this._accordions) && this._accordions.length > 0) {
+          for (let i=0; i<this._accordions.length; i++) {
+            this._accordions[i].opened = true;
+          }
+        }
+      },
+
+      _handleCollapseAll: function() {
+        if (this._accordions && Array.isArray(this._accordions) && this._accordions.length > 0) {
+          for (let i=0; i<this._accordions.length; i++) {
+            this._accordions[i].opened = false;
+          }
+        }
+      }
+    });
+  </script>
+</dom-module>

@@ -1,0 +1,196 @@
+<!--
+Copyright (c) 2018, General Electric
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>px-overlay Demo</title>
+
+    <!-- Import custom element. Note: see comment about relative paths to dependencies in the *.html file referenced below -->
+
+    <link rel="import" href="../../px-theme/px-theme-styles.html">
+    <!-- <link rel="import" href="../../px-dark-theme/px-dark-theme-styles.html"> -->
+    <custom-style>
+      <style include="px-theme-styles" is="custom-style"></style>
+    </custom-style>
+
+    <link rel="import" href="../../promise-polyfill/promise-polyfill-lite.html"/>
+    <link rel="import" href="../../polymer/polymer.html"/>
+    <link rel="import" href="../../polymer/lib/elements/dom-repeat.html"/>
+    <link rel="import" href="../../polymer/lib/elements/dom-if.html"/>
+    <link rel="import" href="../../px-modal/px-modal.html"/>
+    <link rel="import" href="../../px-icon-set/px-icon-set.html"/>
+    <link rel="import" href="../../px-icon-set/px-icon.html"/>
+    <link rel="import" href="../px-overlay-content.html"/>
+    <link rel="import" href="../px-overlay-container.html"/>
+  </head>
+
+  <body>
+    <style>
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+      }
+    </style>
+    <p>This demo illustrates the difference between wrapping content in a div and appending to it vs just appending to the px-overlay-content. Try it in Shadow vs Shady DOM and Polymer 1 vs Polymer 2 to see the differences. HINT: There should be no difference in Polymer 2 regardless of DOM. There should be differneces in Polymer 1 for different DOM types </p>
+    <div class="grid">
+      <div class="col">
+        <h2>No wrap</h2>
+        <h3>Local Content</h3>
+        <px-overlay-content id="nowrapper" container-type="nowrap">
+          <dom-repeat class="nowrap">
+            <template is="dom-repeat" class="nowrap">
+              <p>[[item]]</p>
+            </template>
+          </dom-repeat>
+        </px-overlay-content>
+
+        <button id="addNoWrap" class="btn">Add one to dom-repeat</button>
+        <button id="subNoWrap"class="btn">Subtact one</button>
+        <button id="appendNoWrap" class="btn">Append new content</button>
+        <button id="removeNoWrap" class="btn">Remove last content</button>
+        <h3>Hoisted Content</h3>
+        <px-overlay-container container-type="nowrap"></px-overlay-container>
+      </div>
+
+      <div class="col">
+        <h2>Wrapped</h2>
+        <h3>Local Content</h3>
+        <px-overlay-content id="wrapped" container-type="wrap">
+          <div id="wrapper">
+            <dom-repeat class="wrap">
+              <template is="dom-repeat" class="wrap">
+                <p>[[item]]</p>
+              </template>
+            </dom-repeat>
+          </div>
+        </px-overlay-content>
+
+        <button id="addWrap" class="btn">Add one to dom-repeat</button>
+        <button id="subWrap" class="btn">Subtract one</button>
+        <button id="appendWrap" class="btn">Append new content</button>
+        <button id="removeWrap" class="btn">Remove last content</button>
+        <h3>Hoisted Content</h3>
+        <px-overlay-container container-type="wrap"></px-overlay-container>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("WebComponentsReady", () => {
+        const normOverlay = document.getElementById('nowrapper');
+        const normRepeater = Polymer.Element ? document.querySelector('dom-repeat.nowrap') : document.querySelector('template[is="dom-repeat"].nowrap');
+        const addNoWrap = document.getElementById('addNoWrap');
+        const subNoWrap = document.getElementById('subNoWrap');
+        const appendNoWrap = document.getElementById('appendNoWrap');
+        const removeNoWrap = document.getElementById('removeNoWrap');
+
+        const wrappedOverlay = document.getElementById('wrapped');
+        const wrapper = document.getElementById('wrapper');
+        const wrapRepeater = Polymer.Element ? document.querySelector('dom-repeat.wrap') : document.querySelector('template[is="dom-repeat"].wrap');
+        const addWrap = document.getElementById('addWrap');
+        const subWrap = document.getElementById('subWrap');
+        const appendWrap = document.getElementById('appendWrap');
+        const removeWrap = document.getElementById('removeWrap');
+
+        let i = 100;
+        let iW = 100;
+
+        const noWrapAppended = [];
+        const wrapAppended = [];
+
+        normRepeater.items = [1,2,3,4,5];
+        wrapRepeater.items = [1,2,3,4,5];
+
+        addNoWrap.addEventListener('click', () => {
+          const l = normRepeater.items.length + 1;
+          normRepeater.push('items', l);
+        });
+        addWrap.addEventListener('click', () => {
+          const l = wrapRepeater.items.length + 1;
+          wrapRepeater.push('items', l);
+        });
+
+        subNoWrap.addEventListener('click', () => {
+          normRepeater.pop('items');
+        });
+        subWrap.addEventListener('click', () => {
+          wrapRepeater.pop('items');
+        });
+
+        appendNoWrap.addEventListener('click', () => {
+          const elem = document.createElement('div');
+          elem.setAttribute('class', 'dynamic');
+          elem.textContent = i++;
+          noWrapAppended.push(elem)
+          normOverlay.appendChild(elem);
+        });
+        appendWrap.addEventListener('click', () => {
+          const elem = document.createElement('div');
+          elem.setAttribute('class', 'dynamic');
+          elem.textContent = iW++;
+
+          wrapAppended.push(elem);
+          wrapper.appendChild(elem);
+        });
+
+        removeNoWrap.addEventListener('click', () => {
+          const elem = noWrapAppended.pop();
+          normOverlay.removeChild(elem);
+
+        });
+        removeWrap.addEventListener('click', () => {
+          const elem = wrapAppended.pop();
+          wrapper.removeChild(elem);
+
+        });
+      });
+    </script>
+
+    <script type="text/javascript">
+      (function() {
+        'use strict';
+
+        var onload = function() {
+          // For native Imports, manually fire WebComponentsReady so user code
+          // can use the same code path for native and polyfill'd imports.
+          if (!window.HTMLImports) {
+            document.dispatchEvent(
+              new CustomEvent('WebComponentsReady', {bubbles: true})
+            );
+          }
+        };
+
+        var webComponentsSupported = (
+          'registerElement' in document && 'import' in document.createElement('link') && 'content' in document.createElement('template')
+        );
+
+        if (!webComponentsSupported) {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = '../webcomponentsjs/webcomponents-lite.js';
+          script.onload = onload;
+          document.head.appendChild(script);
+        } else {
+          onload();
+        }
+      })();
+      </script>
+  </body>
+</html>
