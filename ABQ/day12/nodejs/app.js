@@ -38,7 +38,6 @@ app.get( '/', (req, res, next) => {
 
         ]
     });
-    next();
 })
 
 app.get('/get_id/:someid', (esp, res) => {
@@ -46,22 +45,37 @@ app.get('/get_id/:someid', (esp, res) => {
 });
 
 
-app.post('/user' , (req, res) => {
-    const user1 = new UserModel();
+// app.post('/user' , (req, res) => {
+//     const user1 = new UserModel();
 
-    user1.name = req.body.name;
-    user1.pass = req.body.pass;
-    console.log('before save');
-    user1.save = (err) => {
-    console.log('save');
+//     user1.name = req.body.name;
+//     user1.pass = req.body.pass;
+//     console.log('before save');
+//     user1.save = (err) => {
+//     console.log('save');
 
+//         if (err) res.send(err)
+//         res.send({
+//             messages : 'success, user was creaeted'
+//         })
+//     } 
+//     console.log('after save');
+     
+// });
+
+app.post('/user', (req, res) => {
+
+    const user = new UserModel();
+    user.name = req.body.name;
+    user.pass = req.body.pass;
+
+    user.save((err) => {
         if (err) res.send(err)
         res.send({
-            messages : 'success, user was creaeted'
+            message: 'succes, user was created'
         })
-    } 
-    console.log('after save');
-     
+    });
+
 });
 
 

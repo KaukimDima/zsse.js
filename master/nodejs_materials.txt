@@ -1,0 +1,13 @@
+Показан пример работы с route
+https://medium.com/@debug_mode/step-by-step-building-node-js-based-rest-api-to-perform-crud-operations-on-mongodb-ab18835111d7
+
+Mongoose пример работы с поиском данных
+https://coursework.vschool.io/mongoose-crud/
+
+MVC генератор, чтобы использовать, созданную структуруу
+Все что нуно добавить это папку models
+Работает по принципу create-react-app
+https://github.com/rajathavalam/express-mvc-generator
+
+Здесь показан пример, как это работает
+https://code.tutsplus.com/tutorials/build-a-complete-mvc-website-with-expressjs--net-34168
