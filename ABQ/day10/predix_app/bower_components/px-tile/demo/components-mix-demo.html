@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Px-tile Component Thumbnail Examples</title>
+
+    <!--
+      Fast bootstrapping of the webcomponents-lite library. Only loads the library
+      if the browser doesn't natively support web components.
+    -->
+    <script type="text/javascript">
+        (function() {
+            'use strict';
+
+            var onload = function() {
+                // For native Imports, manually fire WebComponentsReady so user code
+                // can use the same code path for native and polyfill'd imports.
+                if (!window.HTMLImports) {
+                    document.dispatchEvent(
+                            new CustomEvent('WebComponentsReady', {bubbles: true})
+                    );
+                }
+            };
+
+            var webComponentsSupported = (
+                    'registerElement' in document && 'import' in document.createElement('link') && 'content' in document.createElement('template')
+            );
+
+            if (!webComponentsSupported) {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = '../../webcomponentsjs/webcomponents-lite.js';
+                script.onload = onload;
+                document.head.appendChild(script);
+            } else {
+                onload();
+            }
+        })();
+    </script>
+
+    <link rel="import" href="../../polymer/polymer.html" />
+    <link rel="import" href="../../px-icon-set/px-icon-set.html" />
+    <link rel="import" href="../../px-icon-set/px-icon.html" />
+    <link rel="import" href="../../px-alert-label/px-alert-label.html" />
+    <link rel="import" href="../../px-theme/px-theme-styles.html">
+
+    <!-- px pie chart demo component import -->
+    <link rel="import" href="px-vis-pie-custom-component.html">
+
+    <!-- px horizontal bar chart demo component import -->
+    <link rel="import" href="../../px-simple-horizontal-bar-chart/px-simple-horizontal-bar-chart.html"/>
+
+    <custom-style>
+        <style include="px-theme-styles" is="custom-style">
+            px-tile {
+                margin: 1rem;
+                /* if you want to customize width and height of px tile */
+                /*--px-tile-width : 20rem;*/
+                --px-tile-height: 21.5rem;
+                /* if you want to truncate this description after 3 lines */
+                --px-tile-desc-text-height : 3rem;
+                --px-tile-thumbnail-background-color: #D8E0E5;
+                --px-tile-text-background-color: #B6C3CC;
+                --px-tile-subtitle-color: #2c404c;
+                --px-tile-title-color: #121f26;
+            }
+            .px-tile-custom {
+              --px-tile-height: 10rem;
+              --px-tile-background-color: #B6C3CC;
+              --px-tile-about-min-height: 10rem;
+              --px-tile-action-buttons-position: absolute;
+              --px-tile-action-buttons-right: 15px;
+              --px-tile-action-buttons-bottom: 15px;
+            }
+            .small-container {
+              --px-tile-height: 5rem;
+              --px-tile-about-min-height: 5rem;
+            }
+            /* square sample  */
+            .square-container {
+              --px-tile-height: 135px;
+              --px-tile-width: 135px;
+              --px-tile-about-min-height: 25px;
+              --px-tile-about-padding: 0px;
+              --px-tile-about-right: 5px;
+              --px-tile-about-bottom: 5px;
+              --px-tile-text-background-color: #D8E0E5;
+              
+              --px-tile-overlay-action-buttons-position: absolute;
+              --px-tile-overlay-action-buttons-bottom: -7px; 
+              --px-tile-overlay-action-buttons-right: -9px;
+              --px-tile-overlay-width: 25px;
+            }
+            .center-text {
+              height: 135px;
+              width: 135px;
+              display: flex;
+					    align-items: center;
+					    justify-content: center;
+            }
+            
+            
+            .footer {
+                display: flex;
+                align-items: center;
+                margin-left: 15px;
+            }
+            px-alert-label {
+                margin-left: 0.66667rem;
+                --px-alert-label-border-color: white;
+                --px-alert-label-background-color--unknown: transparent;
+                --px-alert-label-text-color--unknown: white;
+            }
+
+            .px-simple-horizontal-bar-chart {
+                padding: 1rem 0.5rem 1rem 1rem;
+            }
+        </style>
+    </custom-style>
+
+    <link rel="import" href="../px-tile.html" />
+
+    <script>
+        window.addEventListener('px-tile-action-tapped', function(evt){
+          console.log(evt.detail); 
+          var msg = document.getElementById('selection-mssg');
+          var el = document.getElementById('selection');
+          if(msg && el) {
+            msg.innerText = 'You have selected: ';
+            el.innerText = JSON.stringify(evt.detail);
+          }
+        }); 
+    </script>
+
+</head>
+
+<body>
+
+<style>
+  .info-container {
+    display: flex;
+  }
+  .info-item {
+    padding: 20px;
+  }
+	.thumbnail{
+	    text-align: center;
+	}
+	.info {
+	  padding: 20px;
+	}
+	.selection {
+	  font-size: 22px;
+	}
+	.code-sample {
+	  min-width: 520px;
+	}
+</style>
+<div class="info">
+  https://www.predix-ui.com
+</div>
+
+<div style="display:flex; flex-wrap:wrap;">
+    <px-tile 
+             main-title="02-88583"
+             subtitle="10Y 01 Stage 1 Bucket"
+             description="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui."
+             overlay-description="Overlay description text : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna."
+             action-buttons='{"items":[{"id":"1","label":"Return","size":"small"},{"id":"2","label":"Scrap","size":"small"},{"id":"3","label":"Download","size":"small","type":"bare","buttonIcon":true,"icon":"px-utl:download"}]}'
+             hoverable>
+        <div class="thumbnail" slot="thumbnail">
+            <img src="turbine.jpg"/>
+        </div>
+        <div class="footer" slot="footer">
+            <px-icon icon="px-fea:tag"></px-icon>
+            <px-alert-label type="unknown" label="TAG1"></px-alert-label>
+            <px-alert-label type="unknown" label="TAG2"></px-alert-label>
+            <px-alert-label type="unknown" label="TAG3"></px-alert-label>
+        </div>
+    </px-tile>
+    <px-tile 
+             main-title="07-88302"
+             subtitle="1F 04 Stage 1 Bucket"
+             description="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui."
+             overlay-description="Overlay description text : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna."
+             action-buttons='{"items":[{"id":"102","label":"Link","size":"small","type":"bare","buttonIcon":true,"icon":"px-nav:connection","isPrimary":true},{"id":"1","label":"Return","size":"small","type":"bare primary", "style":"margin-right: -20px;"},{"id":"2","label":"Scrap","size":"small","type":"bare primary", "style":"margin-right: -10px;"},{"id":"3","label":"Download","size":"small","type":"bare","buttonIcon":true,"icon":"px-utl:download"}]}'
+             hoverable>
+        <div class="thumbnail" slot="thumbnail">
+            <img src="gas_turbine.png" />
+        </div>
+    </px-tile>
+    <px-tile 
+             main-title="23-88502"
+             subtitle="9F 04 Stage 1 Bucket"
+             description="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui."
+             overlay-description="Overlay description text : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna eget lacinia odio sem nec elit. Donec sed odio dui.  Etiam porta sem malesuada magna mollis euismod. eget lacinia odio sem nec elit. Donec sed odio dui Etiam porta sem malesuada magna mollis euismod."
+             action-buttons='{"items":[{"id":"103","size":"small","type":"bare","buttonIcon":true,"icon":"px-nav:reload","isPrimary":true},{"id":"1","label":"Return","size":"small","type":"bare","buttonIcon":true,"icon":"px-utl:link"},{"id":"2","label":"Scrap","size":"small","type":"bare","buttonIcon":true,"icon":"px-utl:copy"},{"id":"3","label":"Download","size":"small","type":"bare","buttonIcon":true,"icon":"px-utl:download"}]}'
+             hoverable>
+        <div slot="thumbnail" class="px-vis-pie-chart"><px-vis-pie-custom-component></px-vis-pie-custom-component></div>
+    </px-tile>
+    <px-tile 
+             main-title="13-88937"
+             subtitle="7E 01 Stage 1 Bucket"
+             description="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui."
+             overlay-description="Overlay description text : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna."
+             action-buttons='{"items":[{"id":"104","label":"Favorite","size":"small","type":"bare","buttonIcon":true,"icon":"px-nav:favorite","isPrimary":true},{"id":"1","label":"Return","icon":"px-utl:edit","selected":true},{"id":"2","label":"Scrap","icon":"px-utl:copy"},{"id":"3","label":"Remove","icon":"px-vis:trash-series"},{"id":"4","label":"Notification","icon":"px-nav:notification"}],"sortMode":"id","buttonStyle":"icon","icon":"px-nav:more","displayValue":"Select","disabled":false,"disableClear":false,"hideChevron":true,"multi":false,"searchMode":false}'
+             hoverable>
+        <div slot="thumbnail" class="px-simple-horizontal-bar-chart">
+            <px-simple-horizontal-bar-chart
+                    id="default-chart"
+                    width="auto"
+                    height="150"
+                    chart-data="[100,200,300,400,500,360]"
+                    colors='["#506DB6","#BFDA5D","#BD79A4","#E3483D","#FDE571","#8ACDE2"]'
+                    domain-max="500"
+                    legend-labels='[
+                        "No Action", "Scheduled Maintenance", "Sensor Repair",
+                        "Unplanned Maintenance", "Ops Changes", "Forced Outage", "eight"
+                    ]'>
+            </px-simple-horizontal-bar-chart>
+        </div>
+        <div class="footer" slot="footer">
+            <px-icon icon="px-fea:tag"></px-icon>
+            <px-alert-label type="unknown" label="TAG1"></px-alert-label>
+            <px-alert-label type="unknown" label="TAG2"></px-alert-label>
+            <px-alert-label type="unknown" label="TAG3"></px-alert-label>
+        </div>
+    </px-tile>
+
+    <px-tile class="px-tile-custom"
+             main-title="SF_722101_IR_WDMMYYXX_GHEIXYZ_SS45"
+             subtitle="Subtitle text"
+             description="07/30/2017 by Anita Lazman"
+             action-buttons='{"items":[{"id":"105","size":"small","type":"bare","buttonIcon":true,"icon":"px-nav:favorite","isPrimary":true},{"id":"1","label":"Secondary Action","size":"small", "type":"tertiary"},{"id":"2","label":"Action","size":"small","type":"call to action"}]}' >
+    </px-tile>
+
+    <px-tile class="px-tile-custom"
+             main-title="SF_722101_IR_WDMMYYXX_GHEIXYZ_SS45"
+             subtitle="Subtitle text"
+             description="07/30/2017 by Anita Lazman"
+             action-buttons='{"items":[{"id":"106","size":"small","type":"bare","buttonIcon":true,"icon":"px-nav:favorite","isPrimary":true},{"id":"1","label":"Return","size":"small"},{"id":"2","label":"Scrap","size":"small"},{"id":"3","label":"Download","size":"small"}]}' >
+    </px-tile>
+
+
+    <px-tile class="px-tile-custom small-container"
+             main-title="SF_722101_IR_WDMMYYXX_GHEIXYZ_SS45"
+             subtitle="Inspected by Chelsea Hammond on 11/26/2017"
+             action-buttons='{"items":[{"id":"107","label":"Favorite","size":"small","type":"bare","buttonIcon":true,"icon":"px-nav:favorite","isPrimary":true},{"id":"1","label":"Return","icon":"px-utl:edit","selected":true},{"id":"2","label":"Scrap","icon":"px-utl:copy"},{"id":"3","label":"Remove","icon":"px-vis:trash-series"},{"id":"4","label":"Notification","icon":"px-nav:notification"}]}' >
+    </px-tile>
+
+    <px-tile class="square-container"
+             action-buttons='{"items":[{"id":"20","label":"Download","size":"small","type":"bare","buttonIcon":true,"icon":"px-utl:download"}]}' >
+        <div slot="thumbnail" >
+            <div class="center-text">01</div>
+        </div>
+    </px-tile>
+
+    <px-tile class="square-container"
+             action-buttons='{"items":[{"id":"23","label":"Download","size":"small","type":"bare","buttonIcon":true,"icon":"px-utl:download"}]}' 
+             hoverable >
+        <div slot="thumbnail" >
+            <div class="center-text">02</div>
+        </div>
+    </px-tile>
+
+</div>
+
+<div class="info-container">
+	<div class="info-item">
+	 <div class="code-sample">
+	    <p>Binding <i>'px-tile-action-tapped'</i> event: </p>
+	    <p><b>
+	    window.addEventListener('px-tile-action-tapped', function(evt){ <br>
+	    &nbsp; &nbsp; console.log(evt.detail);  <br>
+	    });  <br>
+	    </b></p>
+	 </div>
+	</div>
+	<div class="info-item">
+	 <p id="selection-mssg"></p>
+	  <span id="selection" class="selection"></span>
+	</div>
+</div>
+
+</body>
+</html>

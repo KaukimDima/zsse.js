@@ -1,0 +1,81 @@
+<link rel="import" href="../polymer/polymer.html"/>
+
+<script>
+window.PxCommonBehavior = window.PxCommonBehavior || {};
+const PxCommonBehavior = window.PxCommonBehavior;
+
+/*
+    Name:
+    PxCommonBehavior.uniqueIds
+
+    Description:
+    Polymer behavior that creates and manages unique ids
+
+    Dependencies:
+    - D3.js
+
+    @polymerBehavior PxCommonBehavior.uniqueIds
+*/
+PxCommonBehavior.uniqueIds = {
+  /**
+  * Generates a random id string.
+  *
+  * Takes a string prefix, then adds 10 random chars
+  *
+  * @param {string}
+  * @return {id string}
+  */
+  generateRandomID: function(baseStr, idLength) {
+    let id = baseStr || 'id_';
+    let l = idLength || 10;
+    const abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    const len = abc.length;
+    for(var i = 0; i < l; i++){
+      id += abc.charAt(Math.floor(Math.random() * len));
+    }
+    window.Px = window.Px || {};
+    window.Px.uniqueIds = window.Px.uniqueIds || new Set();
+
+    if(window.Px.uniqueIds.has(id)) {
+      //id exists, try creating another one
+      return this.generateRandomID(baseStr);
+    } else {
+      window.Px.uniqueIds.add(id);
+    }
+    return id;
+  },
+
+  removeID: function(id) {
+    window.Px.uniqueIds.delete(id);
+  },
+};
+
+/*
+    Name:
+    PxCommonBehavior.cloneObject
+
+    Description:
+    Polymer behavior that provides a clone method for objects
+
+    @polymerBehavior PxCommonBehavior.cloneObject
+*/
+PxCommonBehavior.cloneObject = {
+  /*
+   * deep-copy object into newObject
+  */
+  clone: function(object, newObject) {
+    var newObject = newObject || {};
+    for (i in object) {
+      if (object.hasOwnProperty(i)) {
+        if (typeof object[i] === 'object' && object[i] !== null) {
+          newObject[i] = Array.isArray(object[i]) ? [] : {};
+          this.clone(object[i], newObject[i])
+        } else {
+          newObject[i] = object[i];
+        }
+      }
+    }
+    return newObject;
+  }
+};
+</script>
