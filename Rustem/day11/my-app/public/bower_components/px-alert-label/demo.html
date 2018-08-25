@@ -1,0 +1,73 @@
+<!--
+Copyright (c) 2018, General Electric
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>px-alert-label Demo</title>
+        <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
+        <script src="../webcomponentsjs/webcomponents-lite.min.js"></script>
+        <!-- Import custom element. Note: see comment about relative paths to dependencies in the *.html file referenced below -->
+        <link rel="import" href="../px-theme/px-theme.html"/>
+        <link rel="import" href="px-alert-label.html"/>
+    </head>
+
+    <body>
+
+        <h3>Demo</h3>
+
+        <p>
+            Although related, examples are /not/ the same as the test fixtures.
+            Tests are tests, examples are examples.
+        </p>
+
+        <p>
+            Also see the <a href="index.html">documentation</a> and the <a href="test/wct-tests.html">UI test fixture</a>.
+        </p>
+
+        <p>
+          <px-alert-label type="important" label="Important"></px-alert-label><span>Drink your beer!</span>
+        </p>
+        <p>
+        </p>
+          <px-alert-label type="Warning" label="Warning"></px-alert-label><span>The Martians are coming.</span>
+        <p>
+          <px-alert-label type="Error" label="Error"></px-alert-label><span>Doh!  You pushed the wrong button.</span>
+        </p>
+        <p>
+          <px-alert-label type="info" label="Information"></px-alert-label><span>Paris is nice in the Spring.</span>
+        </p>
+        <p>
+          <px-alert-label type="healthy" label="Healthy"></px-alert-label><span>Spinach</span>
+        </p>
+        <p>
+          <px-alert-label type="healthy-inverted" label="Inverted"></px-alert-label><span>Carrot</span>
+        </p>
+        <p>
+          <px-alert-label type="unknown" label="Unknown"></px-alert-label><span>Spooky</span>
+        </p>
+        <p>
+          <px-alert-label type="I"></px-alert-label><span>Purposedly use an invalid alert label type</span>
+        </p>
+        <p>
+        <p>
+          <px-alert-label type="important" label="3"></px-alert-label><span>Can also be used for badges!</span>
+        </p>
+    </body>
+</html>

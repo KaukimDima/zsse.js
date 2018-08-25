@@ -13,19 +13,7 @@ class App extends Component {
     return (
       <div>
 
-        <h1> Predix </h1>
-
-
 <Accordion/>
-
-
-
-
-
-
-
-
-
 
 
       </div>
