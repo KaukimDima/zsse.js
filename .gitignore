@@ -1,5 +1,9 @@
 npm-debug.log
 node_modules/
+<<<<<<< HEAD
 *bower-components/
 bower-components/
+=======
+bower_components/
+>>>>>>> 4fd7239db5cf78e20c49595f22418430c80b1d30
 *.DS_Store

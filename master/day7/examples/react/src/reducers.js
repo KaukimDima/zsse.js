@@ -4,7 +4,7 @@ import {
   fetchBlogFail
 } from './actions';
 import {combineReducers} from 'redux';
-import {handleAction, handleActions} from '../../../../../../../Library/Caches/typescript/2.9/node_modules/@types/redux-actions';
+import {handleAction, handleActions} from 'redux-actions';
 
 const episodes = handleAction(
   fetchFireFlyEpisodsSuccess,

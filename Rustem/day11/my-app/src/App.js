@@ -1,71 +1,76 @@
 import React, { Component } from 'react';
-import './App.css';
+import AppNav from './web/AppNav'
+
+const navItems = [
+  {
+    "label": "Dashboard",
+    "icon": "px-fea:home",
+    "id": "dashboard"
+  },
+  {
+    "label": "Analytics",
+    "icon": "px-fea:analysis",
+    "id": "analytics"
+  },
+  {
+    "label": "Alerts",
+    "icon": "px-fea:ealerts",
+    "id": "alerts"
+  }
+];
 
 class App extends Component {
-  state = {
-    data : [
-
-{
-  header: "SomeHead",
-
-  innerText: "Smth"
-}
-   
-    ]
-  }
-
-
-  ComponentDidMount(){
-
-
-    console.log(this.$go);
-
-  }
 
   
-  render() {
-    return (
-      <div className="App">
+    state = {
+
+      "selectedItems":"Dashboard"
+     
+    }
 
 
-      {this.state.data.map((el, i) => 
-    
-      <px-accordion-group>
-      <px-accordion
-      icons='{"more":"px-utl:chevron-right","less":"px-utl:chevron","action":[{"icon":"px-utl:edit"},{"icon":"px-utl:delete"}]}'
-      header-value={el.header}
-      status="Last Updated: 3 Days Ago"
-
-      ref = {(el) => this.$value = el} >
+  
+  
+    ComponentDidMount(){
       
+      console.log(this.$appNav);
 
-      {el.innerText}
+      this.$appNav.items = this.navItems;
+  
+      this.$appNav.addEventListener('selected-route-changed', this._handleSelectedRouteChanged, false);
 
-</px-accordion>
-
-{/*  */}</px-accordion-group>
-)}
+    }
 
 
-{/* <px-gauge
-value={30}
-min={0}
-max={100}
-bar-width={0}
-unit="unit"
-error={[[0,12],[79,100]]}
-abnormal={[[12,32],[68,79]]}
-anomaly={[[32,45],[54,68]]}
-normal={[[45,54]]}>
-</px-gauge> */}
-
-        
-      </div>
+  
+    
+    render() {
 
 
 
-    );
+      return (
+
+
+  <div className="App">
+
+
+  <AppNav
+              items={navItems}
+              onSelected = {this._handleSelectedRouteChanged} />
+  
+  <px-app-nav 
+  
+  ref =  {(n)=>{this.$appNav = n} }>
+
+ </px-app-nav>
+
+       
+  </div>
+  
+  
+  
+      );
+    }
   }
-}
-
-export default App;
+  
+  export default App;
